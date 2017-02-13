@@ -10,7 +10,7 @@
     
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    
+    <link href="css/styles.css" rel="stylesheet">
     <!-- import of AngularJS -->
     <script src="js/shared/angular.min.js"></script>
     
@@ -22,7 +22,44 @@
     <![endif]-->
 </head>
 
+
+
 <body ng-app="activityApp">
+	
+	
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				<li><a href="#">Profile</a></li>
+	
+			</ul>
+
+			        <div class="navBar-S col-sm-3 col-md-3">
+       				 <form class="navbar-form" role="search">
+       				 <div class="input-group">
+       			     	<input type="text" class="form-control" placeholder="I Want To ..." name="srch-term" id="srch-term">
+        		    
+   			     </div>
+   			     </form>
+		        </div>
+		
+
+
+
+
+
+	
+
+		</div>
+
+
+
+	</nav>
+		
+
+
+
+
     <div class="main" ng-controller="MainController">
         <h1>{{ title }}</h1>
         <h3>{{ subtitle }}</h3>
