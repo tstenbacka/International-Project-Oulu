@@ -10,8 +10,8 @@
     height: 320px;
     */
     width:380px;
-    background-color: #fff;
     padding: 1%;
+    background-color: #fff;
     border-radius: 0px;
     -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
@@ -26,8 +26,8 @@
     font-weight: bold;
 }
 .card-time {
-    font-weight: bold;
     color: #b5b5b5;
+    font-weight: bold;
 }
 
 .card-distance{
@@ -36,6 +36,9 @@
     float:right;
 }
 
-.card-bottom {
-
+.card-strip {
+    padding: -100000000000000000000000000px;
+    width: 100%;
+    height: 5px;
+    background-color: blue;
 }

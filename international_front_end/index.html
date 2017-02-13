@@ -34,13 +34,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="row">
-                    <div class="col-xs-3">                      
-                        <div class="card">
+                    <div class="col-xs-3" ng-controller="CardController">                      
+                        <div class="card" >
                             <div class="card-block">
-                                <p class="card-text" class="card-category-title">Running</p>
-                                <h4 class="card-title">Running in the 90's</h4>
-                                <p class="card-text" class="card-time">Tuesday at 9 am</p>
-                                <p class="card-distance">800m</p>
+                                <p class="card-text" class="card-category-title">{{ category }}</p>
+                                <h4 class="card-title">{{ title }}</h4>
+                                <span class="card-text" class="card-time">{{ time }}</span>
+                                <span class="card-distance">{{ distance }}</span>
                             </div>
                         </div>                       
                     </div>
