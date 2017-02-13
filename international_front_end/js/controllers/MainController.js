@@ -4,8 +4,4 @@ app.controller('MainController', ['$scope', function($scope) {
     $scope.errormessage = 'You´re not actually supposed to be here, sorry about that!';
 }]);
 
-header.controller("HeaderController",["$scope", function($scope){
-
-
-}]);
 
