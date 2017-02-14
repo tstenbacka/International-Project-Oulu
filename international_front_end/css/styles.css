@@ -1,9 +1,7 @@
-
-
-
 body {
     font-family: 'Nunito', sans-serif;
     background-color: rgba(74,144,226,0.5);
+    padding-top: 100px;
 }
 
 /* Card Start */
@@ -46,3 +44,41 @@ body {
 }
 
 /* Card End */
+
+/*****************
+NAVBAR
+******************/
+
+.bar{
+    text-align: center !important;
+    padding-top: 20px;
+    
+    
+}
+.navbar{ 
+    height: 100px;
+    padding-top: 10px;
+    padding: 5px;
+    display: block;
+}
+
+
+
+.btn-circle{
+    display: block;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color:  aqua;
+   
+}
+.btn{
+    padding: 5px;
+    text-align: center;
+    
+}
+.input-group{
+    width: 700px;
+    
+    
+}

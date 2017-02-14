@@ -29,6 +29,24 @@
     </head>
 
     <body ng-app="activityApp">
+        <nav class="navbar navbar-default navbar-fixed-top">
+		        <div class="container-fluid">
+			          <ul class="nav navbar-left">
+                    <button type="button" class="btn  btn-circle btn-lg"><li class="sing_text"><a href="#">Sing In</a></li></button>
+			          </ul>    
+                <ul class="nav navbar-right">
+                    <button type="button" class="btn  btn-circle btn-lg"><li class="new_act "><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li></button>
+                </ul>
+                <form class="navbar-form" role="search">
+                     <div class="bar">
+                          <div class="input-group">
+                              <input type="text" class="form-control" placeholder="I Want To ..." name="srch-term" id="srch-term">
+                          </div>
+                      </div>
+		            </form>
+		        </div>
+	      </nav>
+      
         <div class="main" ng-controller="MainController">
             <!--<h1>{{ title }}</h1>
             <h3>{{ subtitle }}</h3>
