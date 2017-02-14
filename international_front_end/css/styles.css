@@ -8,6 +8,7 @@
     height: 100px;
     padding-top: 10px;
     padding: 5px;
+    display: block;
 }
 
 
@@ -31,3 +32,6 @@
     
 }
 
+body{
+    padding-top: 100px;
+}

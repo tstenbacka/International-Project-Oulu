@@ -26,15 +26,13 @@
 
 <body ng-app="activityApp">
 	
-	
-	<nav class="navbar navbar-default">
+
+	<nav class="navbar navbar-default navbar-fixed-top">
         
 		<div class="container-fluid">
 			<ul class="nav navbar-left">
                 <button type="button" class="btn  btn-circle btn-lg"><li class="sing_text"><a href="#">Sing In</a></li></button>
                 
-				
-	
 			</ul>
             
             <ul class="nav navbar-right">
@@ -54,26 +52,20 @@
                  </div>
 		   </form>
             
-           
-	
-
-	
-
+ 
 		</div>
 
 
 
 	</nav>
-		
-
-
-
+	
 
     <div class="main" ng-controller="MainController">
         <h1>{{ title }}</h1>
         <h3>{{ subtitle }}</h3>
         <h3>{{ errormessage }}</h3>
     </div>
+    
     
     <!-- Modules -->
     <script src="js/app.js"></script>
