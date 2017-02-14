@@ -5,8 +5,12 @@ app.controller('MainController', ['$scope', function($scope) {
 }]);
 
 app.controller('CardController', ['$scope', function($scope) {
-    $scope.category = 'Running';
-    $scope.title = 'Running in the 90s';
-    $scope.time = 'Tuesday at 9am';
-    $scope.distance = '800m';
+
+    $scope.runnning = {
+        category : 'Running';
+        title : 'Running in the 90s';
+        time : 'Tuesday at 9am';
+        distance : '800m';
+    };
+    
 }]);

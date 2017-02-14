@@ -6,7 +6,7 @@ body {
     background-color: rgba(74,144,226,0.5);
 }
 
-/* Card */
+/* Card Start */
 
 .card {
     
@@ -44,3 +44,5 @@ body {
     height: 5px;
     background-color: blue;
 }
+
+/* Card End */
