@@ -1,41 +1,57 @@
 
 <div class="container">
 	<div class="col-xs-3">
-        <div class="SingUpCard center  text-center">
-    		<div class="card-block">
-                <h2>Welcome =DDDD</h2>
-                
-                <p>We're pleased to see you here! Lets get started by filling the  basic information below.</p>
-               	<br> 
-				<h4>{{check}}</h4>
+        <div class="SingUpCard center  text-center" >
+
+		<div class="card-block" ng-model="check1" ng-if="check1 == true" ng-show="forwardStart">
+		<h2>Welcome =DDDD</h2>
+
+		<p>We're pleased to see you here! Lets get started by filling the  basic information below.</p>
+			<br> 
+			<h4>{{check1}}</h4>
+			<form action="" method="post">
+				<div class="center-block">
+							<img class="user_picture" src="img/user_picture.png" alt="">
+				</div>
+				<br>
+				<div class="input-prepend"><span class="add-on"><i></i></span>
+				    <h5>Name</h5>
+				    <input type="text" ng-model="name" id="Name" name="" placeholder= {{nameHolder}} >
+				</div>
+				<div class="input-prepend"><span class="add-on"><i></i></span>
+				    <h5>Age</h5>
+				    <input type="text" ng-model="age" id="Age" name="" placeholder= {{ageHolder}}s > 
+				</div>
+				<div class="input-prepend"><span class="add-on"><i></i></span>
+				    <h5>Password</h5>
+				    <input type="text" ng-model="password" id="Password" name="" placeholder={{passwordHolder}}>
+				</div>
+                <br>
+				    <input type="button" value="Continue" class="cardbtn" ng-click="forwardStart()"/>
+				<br>				
+            </form>
+			</div>            
+            <div class="card-block" ng-model="check1" ng-show="check2">
+                <h2>Find Activities Nearby</h2> 
+                <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location</p>
+                <br> 
                 <form action="" method="post">
-							<div class="center-block">
-								<img class="user_picture" src="img/user_picture.png" alt="">
-							</div>
-					<br>
-                    <div class="input-prepend"><span class="add-on"><i></i></span>
-						 <h5>Name</h5>
-						 <input type="text" ng-model="name" id="Name" name="" placeholder= {{nameHolder}} >
+                    <div class="center-block">       
+                            <!-- GOOGLE MAP API -->
                     </div>
-                   	
 
-            	 	<div class="input-prepend"><span class="add-on"><i></i></span>
-                       	 <h5>Age</h5>
-						<input type="text" ng-model="age" id="Age" name="" placeholder= {{ageHolder}} > 
-                    </div>
-                    
-
+                    <br>
                     <div class="input-prepend"><span class="add-on"><i></i></span>
-                        <h5>Password</h5>
-						<input type="text" ng-moder="password" id="Password" name="" placeholder={{passwordHolder}}>
+                        <h5>Postal Code</h5>               
+                        <input type="text" ng-model="postalCode" id="postalcode" name""  placeholder={{postalCodeHolder}}>
                     </div>
                     <br>
+                    <input type="button" value="Previous" class="cardbtn-small" ng-click="backwardsPostal()"/>
+                    <input type="button" value="Next" class="cardbtn-small" ng-click="forwardPostal()" />
+				    <br>
+                </form>		
+			</div>
 
-      			<input type="submit" value="Continue" class="cardbtn" ng-click="forwardStart()"/>
-					<br>				
-
-              </form>
-            </div>    
-        </div>
+		</div>
 	</div>
 </div>

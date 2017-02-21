@@ -63,7 +63,15 @@ body {
 	background-color: blue;
 	color: white;
 }
-
+.cardbtn-small{
+    width: 100px;
+	padding: 5px;
+    text-align: center;
+	background-color: blue;
+	color: white;
+    
+    
+}
 
 /* Card End */
 

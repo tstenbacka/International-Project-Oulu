@@ -11,15 +11,20 @@ app.controller('SignUpController', ['$scope', function($scope) {
 	$scope.password;
 	$scope.postalCode;
 	$scope.email;
-	$scope.check = false;
+	$scope.check1  = true;
+	$scope.check2 = false;
 
 	$scope.forwardStart = function (){
-		if ($scope.name != null && $scope.age != null && $scope.password != null){
-			$scope.check = true;
-		}
-		else {
-			$scope.check = false;
-		}
-	}; 	
-	
+		$scope.check1 = false;
+        $scope.check2 = true;
+	};
+
+	$scope.forwardPostal = function (){	
+;
+	}
+	$scope.backwardsPostal = function (){
+        $scope.check1 = true;
+        $scope.check2 = false;
+	}
+
 }]);
