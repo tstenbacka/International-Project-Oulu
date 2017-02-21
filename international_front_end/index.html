@@ -24,9 +24,9 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
 
 <body ng-app="activityApp">
@@ -52,41 +52,24 @@
         </div>
     </nav>
 
-    <div class="main" ng-controller="MainController">
-        <!--<h1>{{ title }}</h1>
-            <h3>{{ subtitle }}</h3>
-            <h3>{{ errormessage }}</h3>-->
-        <br>
-        <br>
-        <br>
-        <br>
-    </div>
-    <div class="container-fluid" ng-controller="CardController">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
-                    <div ng-repeat="card in cards">
-                        <app-info info="card"></app-info>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
     <!-- Modules -->
     <script src="js/app.js"></script>
 
     <!-- Routing places the appropriate page here -->
-    <div ng-view></div>
+    <div class="container-fluid">
+        <div ng-view></div>
+    </div>
 
     <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/CardController.js"></script>
     <script src="js/controllers/LoginController.js"></script>
     <script src="js/controllers/SignUpController.js"></script>
     <script src="js/controllers/ProfileController.js"></script>
     <script src="js/controllers/NewActivityController.js"></script>
     <script src="js/controllers/RatingController.js"></script>
+    
+    <!-- Scripts -->
 
     <!-- Directives -->
     <script src="js/directives/cardInfo.js"></script>
