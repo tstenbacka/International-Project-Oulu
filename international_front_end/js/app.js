@@ -3,7 +3,7 @@ var app = angular.module("activityApp", ['ngRoute']);
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/',{
-      controller: "MainController",
+      controller: "CardController",
       templateUrl: "views/activities.html"
     })
     .when('/login', {
