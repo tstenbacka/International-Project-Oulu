@@ -1,20 +1,20 @@
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: rgba(74,144,226,0.5);:
+    background-color: rgba(74, 144, 226, 0.5);
     padding-top: 100px;
 }
+
 
 /* Card Start */
 
 .card {
-    
-    width:380px;
+    width: 380px;
     padding: 1%;
     background-color: #fff;
     border-radius: 0px;
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     font-weight: bold;
 	color: cyan;
 }
@@ -22,18 +22,20 @@ body {
 .card-title {
     font-weight: bold;
 }
+
 .card-category-title {
     font-weight: bold;
 }
+
 .card-time {
     color: #b5b5b5;
     font-weight: bold;
 }
 
-.card-distance{
+.card-distance {
     font-weight: bold;
     color: #b5b5b5;
-    float:right;
+    float: right;
 }
 
 .card-strip {
@@ -43,6 +45,7 @@ body {
     height: 5px;
     background-color: blue;
 }
+
 
 .SingUpCard {
     
@@ -79,41 +82,96 @@ body {
 
 /* Card End */
 
+
+/* New activity Start */
+
+.new-activity {
+    float: right;
+    height: 100vh;
+    margin-right: -15px;
+    width: 30%;
+    margin-top: -100px;
+    padding-top: 100px;
+    padding-left: 1%;
+    padding-right: 1%;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    background-color: aliceblue;
+}
+
+.column {
+    font-weight: bold;
+}
+
+.row-title {
+    font-weight: bold;
+}
+
+.row-category {
+    font-weight: bold;
+}
+
+.row-desc {
+    font-weight: bold;
+}
+
+.activity-description {
+    resize: none;
+}
+
+.row-date {
+    font-weight: bold;
+}
+
+.row-dur {
+    font-weight: bold;
+}
+
+.row-location {
+    font-weight: bold;
+}
+
+.row-participants {
+    font-weight: bold;
+}
+
+
+/* New activity End */
+
+
 /*****************
 NAVBAR
 ******************/
 
-.bar{
+.bar {
     text-align: center !important;
     padding-top: 20px;
-    
-    
 }
-.navbar{ 
+
+.navbar {
     height: 100px;
     padding-top: 10px;
     padding: 5px;
     display: block;
 }
 
-
-
-.btn-circle{
+.btn-circle {
     display: block;
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background-color:  aqua;
-   
+    background-color: aqua;
 }
-.btn{
+
+.btn {
     padding: 5px;
     text-align: center;
-    
 }
-.input-group{
+
+.input-group {
     width: 700px;
-        
 }
 
 #gmaps {
