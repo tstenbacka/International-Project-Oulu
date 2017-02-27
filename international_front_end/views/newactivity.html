@@ -3,12 +3,12 @@
 
     <div class="new-activity-bar">
         <div class="column">
-            <form>
+            <form name="createNewActivity" ng-controller="NewActivityController" ng-submit="submitActivityForm()">
                 <div>
                     <div class="row-category">
                         <p1>{{ activityHints.hintCategory }}</p1>
                         <br>
-                        <select name="category">
+                        <select ng-model="activityInformation.activityCategory" required>
                             <option value="running">Running</option>
                             <option value="music">Music</option>
                             <option value="swimming">Swimming</option>
@@ -20,35 +20,35 @@
                     <div class="row-title">
                         <p1>{{ activityHints.hintTitle }}</p1>
                         <br>
-                        <input type="text"></input>
+                        <input type="text" ng-model="activityInformation.activityTitle" required></input>
                     </div>
                     <br>
                     <div class="row-desc">
                         <p1>{{ activityHints.hintDescription }}</p1>
                         <br>
-                        <textarea class="activity-description" maxlength="140" rows="6" cols="40"></textarea>
+                        <textarea ng-model="activityInformation.activityDescription" class="activity-description" maxlength="140" rows="6" cols="40" required></textarea>
                     </div>
                     <br>
                     <div class="row-date">
-                        <p1>{{ activityHints.hintDate }}</p1>
+                        <p1>{{ activityHints.hintDateTime }}</p1>
                         <br>
-                        <input type="datetime"></input>
+                        <input type="datetime-local" ng-model="activityInformation.activityDateTime" required></input>
                     </div>
                     <br>
                     <div class="row-location">
                         <p1>{{ activityHints.hintLocation }}</p1>
                         <br>
-                        <input type="text" maxlength="60"></input>
+                        <input type="text" maxlength="60" ng-model="activityInformation.activityLocation" required></input>
                     </div>
                     <br>
                     <div class="row-participants">
                         <p1>{{ activityHints.hintParticipantAmount }}</p1>
-                        <input type="number" min="0" max="4"></input>
+                        <input type="number" value="0" min="0" max="4" ng-model="activityInformation.activityParticipantAmount" required></input>
                     </div>
                     <br>
                     <div class="row-skill">
                         <p1>{{ activityHints.hintSkillLevel }}</p1>
-                        <select name="skillLevel">
+                        <select ng-model="activityInformation.activitySkillLevel" required>
                             <option value="beginner">Beginner</option>
                             <option value="intermediate">Intermediate</option>
                             <option value="advanced">Advanced</option>
@@ -57,7 +57,7 @@
                     <br>
                     <br>
                     <div>
-                        <button name="create_activity" value="value" type="submit">Create</button>
+                        <input type="submit" id="submitActivityForm" value="Create"></input>
                     </div>
                 </div>
             </form>
