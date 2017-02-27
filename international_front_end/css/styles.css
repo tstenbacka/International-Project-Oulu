@@ -69,11 +69,6 @@ CARDS
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
-<<<<<<< Updated upstream
-    font-weight: bold;
-	color: cyan;
-=======
->>>>>>> Stashed changes
 }
 
 .card-category-title {
@@ -108,8 +103,6 @@ CARDS
     background-color: blue;
 }
 
-
-<<<<<<< Updated upstream
 .SingUpCard {
     
     width:380px;
@@ -122,6 +115,7 @@ CARDS
     box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
     font-weight: bold;
 }
+
 
 .cardbtn{
 	width: 350px;
@@ -144,9 +138,6 @@ CARDS
 
 
 /* Card End */
-
-=======
->>>>>>> Stashed changes
 
 /************************
 NEW ACTIVITY
@@ -202,50 +193,4 @@ NEW ACTIVITY
 
 .row-participants {
     font-weight: bold;
-<<<<<<< Updated upstream
 }
-
-
-/* New activity End */
-
-
-/*****************
-NAVBAR
-******************/
-
-.bar {
-    text-align: center !important;
-    padding-top: 20px;
-}
-
-.navbar {
-    height: 100px;
-    padding-top: 10px;
-    padding: 5px;
-    display: block;
-}
-
-.btn-circle {
-    display: block;
-    height: 80px;
-    width: 80px;
-    border-radius: 50%;
-    background-color: aqua;
-}
-
-.btn {
-    padding: 5px;
-    text-align: center;
-}
-
-.input-group {
-    width: 700px;
-}
-
-#gmaps {
-    width: 450px;
-    height: 450px;
-}
-=======
-}
->>>>>>> Stashed changes
