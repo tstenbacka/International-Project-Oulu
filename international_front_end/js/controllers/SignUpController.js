@@ -13,6 +13,8 @@ app.controller('SignUpController', ['$scope', function($scope) {
 	$scope.email;
 	$scope.check1  = true;
 	$scope.check2 = false;
+    $scope.checkEmail = false;
+    $scope.checkDone = false;
 
 	$scope.forwardStart = function (){
 		$scope.check1 = false;
@@ -20,11 +22,27 @@ app.controller('SignUpController', ['$scope', function($scope) {
 	};
 
 	$scope.forwardPostal = function (){	
-;
-	}
+        $scope.check2 = false;
+        $scope.checkEmail = true;
+
+	};
 	$scope.backwardsPostal = function (){
         $scope.check1 = true;
         $scope.check2 = false;
-	}
+	};
+    
+    $scope.backwardEmail = function (){
+        $scope.check2 = true;
+        $scope.checkEmail = false;
+	};
+    
+    $scope.forwardEmail = function (){	
+        $scope.checkDone = true;
+        $scope.checkEmail = false;
+
+	};
+    $scope.letsRoll = function (){
+        
+    };
 
 }]);

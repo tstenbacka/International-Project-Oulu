@@ -47,6 +47,7 @@ body {
 .SingUpCard {
     
     width:380px;
+    height: 620px;
     padding: 5%; 
     background-color: #fff;
     border-radius: 0px;
@@ -69,9 +70,12 @@ body {
     text-align: center;
 	background-color: blue;
 	color: white;
+
+    
     
     
 }
+
 
 /* Card End */
 
