@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" ng-controller="LoginController">
     <div class="col-md-offset-5 col-md-3">
-    <h2>{{msg}}</h2>
-<form name="form" ng-submit="login()" role="form">
+    <h2>{{loginMsg}}</h2>
+<form ng-show="notHidden" name="form" ng-submit="login()" role="form">
     <div class="form-group">
         <label for="username">Username</label>
         <i class="fa fa-key"></i>
@@ -16,10 +16,14 @@
     </div>
     <div class="form-actions">
         <h4>{{loginError}}</h4>
-        <button type="submit" class="btn btn-danger">{{msg}}</button>
-      <!--  <a href="#" ng-if="logged"/a> -->  
-       <!-- <input type="button" onclick="location.href='#';" value={{msg}} /> -->
-    </div>
+        <button type="submit" class="btn btn-primary btn-md">{{loginMsg}}</button>
+       <br>
+      <a href="#"> {{forgotPassWordMsg}}</a>
+        <br>
+        <br>
     </div>
 </form>
+    <h2>{{newUserMsg}}</h2>
+    <button ng-click="signUp()" class="btn btn-primary btn-md">{{newUserButtonMsg}}</button>
+   </div>
 </div>
