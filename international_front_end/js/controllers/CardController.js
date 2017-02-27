@@ -1,5 +1,6 @@
 app.controller('CardController', ['$scope','$http', function($scope, $http) {
 
+<<<<<<< Updated upstream
     $scope.pageInfo = 'Choose a card';
     $http.get('http://jsonplaceholder.typicode.com/comments/').then(function(response) {
         $scope.activities = response.data;
@@ -8,6 +9,8 @@ app.controller('CardController', ['$scope','$http', function($scope, $http) {
         $scope.activities = "Something went wrong";
         console.log("WRONG");
     });
+=======
+>>>>>>> Stashed changes
     
    /* $scope.activities = [
         {

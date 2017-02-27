@@ -1,52 +1,115 @@
+/************************
+GENERAL
+************************/
+
 body {
     font-family: 'Nunito', sans-serif;
     background-color: rgba(74, 144, 226, 0.5);
-    padding-top: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container-fluid{
+    padding: 0;
+    margin: 0;
+    padding-top: 60px;
+}
+
+/************************
+HEADER
+************************/
+
+.navbar-fixed-top {
+    display: inline;
+}
+
+.nav-list {
+    padding-top: 8px;
+}
+
+.navbar-left {
+    padding: 0;
+    margin: auto;
+    float: left;
+}
+
+.navbar-form {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.input-group {
+    width: 52%;
+}
+
+.navbar-right {
+    margin: 0;
+    padding: 0;
+    float: right;
 }
 
 
-/* Card Start */
+/************************
+CARDS
+************************/
 
 .card {
-    width: 380px;
-    padding: 1%;
+    padding: 0 0 10px 0;
+    margin-bottom: 20px;
     background-color: #fff;
     border-radius: 0px;
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+<<<<<<< Updated upstream
     font-weight: bold;
 	color: cyan;
-}
-
-.card-title {
-    font-weight: bold;
+=======
+>>>>>>> Stashed changes
 }
 
 .card-category-title {
+    margin: 14px 14px 2px 14px;
+    font-size: 1.125em;
     font-weight: bold;
+    color: #4990E2;
+}
+
+.card-title {
+    margin: 0 14px 10px 14px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #4A4A4A;
 }
 
 .card-time {
+    margin: 0 0 0 14px;
     color: #b5b5b5;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .card-distance {
-    font-weight: bold;
+    margin: 0 14px 0 0;
+    font-weight: normal;
     color: #b5b5b5;
     float: right;
 }
 
 .card-strip {
-    margin-top: -1.3%;
-    margin-left: -1.3%;
-    width: 102.6%;
-    height: 5px;
+    height: 3px;
     background-color: blue;
 }
 
 
+<<<<<<< Updated upstream
 .SingUpCard {
     
     width:380px;
@@ -82,8 +145,12 @@ body {
 
 /* Card End */
 
+=======
+>>>>>>> Stashed changes
 
-/* New activity Start */
+/************************
+NEW ACTIVITY
+************************/
 
 .new-activity {
     float: right;
@@ -135,6 +202,7 @@ body {
 
 .row-participants {
     font-weight: bold;
+<<<<<<< Updated upstream
 }
 
 
@@ -178,3 +246,6 @@ NAVBAR
     width: 450px;
     height: 450px;
 }
+=======
+}
+>>>>>>> Stashed changes
