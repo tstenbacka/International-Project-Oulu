@@ -1,8 +1,15 @@
-app.controller('CardController', ['$scope', function($scope) {
+app.controller('CardController', ['$scope','$http', function($scope, $http) {
 
-    $scope.pageInfo = 'Choose a card'
+    $scope.pageInfo = 'Choose a card';
+    $http.get('http://jsonplaceholder.typicode.com/comments/').then(function(response) {
+        $scope.activities = response.data;
+        console.log(response.data);
+    }, function(response){
+        $scope.activities = "Something went wrong";
+        console.log("WRONG");
+    });
     
-    $scope.activities = [
+   /* $scope.activities = [
         {
             category : 'Running',
             title : 'Running in the 90s',
@@ -51,7 +58,7 @@ app.controller('CardController', ['$scope', function($scope) {
             time : 'Friday at 8pm',
             distance : '1400m'
         }   
-    ];
+    ];*/
     
     
 }]);
