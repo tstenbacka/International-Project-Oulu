@@ -47,7 +47,7 @@ body {
 .SingUpCard {
     
     width:380px;
-    height: 620px;
+    height: 670px;
     padding: 5%; 
     background-color: #fff;
     border-radius: 0px;
@@ -116,3 +116,7 @@ NAVBAR
         
 }
 
+#gmaps {
+    width: 450px;
+    height: 450px;
+}

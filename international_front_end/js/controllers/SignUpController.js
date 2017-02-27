@@ -11,28 +11,28 @@ app.controller('SignUpController', ['$scope', function($scope) {
 	$scope.password;
 	$scope.postalCode;
 	$scope.email;
-	$scope.check1  = true;
-	$scope.check2 = false;
+	$scope.checkStart  = true;
+	$scope.checkPostal = false;
     $scope.checkEmail = false;
     $scope.checkDone = false;
 
 	$scope.forwardStart = function (){
-		$scope.check1 = false;
-        $scope.check2 = true;
+		$scope.checkStart = false;
+        $scope.checkPostal = true;
 	};
 
 	$scope.forwardPostal = function (){	
-        $scope.check2 = false;
+        $scope.checkPostal = false;
         $scope.checkEmail = true;
 
 	};
 	$scope.backwardsPostal = function (){
-        $scope.check1 = true;
-        $scope.check2 = false;
+        $scope.checkStart = true;
+        $scope.checkPostal = false;
 	};
     
     $scope.backwardEmail = function (){
-        $scope.check2 = true;
+        $scope.checkPostal = true;
         $scope.checkEmail = false;
 	};
     

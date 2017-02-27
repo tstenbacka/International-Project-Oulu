@@ -2,14 +2,14 @@
 <div class="container">
 	<div class="col-xs-3">
         <div class="SingUpCard center  text-center" >
-		<div class="card-block" ng-model="check1" ng-if="check1 == true" ng-show="forwardStart">
+		<div class="card-block" ng-model="checkStart" ng-if="checkStart == true" ng-show="forwardStart">
 		<h2>Welcome =DDDD</h2>
 		<p>We're pleased to see you here! Lets get started by filling the  basic information below.</p>
                 <br> 
                 <h4>{{check1}}</h4>
 			<form action="" method="post">
 				<div class="center-block">
-							<img class="user_picture" src="img/user_picture.png" alt="">
+				    <img class="user_picture" src="img/user_picture.png" alt=""/>
 				</div>
 				<br>
 				<div class="input-prepend"><span class="add-on"><i></i></span>
@@ -29,13 +29,13 @@
 				<br>				
             </form>
 			</div>            
-            <div class="card-block" ng-model="check2" ng-show="check2">
+            <div class="card-block" ng-model="checkPostal" ng-show="checkPostal">
                 <h2>Find Activities Nearby</h2> 
                     <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location</p>
                     <br> 
                 <form action="" method="post">
-                    <div class="center-block">       
-                            <!-- GOOGLE MAP API -->
+                    <div class="center-block">
+	                       <!--Google Map Api code here-->
                     </div>
                     <br>
                     <div class="input-prepend"><span class="add-on"><i></i></span>
@@ -48,7 +48,7 @@
 				    <br>
                 </form>		
 			</div>         
-            <div class="card-block" ng-model="check3" ng-show="checkEmail">
+            <div class="card-block" ng-model="checkEmail" ng-show="checkEmail">
                 <h2>Almost There...</h2> 
                     <p> You're almost done! We still need your email so we can verify your account. Dont't worry. We hate spam mail as much as you do. So we Promise not to send you any.</p>
                     <br> 
