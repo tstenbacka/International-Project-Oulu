@@ -1,6 +1,7 @@
 var app = angular.module("activityApp", ['ngRoute']);
 
-app.config(function ($routeProvider) {
+app.config(function ($routeProvider, $locationProvider) {
+$locationProvider.hashPrefix('');
   $routeProvider
     .when('/',{
       controller: "CardController",
@@ -30,3 +31,5 @@ app.config(function ($routeProvider) {
       redirectTo: '/'
     });
 });
+
+

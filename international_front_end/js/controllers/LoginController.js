@@ -27,6 +27,6 @@ app.controller('LoginController', ['$scope', '$location', function($scope, $loca
 
     $scope.signUp = function () {
         $scope.notHidden = false;
-        $location.path('/signup').replace();
+        $location.path('/signup').replace();      
     };
 }]);

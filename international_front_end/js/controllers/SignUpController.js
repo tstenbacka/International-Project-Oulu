@@ -1,4 +1,4 @@
-app.controller('SignUpController', ['$scope', function($scope) {
+app.controller('SignUpController', ['$scope','$location', function($scope, $location) {
     $scope.msg = 'sign up';
 	$scope.nameHolder = 'Name';
 	$scope.ageHolder = 'Age';
@@ -42,7 +42,7 @@ app.controller('SignUpController', ['$scope', function($scope) {
 
 	};
     $scope.letsRoll = function (){
-        
+         $location.path('/').replace();
     };
 
 }]);
