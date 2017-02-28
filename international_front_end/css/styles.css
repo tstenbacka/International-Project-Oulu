@@ -4,12 +4,11 @@ GENERAL
 
 body {
     font-family: 'Nunito', sans-serif;
-    background-color: rgba(74, 144, 226, 0.5);
+    background-color: #aac8ed;
 }
 
 a {
     text-decoration: none;
-    color: white;
 }
 
 img {
@@ -28,32 +27,76 @@ HEADER
 
 .navbar-fixed-top {
     display: inline;
-}
-
-.nav-list {
-    padding-top: 8px;
+    background-color: #aac8ed;
+    padding: 5px 0 0px 0;
 }
 
 .navbar-left {
-    padding: 0;
-    margin: auto;
     float: left;
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent!important;
+}
+
+.profilePicture {
+    width: 32px;
 }
 
 .navbar-form {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    height:75px;
     text-align: center;
 }
 
-.input-group {
-    width: 52%;
+.IWantTo {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    background-color: #aac8ed;
+    height: auto;
+    width: 300px !important;
+    margin: 0 0 20px -4px;
+    font-size: 3em;
+    font-weight: lighter;
+    color: white;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
 }
 
 .navbar-right {
-    margin: 0;
+    margin: 10px 20px 0 0px;
     padding: 0;
     float: right;
+}
+
+.newActivity {
+    width: 32px;
+}
+
+.menuButton {
+    display: inline-flex;
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.signIn {
+    padding-left: 8px;
 }
 
 

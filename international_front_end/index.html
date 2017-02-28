@@ -33,16 +33,23 @@
     <nav class="navbar-fixed-top">
         <div class="nav-list">
             <ul class="nav navbar-left">
-                <li class="sign_text"><a ng-href='#/login'>Sign In</a></li>
+                <li>
+                    <a href='#/login' class="menuButton">
+                        <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
+                        <span class="signIn">Sign In</span>
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-right">
-                <li class="new_act"><a href="#/newactivity">New Activity</a></li>
+                <li class="new_act">
+                    <a href="#/newactivity" class="menuButton">
+                        <img src="img/NewActivityButton.png" alt="" class="newActivity">
+                    </a>
+                </li>
             </ul>
             <form class="nav navbar-form" role="search">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="I Want To ..." name="srch-term" id="srch-term">
-                    </div>
-              
+                        <span class="IWantTo">I want to</span>
+                        <input type="text" class="form-control" placeholder="" name="srch-term" id="srch-term">              
             </form>
             </div>
     </nav>
