@@ -1,3 +1,5 @@
 app.controller('MainController', ['$scope', function($scope) {
-    $scope.msg = 'main';
+    $scope.signInTxt = 'Sign In';
+    $scope.newActivityTxt = 'New Activity';
+    $scope.searchTxt = "I Want To ...";
 }]);

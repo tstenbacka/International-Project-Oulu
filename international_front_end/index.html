@@ -31,16 +31,16 @@
 
 <body ng-app="activityApp">
     <nav class="navbar-fixed-top">
-        <div class="nav-list">
+        <div class="nav-list" ng-controller="MainController">
             <ul class="nav navbar-left">
-                <li class="sign_text"><a ng-href='#/login'>Sign In</a></li>
+                <li class="sign_text"><a ng-href='#/login'>{{signInTxt}}</a></li>
             </ul>
             <ul class="nav navbar-right">
-                <li class="new_act"><a href="#/newactivity">New Activity</a></li>
+                <li class="new_act"><a ng-href="#/newactivity">{{newActivityTxt}}</a></li>
             </ul>
             <form class="nav navbar-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="I Want To ..." name="srch-term" id="srch-term">
+                        <input type="text" class="form-control" placeholder={{searchTxt}} name="srch-term" id="srch-term">
                     </div>
               
             </form>
