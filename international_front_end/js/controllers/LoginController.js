@@ -1,4 +1,4 @@
-app.controller('LoginController', ['$scope', '$location', function($scope, $location) {
+app.controller('LoginController', ['$scope', '$location', '$http', function($scope, $location, $http) {
     $scope.notHidden = true;
     $scope.loginMsg = 'login';
     $scope.newUserMsg = 'New User';
@@ -13,7 +13,13 @@ app.controller('LoginController', ['$scope', '$location', function($scope, $loca
     $scope.logged = false;
     $scope.loginError;
 
+    $scope.loginInformation = {
+        username: '',
+        password: ''
+    };
+
     $scope.login = function () {
+        /*
         if ($scope.userName === $scope.passWord) {
             $scope.logged = true;
             $location.path('/').replace();
@@ -22,7 +28,16 @@ app.controller('LoginController', ['$scope', '$location', function($scope, $loca
         else {
             $scope.logged = false;
             $scope.loginError = 'Failed to Authenticate';
-        }
+        }*/
+
+        /* while compiling form , angular created this object*/
+        var data = $scope.loginInformation;
+        /* post to server*/
+        console.log(data);
+
+        // we still need to get the return token
+        $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users/login", data);
+        $location.path('/').replace();
     };
 
     $scope.signUp = function () {
