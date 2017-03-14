@@ -1,4 +1,3 @@
-
 <div class="container">
 	<div class="col-xs-3">
         <div class="SingUpCard center  text-center" >
@@ -13,18 +12,30 @@
 				</div>
 				<br>
 				<div class="input-prepend"><span class="add-on"><i></i></span>
-				    <h5>Name</h5>
-				    <input type="text" ng-model="name" id="Name" name="" placeholder= {{nameHolder}} >
+				    <h5>Username</h5>
+				    <input type="text" ng-model="signInformation.username" id="username" name="" placeholder= {{SignUpHolders.usernameHolder}} required>
 				</div>
 				<div class="input-prepend"><span class="add-on"><i></i></span>
+				    <h5>Surname</h5>
+				    <input type="text" ng-model="signInformation.surname" id="Surname" name="" placeholder= {{SignUpHolders.surnameHolder}} required> 
+				</div>
+				<div class="input-prepend"><span class="add-on"><i></i></span>
+				    <h5>Lastname</h5>
+				    <input type="text" ng-model="signInformation.lastname" id="Lastname" name="" placeholder={{SignUpHolders.lastnameHolder}} required>
+				</div>
+                <div class="input-prepend"><span class="add-on"><i></i></span>
 				    <h5>Age</h5>
-				    <input type="text" ng-model="age" id="Age" name="" placeholder= {{ageHolder}} > 
+				    <input type="datetime-local" ng-model="signInformation.age" id="age" name="" required>
 				</div>
-				<div class="input-prepend"><span class="add-on"><i></i></span>
+                    <br>
+                <div class="input-prepend"><span class="add-on"><i></i></span>
 				    <h5>Password</h5>
-				    <input type="text" ng-model="password" id="Password" name="" placeholder={{passwordHolder}}>
+				    <input type="text" ng-model="signInformation.password" id="Password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
 				</div>
-                		<br>
+                <div class="input-prepend"><span class="add-on"><i></i></span>
+				    <h5>Retype password</h5>
+				    <input type="text" id="Password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+				</div>
 				    <input type="button" value="Continue" class="cardbtn" ng-click="forwardStart()"/>
 				<br>				
             </form>
@@ -40,7 +51,7 @@
                     <br>
                     <div class="input-prepend"><span class="add-on"><i></i></span>
                         <h5>Postal Code</h5>               
-                        <input type="text" ng-model="postalCode" id="postalcode" name=""  placeholder={{postalCodeHolder}}>
+                        <input type="text" ng-model="signInformation.postalCode" id="postalcode" name=""  placeholder={{SignUpHolders.postalCodeHoler}} required>
                     </div>
                     <br>
                     <input type="button" value="Previous" class="cardbtn-small" ng-click="backwardsPostal()"/>
@@ -56,7 +67,7 @@
                     <br>
                     <div class="input-prepend"><span class="add-on"><i></i></span>
                         <h5>Email</h5>               
-                        <input type="text" ng-model="email" id="email" name=""  placeholder={{emailHolder}}>
+                        <input type="text" ng-model="signInformation.email" id="email" name=""  placeholder={{SignUpHolders.emailHolder}} required>
                     </div>
                     <br>
                     <input type="button" value="Previous" class="cardbtn-small" ng-click="backwardEmail()"/>

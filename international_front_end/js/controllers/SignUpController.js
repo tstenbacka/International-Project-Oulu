@@ -1,16 +1,27 @@
 app.controller('SignUpController', ['$scope','$location', function($scope, $location) {
-    $scope.msg = 'sign up';
-	$scope.nameHolder = 'Name';
-	$scope.ageHolder = 'Age';
-	$scope.passwordHolder = 'Password';
-	$scope.postalCodeHoler = 'PostalCode';
-	$scope.emailHolder = 'example@example.com';
 
-	$scope.name;
-	$scope.age;
-	$scope.password;
-	$scope.postalCode;
-	$scope.email;
+
+
+	$scope.SignUpHolders = {
+        usernameHolder: 'Username',
+		surnameHolder: 'Surname',
+		lastnameHolder: 'Lastname',
+		ageHolder:'Age',
+		passwordHolder:'Password',
+		postalCodeHoler:'PostalCode',
+		emailHolder:'example@example.com'
+	};
+	
+	$scope.signInformation = {
+		username:'',
+		password:'',
+		surname:'',
+		age: new Date(Date), 
+		lastname:'',
+		email:'',
+		zipcode:''
+	};
+
 	$scope.checkStart  = true;
 	$scope.checkPostal = false;
     $scope.checkEmail = false;
@@ -24,7 +35,6 @@ app.controller('SignUpController', ['$scope','$location', function($scope, $loca
 	$scope.forwardPostal = function (){	
         $scope.checkPostal = false;
         $scope.checkEmail = true;
-
 	};
 	$scope.backwardsPostal = function (){
         $scope.checkStart = true;
@@ -42,6 +52,11 @@ app.controller('SignUpController', ['$scope','$location', function($scope, $loca
 
 	};
     $scope.letsRoll = function (){
+        /* while compiling form , angular created this object*/
+        var data = $scope.signInformation;
+        /* post to server*/
+        console.log(data);
+        $http.post("$http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
          $location.path('/').replace();
     };
 
