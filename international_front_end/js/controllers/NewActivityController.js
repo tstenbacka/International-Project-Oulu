@@ -8,21 +8,22 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         hintFrequency: 'Frequency:',
         hintPostalCode: 'ZipCode:',
         hintDescription: 'Description:',
+        hintDuration: 'Duration of activity:',
         hintParticipantAmount: 'Participants:',
         hintSkillLevel: 'Skill level:'
     };
-
-    $scope.activityInformation = {
-        activityCategory: '',
-        activityTitle: '',
-        activityDateTime: new Date(Date),
-        activityLocation: '',
-        activityPostalCode: '',
-        activityDescription: '',
-        activityParticipantAmount: 0,
-        activitySkillLevel: ''
-    };
-
+    /*
+        $scope.activityInformation = {
+            activityCategory: '',
+            activityTitle: '',
+            activityDateTime: new Date(Date),
+            activityLocation: '',
+            activityPostalCode: '',
+            activityDescription: '',
+            activityParticipantAmount: 0,
+            activitySkillLevel: ''
+        };
+    */
     $scope.activityInformation = {
         creator: '',
         dateTime: new Date(Date),
@@ -30,63 +31,30 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         duration: 0,
         frequency: '',
         name: '',
-        skilllevel: 0,
-        subcategory: 0,
-        tags: ['', '', ''],
+        skilllevel: '',
+        subcategory: '',
+        tags: ['these', 'are', 'tags'],
         userAmount: 0,
     };
 
     $scope.skillLevels = [
-        {
-            id: 'beginner',
-            name: 'Beginner'
-        },
-        {
-            id: 'intermediate',
-            name: 'Intermediate'
-        },
-        {
-            id: 'advanced',
-            name: 'Advanced'
-        }
+        'Beginner',
+        'Intermediate',
+        'Advanced'
     ];
 
     $scope.frequencies = [
-        {
-            id: 'daily',
-            name: 'Daily'
-        },
-        {
-            id: 'weekly',
-            name: 'Weekly'
-        },
-        {
-            id: 'monthly',
-            name: 'Monthly'
-        }
+        'Daily',
+        'Weekly',
+        'Monthly'
     ];
 
     $scope.categories = [
-        {
-            id: 'running',
-            name: 'Running'
-        },
-        {
-            id: 'music',
-            name: 'Music'
-        },
-        {
-            id: 'fencing',
-            name: 'Fencing'
-        },
-        {
-            id: 'swimming',
-            name: 'Swimming'
-        },
-        {
-            id: 'cycling',
-            name: 'Cycling'
-        }
+        'Running',
+        'Music',
+        'Fencing',
+        'Swimming',
+        'Cycling'
     ];
 
     $scope.submitActivityForm = function () {
@@ -94,10 +62,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         var data = $scope.activityInformation;
         /* post to server*/
         console.log(data);
-
-        //$http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/activities", data);
-
+        $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/activities", data);
         $location.path('/').replace();
     }
-
 }]);

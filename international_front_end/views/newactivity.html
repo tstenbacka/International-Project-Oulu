@@ -1,6 +1,5 @@
 <div class="new-activity">
     <h1>{{ viewTitle }}</h1>
-
     <div class="new-activity-bar">
         <div class="column">
             <form name="createNewActivity" ng-controller="NewActivityController" ng-submit="submitActivityForm()">
@@ -8,8 +7,7 @@
                     <div class="row-category">
                         <p1>{{ activityHints.hintCategory }}</p1>
                         <br>
-                        <select ng-model="activityInformation.subcategory" ng-options="category.name for category in categories" required>
-                        </select>
+                        <select ng-model="activityInformation.subcategory" ng-options="category for category in categories" required> </select>
                     </div>
                     <br>
                     <div class="row-title">
@@ -33,8 +31,12 @@
                     <div class="row-frequency">
                         <p1>{{ activityHints.hintFrequency }}</p1>
                         <br>
-                        <select ng-model="activityInformation.frequency" ng-options="frequency.name for frequency in frequencies" required>
-                        </select>
+                        <select ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies" required> </select>
+                    </div>
+                    <br>
+                    <div class="row-duration">
+                        <p1>{{ activityHints.hintDuration }}</p1>
+                        <input type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" required>hours</input>
                     </div>
                     <br>
                     <div class="row-participants">
@@ -44,8 +46,7 @@
                     <br>
                     <div class="row-skill">
                         <p1>{{ activityHints.hintSkillLevel }}</p1>
-                        <select ng-model="activityInformation.skilllevel" ng-options="skillLevel.name for skillLevel in skillLevels" required>
-                        </select>
+                        <select ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required> </select>
                     </div>
                     <br>
                     <br>
