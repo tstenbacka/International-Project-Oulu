@@ -1,0 +1,239 @@
+/************************
+GENERAL
+************************/
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #aac8ed;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container-fluid{
+    padding: 0;
+    margin: 0;
+    padding-top: 60px;
+}
+
+/************************
+HEADER
+************************/
+
+.navbar-fixed-top {
+    display: inline;
+    background-color: #aac8ed;
+    padding: 5px 0 0px 0;
+}
+
+.navbar-left {
+    float: left;
+    margin: 10px 0 0 20px;
+    padding: 0;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent!important;
+}
+
+.profilePicture {
+    width: 32px;
+}
+
+.navbar-form {
+    margin: 0;
+    padding: 0;
+    height:75px;
+    text-align: center;
+}
+
+.IWantTo {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    background-color: #aac8ed;
+    height: auto;
+    width: 300px !important;
+    margin: 0 0 20px -4px;
+    font-size: 3em;
+    font-weight: lighter;
+    color: white;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.navbar-right {
+    margin: 10px 20px 0 0px;
+    padding: 0;
+    float: right;
+}
+
+.newActivity {
+    width: 32px;
+}
+
+.menuButton {
+    display: inline-flex;
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.signIn {
+    padding-left: 8px;
+}
+
+
+/************************
+CARDS
+************************/
+
+.card {
+    padding: 0 0 10px 0;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 0px;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+}
+
+.card-category-title {
+    margin: 14px 14px 2px 14px;
+    font-size: 1.125em;
+    font-weight: bold;
+    color: #4990E2;
+}
+
+.card-title {
+    margin: 0 14px 10px 14px;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #4A4A4A;
+}
+
+.card-time {
+    margin: 0 0 0 14px;
+    color: #b5b5b5;
+    font-weight: normal;
+}
+
+.card-distance {
+    margin: 0 14px 0 0;
+    font-weight: normal;
+    color: #b5b5b5;
+    float: right;
+}
+
+.card-strip {
+    height: 3px;
+    background-color: blue;
+}
+
+.SingUpCard {
+    
+    width:380px;
+    height: 670px;
+    padding: 5%; 
+    background-color: #fff;
+    border-radius: 0px;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+    font-weight: bold;
+}
+
+
+.cardbtn{
+	width: 350px;
+	padding: 5px;
+    text-align: center;
+	background-color: blue;
+	color: white;
+}
+.cardbtn-small{
+    width: 100px;
+	padding: 5px;
+    text-align: center;
+	background-color: blue;
+	color: white;
+
+    
+    
+    
+}
+
+
+/* Card End */
+
+/************************
+NEW ACTIVITY
+************************/
+
+.new-activity {
+    float: right;
+    height: 100vh;
+    margin-right: -15px;
+    width: 30%;
+    margin-top: -100px;
+    padding-top: 100px;
+    padding-left: 1%;
+    padding-right: 1%;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+    background-color: aliceblue;
+}
+
+.column {
+    font-weight: bold;
+}
+
+.row-title {
+    font-weight: bold;
+}
+
+.row-category {
+    font-weight: bold;
+}
+
+.row-desc {
+    font-weight: bold;
+}
+
+.activity-description {
+    resize: none;
+}
+
+.row-date {
+    font-weight: bold;
+}
+
+.row-dur {
+    font-weight: bold;
+}
+
+.row-location {
+    font-weight: bold;
+}
+
+.row-participants {
+    font-weight: bold;
+}
