@@ -1,5 +1,5 @@
 app.controller('NewActivityController', ['$scope', '$location', function ($scope, $location) {
-    $scope.viewTitle = 'Create a new activity';
+    $scope.viewTitle = 'Create activity';
 
     $scope.activityHints = {
         hintCategory: 'Category:',

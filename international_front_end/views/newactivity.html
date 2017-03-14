@@ -1,9 +1,11 @@
 <div class="new-activity">
-    <h1>{{ viewTitle }}</h1>
+    <div class="createActivityLabel">
+        {{ viewTitle }}
+        </div>
 
     <div class="new-activity-bar">
         <div class="column">
-            <form name="createNewActivity" ng-controller="NewActivityController" ng-submit="submitActivityForm()">
+            <form name="createNewActivity" id="createActivity" ng-controller="NewActivityController" ng-submit="submitActivityForm()">
                 <div>
                     <div class="row-category">
                         <p1>{{ activityHints.hintCategory }}</p1>
