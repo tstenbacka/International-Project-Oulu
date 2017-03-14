@@ -1,11 +1,11 @@
-app.controller('NewActivityController', ['$scope', '$location', function ($scope, $location) {
+app.controller('NewActivityController', ['$scope', '$location', '$http', function ($scope, $location, $http) {
     $scope.viewTitle = 'Create a new activity';
 
     $scope.activityHints = {
         hintCategory: 'Category:',
         hintTitle: 'Title:',
         hintDateTime: 'Date/Time:',
-        hintLocation: 'Location:',
+        hintFrequency: 'Frequency:',
         hintPostalCode: 'ZipCode:',
         hintDescription: 'Description:',
         hintParticipantAmount: 'Participants:',
@@ -13,7 +13,6 @@ app.controller('NewActivityController', ['$scope', '$location', function ($scope
     };
 
     $scope.activityInformation = {
-        activityId: 0,
         activityCategory: '',
         activityTitle: '',
         activityDateTime: new Date(Date),
@@ -24,50 +23,80 @@ app.controller('NewActivityController', ['$scope', '$location', function ($scope
         activitySkillLevel: ''
     };
 
+    $scope.activityInformation = {
+        creator: '',
+        dateTime: new Date(Date),
+        description: '',
+        duration: 0,
+        frequency: '',
+        name: '',
+        skilllevel: 0,
+        subcategory: 0,
+        tags: ['', '', ''],
+        userAmount: 0,
+    };
+
     $scope.skillLevels = [
         {
-            id: '00',
-            title: 'Beginner'
+            id: 'beginner',
+            name: 'Beginner'
         },
         {
-            id: '01',
-            title: 'Intermediate'
+            id: 'intermediate',
+            name: 'Intermediate'
         },
         {
-            id: '02',
-            title: 'Advanced'
+            id: 'advanced',
+            name: 'Advanced'
         }
     ];
-    
+
+    $scope.frequencies = [
+        {
+            id: 'daily',
+            name: 'Daily'
+        },
+        {
+            id: 'weekly',
+            name: 'Weekly'
+        },
+        {
+            id: 'monthly',
+            name: 'Monthly'
+        }
+    ];
+
     $scope.categories = [
         {
-            id: '00',
-            title: 'Running'
+            id: 'running',
+            name: 'Running'
         },
         {
-            id: '01',
-            title: 'Music'
+            id: 'music',
+            name: 'Music'
         },
         {
-            id: '02',
-            title: 'Fencing'
+            id: 'fencing',
+            name: 'Fencing'
         },
         {
-            id: '03',
-            title: 'Swimming'
+            id: 'swimming',
+            name: 'Swimming'
         },
         {
-            id: '04',
-            title: 'Cycling'
+            id: 'cycling',
+            name: 'Cycling'
         }
     ];
 
     $scope.submitActivityForm = function () {
-        /* while compiling form , angular created this object*/
+        /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
         /* post to server*/
         console.log(data);
-        // $http.post("https://jsonplaceholder.typicode.com/posts/", data);
+
+        //$http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/activities", data);
+
         $location.path('/').replace();
     }
 
