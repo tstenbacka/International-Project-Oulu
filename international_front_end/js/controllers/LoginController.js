@@ -36,7 +36,22 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
         console.log(data);
 
         // we still need to get the return token
-        $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users/login", data);
+        
+        //$http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users/login", data);
+
+        $http({
+            method: 'post',
+            url: 'http://192.81.223.10:8080/Oulu_Backend/webapi/users/login',
+            data: {data},
+            config: 'Content-Type: application/json;'
+        }).then(function (response) {
+            console.log(response);
+        }, function (response) {
+            console.log(response);
+        });
+        
+
+
         $location.path('/').replace();
     };
 
