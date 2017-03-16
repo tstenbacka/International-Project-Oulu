@@ -32,26 +32,21 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
 
         /* while compiling form , angular created this object*/
         var data = $scope.loginInformation;
-        /* post to server*/
+        /* user data to post to the server*/
         console.log(data);
 
-        // we still need to get the return token
-        
-        //$http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users/login", data);
-
-        $http({
+       $http({
             method: 'post',
             url: 'http://192.81.223.10:8080/Oulu_Backend/webapi/users/login',
-            data: {data},
+            data: data,
             config: 'Content-Type: application/json;'
-        }).then(function (response) {
-            console.log(response);
-        }, function (response) {
-            console.log(response);
+           }) .then(function(response) {
+                console.log(response.data.token);
+            }, function (response) {
+            // this function handles error
+
         });
         
-
-
         $location.path('/').replace();
     };
 
