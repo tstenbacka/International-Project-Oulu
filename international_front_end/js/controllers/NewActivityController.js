@@ -24,9 +24,24 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
             activitySkillLevel: ''
         };
     */
+    
+    $scope.user = {
+        username: "TestUser",
+        password: "test",
+        surname: "Tester",
+        lastname: "Testington",
+        email: "tester.testington@test.com",
+        dayOfBirth: "" + new Date(0),
+        profilePicture: "",
+        description: "I am a hard coded test",
+        homeX: 0,
+        homeY: 0,
+        searchDistance: 10
+    };
+    
     $scope.activityInformation = {
-        creator: '',
-        dateTime: new Date(Date),
+        creator: $scope.user,
+        dateTime: "" + new Date(0),
         description: '',
         duration: 0,
         frequency: '',
@@ -50,19 +65,26 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
     ];
 
     $scope.categories = [
-        'Running',
-        'Music',
-        'Fencing',
-        'Swimming',
-        'Cycling'
+        {name : 'Running'},
+        {name : 'Music'},
+        {name : 'Fencing'},
+        {name : 'Swimming'},
+        {name : 'Cycling'},
+        {name : 'Soccer'}
     ];
 
     $scope.submitActivityForm = function () {
         /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
-        /* post to server*/
+        var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
+        
+        $http.defaults.headers.post = 'Bearer kaas';
+        
         console.log(data);
-        $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/activities", data);
+        
+        /* post to server*/
+        $http.post(url, data);
+        
         $location.path('/').replace();
     }
 }]);

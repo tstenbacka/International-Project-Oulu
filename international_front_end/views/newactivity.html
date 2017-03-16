@@ -7,7 +7,7 @@
                     <div class="row-category">
                         <p1>{{ activityHints.hintCategory }}</p1>
                         <br>
-                        <select ng-model="activityInformation.subcategory" ng-options="category for category in categories" required> </select>
+                        <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
                     </div>
                     <br>
                     <div class="row-title">
@@ -22,12 +22,14 @@
                         <textarea ng-model="activityInformation.description" class="activity-description" maxlength="140" rows="6" cols="40" required></textarea>
                     </div>
                     <br>
+                <!--
                     <div class="row-date">
                         <p1>{{ activityHints.hintDateTime }}</p1>
                         <br>
-                        <input type="datetime-local" ng-model="activityInformation.dateTime" required></input>
+                        <input type="datetime" ng-model="activityInformation.dateTime" required></input>
                     </div>
                     <br>
+                -->
                     <div class="row-frequency">
                         <p1>{{ activityHints.hintFrequency }}</p1>
                         <br>
