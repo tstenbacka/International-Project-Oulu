@@ -1,4 +1,6 @@
-app.controller('SignUpController', ['$scope','$location', function($scope, $location) {
+app.controller('SignUpController', ['$scope','$http','$location' ,'$window', function($scope,$http ,$location, $window) {
+                          
+    
 
 
 
@@ -8,7 +10,7 @@ app.controller('SignUpController', ['$scope','$location', function($scope, $loca
 		lastnameHolder: 'Lastname',
 		ageHolder:'Age',
 		passwordHolder:'Password',
-		postalCodeHoler:'PostalCode',
+		postalCodeHoler:'Postal code',
 		emailHolder:'example@example.com'
 	};
 	
@@ -16,10 +18,13 @@ app.controller('SignUpController', ['$scope','$location', function($scope, $loca
 		username:'',
 		password:'',
 		surname:'',
-		age: new Date(Date), 
-		lastname:'',
-		email:'',
-		zipcode:''
+        lastname:'',
+        email:'',
+		dayOfBirth: new Date(Date),
+        profilePicture:'',
+        homeX:'',
+        homeY:'',
+        searchDistance:''
 	};
 
 	$scope.checkStart  = true;
@@ -53,10 +58,10 @@ app.controller('SignUpController', ['$scope','$location', function($scope, $loca
 	};
     $scope.letsRoll = function (){
         /* while compiling form , angular created this object*/
-        var data = $scope.signInformation;
+        var data = $scope.signInformation
         /* post to server*/
         console.log(data);
-        $http.post("$http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
+        $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
          $location.path('/').replace();
     };
 
