@@ -1,8 +1,8 @@
 app.controller('SignUpController', ['$scope','$location', function($scope, $location) {
-    $scope.msg = 'sign up';
-	$scope.nameHolder = 'Name';
-	$scope.ageHolder = 'Age';
-	$scope.passwordHolder = 'Password';
+    $scope.msg = 'Sign up';
+	$scope.nameHolder = 'Onni Oululainen';
+	$scope.ageHolder = '23';
+	$scope.passwordHolder = '**********';
 	$scope.postalCodeHoler = 'PostalCode';
 	$scope.emailHolder = 'example@example.com';
 
