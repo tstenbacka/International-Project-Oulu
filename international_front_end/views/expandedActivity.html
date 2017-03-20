@@ -1,0 +1,25 @@
+<div ng-controller="ExpandedActivityController">
+    <div class="card-container">
+        <div class="card card-expanded">
+            <div class="card-block">
+                <div class="card-strip"></div>
+                <p class="card-category-title">{{activity.subcategory.name}}</p> 
+                <h4 class="card-title"> {{activity.name}}</h4>                 
+                <p>{{activity.description}}</p>
+                <p class="card-title">Time and location</p> 
+                <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>
+                <p>Hupisaarten kesäteatteri</p>
+                <p class="card-title">Participants</p>
+                <p>O O O O O O O O O O O O</p>
+                <p>Matti and 2 other friends are going</p>
+                <p class="card-title">Skill Level</p>
+                <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
+                <p class="card-title">About the Hoster</p> 
+                <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
+                <span>{{activity.creator.surname}} {{activity.creator.lastname}}</span>
+                <span>+ 3 running</span>
+                <input type="button" value="Let's Roll" class="cardbtn"/>
+           </div>
+        </div>
+    </div>
+</div>

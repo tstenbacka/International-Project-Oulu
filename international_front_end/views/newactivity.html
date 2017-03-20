@@ -31,10 +31,10 @@
 -->
 
 <div class="new-activity">
+
     <div class="createActivityLabel">
         {{ viewTitle }}
-        </div>
-
+    </div>
     <div class="new-activity-bar">
         <div class="column">
             <form name="createNewActivity" id="createActivity" ng-controller="NewActivityController" ng-submit="submitActivityForm()">
@@ -42,51 +42,46 @@
                     <div class="row-category">
                         <p1>{{ activityHints.hintCategory }}</p1>
                         <br>
-                        <select ng-model="activityInformation.activityCategory" required>
-                            <option value="running">Running</option>
-                            <option value="music">Music</option>
-                            <option value="swimming">Swimming</option>
-                            <option value="fencing">Fencing</option>
-                            <option value="arts">Arts</option>
-                        </select>
+                        <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
                     </div>
                     <br>
                     <div class="row-title">
                         <p1>{{ activityHints.hintTitle }}</p1>
                         <br>
-                        <input type="text" ng-model="activityInformation.activityTitle" required></input>
+                        <input type="text" ng-model="activityInformation.name" required></input>
                     </div>
                     <br>
                     <div class="row-desc">
                         <p1>{{ activityHints.hintDescription }}</p1>
                         <br>
-                        <textarea ng-model="activityInformation.activityDescription" class="activity-description" maxlength="140" rows="6" cols="40" required></textarea>
+                        <textarea ng-model="activityInformation.description" class="activity-description" maxlength="140" rows="6" cols="40" required></textarea>
                     </div>
                     <br>
                     <div class="row-date">
                         <p1>{{ activityHints.hintDateTime }}</p1>
                         <br>
-                        <input type="datetime-local" ng-model="activityInformation.activityDateTime" required></input>
+                        <input type="datetime" ng-model="activityInformation.dateTime" required></input>
                     </div>
                     <br>
-                    <div class="row-location">
-                        <p1>{{ activityHints.hintLocation }}</p1>
+                    <div class="row-frequency">
+                        <p1>{{ activityHints.hintFrequency }}</p1>
                         <br>
-                        <input type="text" maxlength="60" ng-model="activityInformation.activityLocation" required></input>
+                        <select ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies" required> </select>
+                    </div>
+                    <br>
+                    <div class="row-duration">
+                        <p1>{{ activityHints.hintDuration }}</p1>
+                        <input type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" required>hours</input>
                     </div>
                     <br>
                     <div class="row-participants">
                         <p1>{{ activityHints.hintParticipantAmount }}</p1>
-                        <input type="number" value="0" min="0" max="4" ng-model="activityInformation.activityParticipantAmount" required></input>
+                        <input type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" required></input>
                     </div>
                     <br>
                     <div class="row-skill">
                         <p1>{{ activityHints.hintSkillLevel }}</p1>
-                        <select ng-model="activityInformation.activitySkillLevel" required>
-                            <option value="beginner">Beginner</option>
-                            <option value="intermediate">Intermediate</option>
-                            <option value="advanced">Advanced</option>
-                        </select>
+                        <select ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required> </select>
                     </div>
                     <br>
                     <br>
