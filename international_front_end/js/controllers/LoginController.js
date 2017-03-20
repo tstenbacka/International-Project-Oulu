@@ -13,27 +13,17 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
     $scope.logged = false;
     $scope.loginError;
 
+
     $scope.loginInformation = {
         username: '',
         password: ''
     };
 
     $scope.login = function () {
-        /*
-        if ($scope.userName === $scope.passWord) {
-            $scope.logged = true;
-            $location.path('/').replace();
-        }
-
-        else {
-            $scope.logged = false;
-            $scope.loginError = 'Failed to Authenticate';
-        }*/
-
         /* while compiling form , angular created this object*/
         var data = $scope.loginInformation;
         /* user data to post to the server*/
-        console.log(data);
+       // console.log(data);
 
        $http({
             method: 'post',
@@ -41,17 +31,24 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
             data: data,
             config: 'Content-Type: application/json;'
            }) .then(function(response) {
-                console.log(response.data.token);
+               document.cookie = response.data.token;
+               // token = response.data.token;
+             //  var x = document.cookie;
+               // console.log(x);
+                //console.log(response.data.token);
+               // $location.path('/').replace();
             }, function (response) {
             // this function handles error
+            $scope.loginError = "Failed to login";
 
         });
         
-        $location.path('/').replace();
+       // $location.path('/').replace();
     };
 
     $scope.signUp = function () {
         $scope.notHidden = false;
         $location.path('/signup').replace();      
     };
+
 }]);
