@@ -22,6 +22,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         searchDistance:""
 	};
 
+
 	$scope.checkStart  = true;
 	$scope.checkPostal = false;
     $scope.checkEmail = false;

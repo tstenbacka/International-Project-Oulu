@@ -5,6 +5,8 @@ GENERAL
 body {
     font-family: 'Nunito', sans-serif;
     background-color: #aac8ed;
+    padding-top: 0;
+    margin-top: 20px;
 }
 
 a {
@@ -18,7 +20,41 @@ img {
 .container-fluid{
     padding: 0;
     margin: 0;
-    padding-top: 60px;
+    margin-top: 80px;
+}
+
+/************************
+FONTS
+************************/
+
+p {
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 2.25em;
+    color: #4A4A4A;
+    font-weight: bold;
+}
+
+h1-color {
+    font-size: 2.25em;
+    color: #4990E2;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.250em;
+    color: #4990E2;
+    font-weight: bold;
+}
+
+h2-black {
+    font-size: 1.250em;
+    color: #4A4A4A;
+    font-weight: bold;
 }
 
 /************************
@@ -26,7 +62,6 @@ HEADER
 ************************/
 
 .navbar-fixed-top {
-    display: inline;
     background-color: #aac8ed;
     padding: 5px 0 0px 0;
 }
@@ -58,9 +93,10 @@ a:hover {
     color: white;
     font-weight: bold;
     letter-spacing: 0.5px;
+    margin-right: 12px;
 }
 
-.form-control {
+.form-control-input {
     background-color: #aac8ed;
     height: auto;
     width: 300px !important;
@@ -101,7 +137,7 @@ a:hover {
 
 
 /************************
-CARDS
+CARD  |  SMALL
 ************************/
 
 .card {
@@ -167,20 +203,33 @@ CARDS
 	background-color: blue;
 	color: white;
 }
+
 .cardbtn-small{
     width: 100px;
 	padding: 5px;
     text-align: center;
 	background-color: blue;
-	color: white;
-
-    
-    
-    
+	color: white;   
 }
 
+/************************
+CARD  |  EXPANDED
+************************/
 
-/* Card End */
+.card-expanded {
+    background-color: white;
+    text-align: center;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    padding: 0;
+    margin: 45px 200px 45px 200px;
+    height: 728px;
+}
+
+.card-expanded-block {
+    padding: 50px 40px 30px 40px;
+}
 
 /************************
 NEW ACTIVITY
@@ -188,52 +237,131 @@ NEW ACTIVITY
 
 .new-activity {
     float: right;
+    margin: -60px 0 0 0;
+    width: 470px;
     height: 100vh;
-    margin-right: -15px;
-    width: 30%;
-    margin-top: -100px;
-    padding-top: 100px;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding: 0 3% 0 3%;
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     font-weight: bold;
-    background-color: aliceblue;
+    background-color: white;
+}
+
+.createActivityLabel {
+    font-size: 2.25em;
+    color: #4990E2;
+    margin: 47px 0 10px 0;
+    font-weight: bold;
 }
 
 .column {
     font-weight: bold;
-}
-
-.row-title {
-    font-weight: bold;
-}
-
-.row-category {
-    font-weight: bold;
-}
-
-.row-desc {
-    font-weight: bold;
+    font-size: 1.25em;
 }
 
 .activity-description {
-    resize: none;
+    width: 100%;
 }
 
-.row-date {
-    font-weight: bold;
+#submitActivityForm {
+    background-color: #4990E2;
+    color: white;
+    width: 100%;
+    height: 66px;
+    margin-bottom: 26px;
+    border: none;
 }
 
-.row-dur {
-    font-weight: bold;
+/************************
+LOG IN
+************************/
+
+.login-main {
+    float: left;
+    margin: 0 0 0 0;
+    width: 470px;
+    height: 100vh;
+    padding: 0 45px 0 45px;
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
 
-.row-location {
-    font-weight: bold;
+.logInMainLabel {
+    padding-bottom: 23px;
 }
 
-.row-participants {
-    font-weight: bold;
+.input-logIn {
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: normal;
+    width: 50%;
+    text-align: left;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    margin-bottom: 30px
 }
+
+.mainButton {
+    background-color: #4990E2;
+    color: white;
+    width: 100%;
+    height: 58px;
+    border: none;
+
+}
+
+.spaceForgotPassword {
+    padding-bottom: 116px;
+}
+
+
+/************************
+CREATE NEW USER
+************************/
+
+.user_picture {
+    width: 30%;
+    margin: 10px 10px 10px 10px;
+}
+
+.inputs {
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: normal;
+}
+
+.input-register {
+    width: 50%;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    margin-bottom: 10px
+}
+
+.button-row-left {
+    background-color: #4990E2;
+    color: white;
+    width: 100%;
+    height: 58px;
+    border: none;
+    float: left;
+    width: 40%;
+    margin-top: 342px;
+}
+
+.button-row-right {
+    background-color: #4990E2;
+    color: white;
+    width: 100%;
+    height: 58px;
+    border: none;
+    float: right;
+    width: 40%;
+    margin-top: 342px;
+}
+

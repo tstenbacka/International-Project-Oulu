@@ -1,74 +1,135 @@
-app.controller('NewActivityController', ['$scope', '$location', function ($scope, $location) {
+app.controller('NewActivityController', ['$scope', '$location', '$http', function ($scope, $location, $http) {
     $scope.viewTitle = 'Create a new activity';
 
     $scope.activityHints = {
         hintCategory: 'Category:',
         hintTitle: 'Title:',
         hintDateTime: 'Date/Time:',
-        hintLocation: 'Location:',
+        hintFrequency: 'Frequency:',
         hintPostalCode: 'ZipCode:',
         hintDescription: 'Description:',
+        hintDuration: 'Duration of activity:',
         hintParticipantAmount: 'Participants:',
         hintSkillLevel: 'Skill level:'
     };
-
+    /*
+        $scope.activityInformation = {
+            activityCategory: '',
+            activityTitle: '',
+            activityDateTime: new Date(Date),
+            activityLocation: '',
+            activityPostalCode: '',
+            activityDescription: '',
+            activityParticipantAmount: 0,
+            activitySkillLevel: ''
+        };
+    */
+    
+    $scope.user = {
+        dayOfBirth: '1990-02-13T00:00:00Z',
+        description: 'oke',
+        email: 'pietje@bell.nl',
+        firstname: 'Pietje',
+        friends: [],
+        homeLat: 432.0,
+        homeLong: 234.0,
+        id: 2,
+        lastname: 'Bell',
+        profilePicture: 'pietje.png',
+        searchDistance: 10,
+        username: 'pietjuh'
+    };
+    
     $scope.activityInformation = {
-        activityId: 0,
-        activityCategory: '',
-        activityTitle: '',
-        activityDateTime: new Date(Date),
-        activityLocation: '',
-        activityPostalCode: '',
-        activityDescription: '',
-        activityParticipantAmount: 0,
-        activitySkillLevel: ''
+        creator: $scope.user,
+        dateTime: '2017-03-20T00:00:00Z',
+        description: '',
+        duration: 0,
+        frequency: '',
+        id: 0,
+        name: '',
+        participants:[],
+        skilllevel: '',
+        subcategory: '',
+        tags: [],
+        userAmount: 0,
+        locationX: '',
+        locationY: ''
     };
 
     $scope.skillLevels = [
-        {
-            id: '00',
-            title: 'Beginner'
-        },
-        {
-            id: '01',
-            title: 'Intermediate'
-        },
-        {
-            id: '02',
-            title: 'Advanced'
-        }
+        'Beginner',
+        'Intermediate',
+        'Advanced'
     ];
-    
+
+    $scope.frequencies = [
+        'Daily',
+        'Weekly',
+        'Monthly'
+    ];
+
     $scope.categories = [
-        {
-            id: '00',
-            title: 'Running'
+        {id: 1,
+         name : 'Running',
+         ratings: [],
+         type: "Models.Subcategory"
         },
-        {
-            id: '01',
-            title: 'Music'
+        {id: 2,
+         name : 'Swimming',
+         ratings: [],
+         type: "Models.Subcategory"
         },
-        {
-            id: '02',
-            title: 'Fencing'
+        {id: 3,
+         name : 'Tennis',
+         ratings: [],
+         type: "Models.Subcategory"
         },
-        {
-            id: '03',
-            title: 'Swimming'
+        {id: 4,
+         name : 'Fencing',
+         ratings: [],
+         type: "Models.Subcategory"
         },
-        {
-            id: '04',
-            title: 'Cycling'
+        {id: 5,
+         name : 'Cycling',
+         ratings: [],
+         type: "Models.Subcategory"
+        },
+        {id: 6,
+         name : 'Soccer',
+         ratings: [],
+         type: "Models.Subcategory"
         }
     ];
 
     $scope.submitActivityForm = function () {
-        /* while compiling form , angular created this object*/
+        /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
-        /* post to server*/
+        var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
         console.log(data);
-        // $http.post("https://jsonplaceholder.typicode.com/posts/", data);
+        
+        $http.defaults.headers.post = 'Bearer kaas';
+        
+        
+        /* post to server*/
+        //$http.post(url, data);
+        
+        
+        $http.post(url, data)
+        .then(
+            function(response){
+                // success callback
+                console.log("SUCCESS");
+                console.log(response);
+                
+            },
+            function(response){
+                // failure callback
+                console.log("FAILURE");
+                console.log(response);
+            }
+        );
+        
         $location.path('/').replace();
     }
-
 }]);
