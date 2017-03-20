@@ -6,7 +6,7 @@
     <meta name="description" content="International software project between OAMK and Fontys">
     <meta name="author" content="OAMK and FONTYS">
 
-    <title>International project</title>
+    <title>Project Activity</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
@@ -20,6 +20,7 @@
     <!-- import of AngularJS -->
     <script src="js/shared/angular.min.js"></script>
     <script src="js/shared/angular-route.js"></script>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,40 +31,39 @@
 </head>
 
 <body ng-app="activityApp">
-    <!-- Routing places the appropriate page here -->
-    <div class="container-fluid">
-        <div ng-view></div>
-    </div>
-
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
+    <nav class="navbar-fixed-top">
+        <div class="nav-list" ng-controller="MainController">
             <ul class="nav navbar-left">
-                <button type="button" class="btn  btn-circle btn-lg">
-                    <li class="sign_text"><a href="#">Sign In</a></li>
-                </button>
+                <li>
+                    <a href='#/login' class="menuButton">
+                        <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
+                        <span class="signIn">Sign In</span>
+                    </a>
+                </li>
             </ul>
             <ul class="nav navbar-right">
-                <button type="button" class="btn  btn-circle btn-lg">
-                    <li class="new_act "><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
-                </button>
+                <li class="new_act">
+                    <a href="#/newactivity" class="menuButton">
+                        <img src="img/NewActivityButton.png" alt="" class="newActivity">
+                    </a>
+                </li>
             </ul>
-            <form class="navbar-form" role="search">
-                <div class="bar">
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="I Want To ..." name="srch-term" id="srch-term">
-                    </div>
-                </div>
-            </form>
-        </div>
-    </nav>
-    <!-- Modules -->
-    <script src="js/app.js"></script>
+            <form class="nav navbar-form" role="search">
+                        <span class="IWantTo">I want to</span>
+                        <input type="text" class="form-control" placeholder="" name="srch-term" id="srch-term">              
 
-    <!-- Routing places the appropriate page here -->
-    <!--
+            </form>
+            </div>
+    </nav>
+  
+     <!-- Routing places the appropriate page here -->
     <div class="container-fluid">
         <div ng-view></div>
     </div>
+    <!-- Modules -->
+    <script src="js/app.js"></script>
+                 
+
 
     <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
@@ -75,7 +75,24 @@
     <script src="js/controllers/RatingController.js"></script>
 
     <!-- Scripts -->
-
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+      <script type="text/javascript">
+        function GetLocation() {
+        var geocoder = new google.maps.Geocoder();
+        var address = document.getElementById("zipcode").value;
+            geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var homeX = results[0].geometry.location.lat();
+                var homeY = results[0].geometry.location.lng();
+                    var scope = angular.element($("#signUpcontroller")).scope();
+                        scope.$apply(function(){
+                   
+                } else {
+                    alert("Request failed.");
+            }
+        });
+    };
+    </script>
     <!-- Directives -->
     <script src="js/directives/cardInfo.js"></script>
 
