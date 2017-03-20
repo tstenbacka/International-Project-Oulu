@@ -1,32 +1,25 @@
 app.controller('SignUpController', ['$scope','$http','$location' ,'$window', function($scope,$http ,$location, $window) {
                           
-    
-
-
-
 	$scope.SignUpHolders = {
         usernameHolder: 'Username',
-		surnameHolder: 'Surname',
-		lastnameHolder: 'Lastname',
-		ageHolder:'Age',
+		surnameHolder: 'First name',
+		lastnameHolder: 'Last name',
+		ageHolder:'date of birth',
 		passwordHolder:'Password',
 		postalCodeHoler:'Postal code',
 		emailHolder:'example@example.com'
 	};
-    
-    
-	
 	$scope.signInformation = {
-		username:'',
-		password:'',
-		surname:'',
-        lastname:'',
-        email:'',
-		dayOfBirth: '',
-        profilePicture:'',
-        homeX: '',
-        homeY: '',
-        searchDistance:''
+		username:"",
+		password:"",
+		firsname:"",
+        lastname:"",
+        email:"",
+		dayOfBirth: "1997-07-02T00:00:00Z",
+        profilePicture:"",
+        homeLat: "",
+        homeLong: "",
+        searchDistance:""
 	};
 
 	$scope.checkStart  = true;
@@ -46,9 +39,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
            /* window.navigator.geolocation.getCurrentPosition(function(pos){
             console.log(pos);
             });*/     
-        GetLocation();
-
-        
+        GetLocation();       
 	};
     
 	$scope.backwardsPostal = function (){
@@ -68,15 +59,14 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 	};
     $scope.letsRoll = function (){
         /* while compiling form , angular created this object*/
-        var data = $scope.signInformation
+        var data = $scope.signInformation;
         /* post to server*/
-        console.log(data);
+        console.log(JSON.stringify(data));
+        
+        
         $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
-         $location.path('/').replace();
+        $location.path('/').replace();
     };
-    
-    
-    
         function GetLocation() {
             var geocoder = new google.maps.Geocoder();              
             var address =  document.getElementById("postcode").value;       
@@ -85,8 +75,8 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
                     var lati = results[0].geometry.location.lat();
                     var longi = results[0].geometry.location.lng();
                     //alert("Latitude: " + lati + "\nLongitude: " + longi );
-                    $scope.signInformation.homeX = lati;
-                    $scope.signInformation.homeY = longi;
+                    $scope.signInformation.homeLat = lati;
+                    $scope.signInformation.homeLong = longi;
                 } else {
                     alert("Request failed.");
                 }
