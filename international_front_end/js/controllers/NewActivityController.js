@@ -26,29 +26,29 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
     */
     
     $scope.user = {
-        username: "TestUser",
-        password: "test",
-        surname: "Tester",
-        lastname: "Testington",
-        email: "tester.testington@test.com",
-        dayOfBirth: "" + new Date(0),
-        profilePicture: "",
-        description: "I am a hard coded test",
-        homeX: 0,
-        homeY: 0,
-        searchDistance: 10
+        dayOfBirth: '1997-04-11T00:00:00Z',
+        email: 'tester.testington@test.com',
+        friends: [],
+        homeLat: 0,
+        homeLong: 0,
+        id: 96,
+        lastname: 'Testington',
+        searchDistance: 10,
+        surname: 'Tester'
     };
     
     $scope.activityInformation = {
         creator: $scope.user,
-        dateTime: "" + new Date(0),
+        dateTime: '2017-03-20T00:00:00Z',
         description: '',
         duration: 0,
         frequency: '',
+        id: 0,
         name: '',
+        participants:[],
         skilllevel: '',
         subcategory: '',
-        tags: ['these', 'are', 'tags'],
+        tags: [],
         userAmount: 0,
     };
 
@@ -65,25 +65,65 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
     ];
 
     $scope.categories = [
-        {name : 'Running'},
-        {name : 'Music'},
-        {name : 'Fencing'},
-        {name : 'Swimming'},
-        {name : 'Cycling'},
-        {name : 'Soccer'}
+        {id: 1,
+         name : 'Running',
+         ratings: [],
+         type: "Models.Subcategory"
+        },
+        {id: 2,
+         name : 'Swimming',
+         ratings: [],
+         type: "Models.Subcategory"
+        },
+        {id: 3,
+         name : 'Tennis',
+         ratings: [],
+         type: "Models.Subcategory"
+        },
+        {id: 4,
+         name : 'Fencing',
+         ratings: [],
+         type: "Models.Subcategory"
+        },
+        {id: 5,
+         name : 'Cycling',
+         ratings: [],
+         type: "Models.Subcategory"
+        },
+        {id: 6,
+         name : 'Soccer',
+         ratings: [],
+         type: "Models.Subcategory"
+        }
     ];
 
     $scope.submitActivityForm = function () {
         /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
         var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
+        console.log(data);
         
         $http.defaults.headers.post = 'Bearer kaas';
         
-        console.log(data);
         
         /* post to server*/
-        $http.post(url, data);
+        //$http.post(url, data);
+        
+        
+        $http.post(url, data)
+        .then(
+            function(response){
+                // success callback
+                console.log("SUCCESS");
+                console.log(response);
+                
+            },
+            function(response){
+                // failure callback
+                console.log("FAILURE");
+                console.log(response);
+            }
+        );
         
         $location.path('/').replace();
     }
