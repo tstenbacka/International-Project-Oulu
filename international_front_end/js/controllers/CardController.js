@@ -6,7 +6,6 @@ app.controller('CardController', ['$scope','$http', function($scope, $http) {
         console.log(response.data);
     }, function(response){
         $scope.activities = "Something went wrong";
-        console.log("WRONG");
     });
 
     
