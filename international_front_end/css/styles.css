@@ -237,3 +237,15 @@ NEW ACTIVITY
 .row-participants {
     font-weight: bold;
 }
+/************************
+EXPANDED CARD
+************************/
+
+.card-expanded {
+    width: inherit;
+}
+
+.card-container {
+    padding-left: 30%;
+    padding-right: 30%;
+}

@@ -27,6 +27,10 @@ $locationProvider.hashPrefix('');
       controller: "RatingController",
       templateUrl: "views/rating.html"
     })
+    .when('/activity', {
+      controller: "ExpandedActivityController",
+      templateUrl: "views/expandedActivity.html"
+    })
     .otherwise({
       redirectTo: '/'
     });
