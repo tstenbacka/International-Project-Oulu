@@ -25,7 +25,7 @@
 				</div>
                 <div class="input-prepend"><span class="add-on"><i></i></span>
 				    <h5>Age</h5>
-				    <input type="datetime-local" ng-model="signInformation.dayofBirth" id="age" name="" placeholder={{SignUpHolders.ageHolder}} required>
+				    <input type="text" ng-model="signInformation.dayOfBirth" id="age" name="" placeholder={{SignUpHolders.ageHolder}} required>
 				</div>
                     <br>
                 <div class="input-prepend"><span class="add-on"><i></i></span>
@@ -34,9 +34,9 @@
 				</div>
                 <div class="input-prepend"><span class="add-on"><i></i></span>
 				    <h5>Retype password</h5>
-				    <input type="text" id="Password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+				    <input type="text" ng-model="pass2" id="Password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
 				</div>
-				    <input type="button" value="Continue" class="cardbtn" ng-click="forwardStart()"/>
+				    <input type="button" id="continue1" value="Continue" class="cardbtn" ng-click="forwardStart()"/>
 				<br>				
             </form>
 			</div>            
@@ -50,11 +50,11 @@
                     <br>
                     <div class="input-prepend"><span class="add-on"><i></i></span>
                         <h5>Postal Code</h5>               
-                        <input type="text" ng-model="signInformation.zipcode" id="zipcode" name=""  placeholder={{SignUpHolders.postalCodeHoler}} required>
+                        <input type="text"  id="postcode" name=""  placeholder={{SignUpHolders.postalCodeHoler}} required>
                     </div>
                     <br>
                     <input type="button" value="Previous" class="cardbtn-small" ng-click="backwardsPostal()"/>
-                    <input type="button" value="Next" class="cardbtn-small" ng-click="forwardPostal()"  onclick="GetLocation()"/>
+                    <input type="button" value="Next" class="cardbtn-small" ng-click="forwardPostal()"/>
 				    <br>
                 </form>		
 			</div>         

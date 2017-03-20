@@ -63,8 +63,6 @@
     <!-- Modules -->
     <script src="js/app.js"></script>
                  
-
-
     <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
     <script src="js/controllers/CardController.js"></script>
@@ -75,24 +73,8 @@
     <script src="js/controllers/RatingController.js"></script>
 
     <!-- Scripts -->
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-      <script type="text/javascript">
-        function GetLocation() {
-        var geocoder = new google.maps.Geocoder();
-        var address = document.getElementById("zipcode").value;
-            geocoder.geocode({ 'address': address }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var homeX = results[0].geometry.location.lat();
-                var homeY = results[0].geometry.location.lng();
-                    var scope = angular.element($("#signUpcontroller")).scope();
-                        scope.$apply(function(){
-                   
-                } else {
-                    alert("Request failed.");
-            }
-        });
-    };
-    </script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>  
+
     <!-- Directives -->
     <script src="js/directives/cardInfo.js"></script>
 

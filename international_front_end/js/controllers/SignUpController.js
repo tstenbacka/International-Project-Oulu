@@ -13,6 +13,8 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 		postalCodeHoler:'Postal code',
 		emailHolder:'example@example.com'
 	};
+    
+    
 	
 	$scope.signInformation = {
 		username:'',
@@ -20,10 +22,10 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 		surname:'',
         lastname:'',
         email:'',
-		dayOfBirth: new Date(Date),
+		dayOfBirth: '',
         profilePicture:'',
-        homeX:'',
-        homeY:'',
+        homeX: '',
+        homeY: '',
         searchDistance:''
 	};
 
@@ -31,6 +33,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 	$scope.checkPostal = false;
     $scope.checkEmail = false;
     $scope.checkDone = false;
+    $scope.pass2;
 
 	$scope.forwardStart = function (){
 		$scope.checkStart = false;
@@ -40,7 +43,14 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 	$scope.forwardPostal = function (){	
         $scope.checkPostal = false;
         $scope.checkEmail = true;
+           /* window.navigator.geolocation.getCurrentPosition(function(pos){
+            console.log(pos);
+            });*/     
+        GetLocation();
+
+        
 	};
+    
 	$scope.backwardsPostal = function (){
         $scope.checkStart = true;
         $scope.checkPostal = false;
@@ -64,5 +74,31 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
          $location.path('/').replace();
     };
-
+    
+    
+    
+        function GetLocation() {
+            var geocoder = new google.maps.Geocoder();              
+            var address =  document.getElementById("postcode").value;       
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    var lati = results[0].geometry.location.lat();
+                    var longi = results[0].geometry.location.lng();
+                    //alert("Latitude: " + lati + "\nLongitude: " + longi );
+                    $scope.signInformation.homeX = lati;
+                    $scope.signInformation.homeY = longi;
+                } else {
+                    alert("Request failed.");
+                }
+            });
+        };
+    
+    
 }]);
+
+
+
+     
+          
+                
+        
