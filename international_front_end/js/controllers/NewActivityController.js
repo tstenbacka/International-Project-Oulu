@@ -26,15 +26,18 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
     */
     
     $scope.user = {
-        dayOfBirth: '1997-04-11T00:00:00Z',
-        email: 'tester.testington@test.com',
+        dayOfBirth: '1990-02-13T00:00:00Z',
+        description: 'oke',
+        email: 'pietje@bell.nl',
+        firstname: 'Pietje',
         friends: [],
-        homeLat: 0,
-        homeLong: 0,
-        id: 96,
-        lastname: 'Testington',
+        homeLat: 432.0,
+        homeLong: 234.0,
+        id: 2,
+        lastname: 'Bell',
+        profilePicture: 'pietje.png',
         searchDistance: 10,
-        surname: 'Tester'
+        username: 'pietjuh'
     };
     
     $scope.activityInformation = {
@@ -50,6 +53,8 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         subcategory: '',
         tags: [],
         userAmount: 0,
+        locationX: '',
+        locationY: ''
     };
 
     $scope.skillLevels = [
