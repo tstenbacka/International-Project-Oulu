@@ -31,10 +31,14 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
             data: data,
             config: 'Content-Type: application/json;'
            }) .then(function(response) {
-               document.cookie = response.data.token;
-               // token = response.data.token;
-               //  var x = document.cookie;
-               // console.log(x);
+             //  document.cookie = "token:" + response.data.token + " id:" + response.data.id;
+                document.cookie = JSON.stringify(response.data);
+                /* Example on how to use cookies below
+                console.log(document.cookie);
+
+                var y = JSON.parse(document.cookie);
+                console.log(y.token);
+                */
                 //console.log(response.data.token);
                 $location.path('/').replace();
             }, function (response) {
