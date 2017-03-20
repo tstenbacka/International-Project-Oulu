@@ -1,9 +1,9 @@
 app.controller('LoginController', ['$scope', '$location', function($scope, $location) {
     $scope.notHidden = true;
-    $scope.loginMsg = 'login';
+    $scope.loginMsg = 'Sign In';
     $scope.newUserMsg = 'New User';
-    $scope.userNamePlaceholder = 'username';
-    $scope.passWordPlaceholder = 'password';
+    $scope.userNamePlaceholder = 'Name or email';
+    $scope.passWordPlaceholder = 'Password';
     $scope.userNameHelpText = 'Username is required';
     $scope.passWordHelpText = 'Password is required';
     $scope.newUserButtonMsg = 'Create a new account';
