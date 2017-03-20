@@ -33,17 +33,15 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
            }) .then(function(response) {
                document.cookie = response.data.token;
                // token = response.data.token;
-             //  var x = document.cookie;
+               //  var x = document.cookie;
                // console.log(x);
                 //console.log(response.data.token);
-               // $location.path('/').replace();
+                $location.path('/').replace();
             }, function (response) {
             // this function handles error
             $scope.loginError = "Failed to login";
 
         });
-        
-       // $location.path('/').replace();
     };
 
     $scope.signUp = function () {
