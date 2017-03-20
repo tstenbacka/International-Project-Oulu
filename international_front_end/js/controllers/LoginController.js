@@ -1,4 +1,4 @@
-app.controller('LoginController', ['$scope', '$location', function($scope, $location) {
+app.controller('LoginController', ['$scope', '$location', '$http', function($scope, $location, $http) {
     $scope.notHidden = true;
     $scope.loginMsg = 'login';
     $scope.newUserMsg = 'New User';
@@ -13,20 +13,44 @@ app.controller('LoginController', ['$scope', '$location', function($scope, $loca
     $scope.logged = false;
     $scope.loginError;
 
-    $scope.login = function () {
-        if ($scope.userName === $scope.passWord) {
-            $scope.logged = true;
-            $location.path('/').replace();
-        }
 
-        else {
-            $scope.logged = false;
-            $scope.loginError = 'Failed to Authenticate';
-        }
+    $scope.loginInformation = {
+        username: '',
+        password: ''
+    };
+
+    $scope.login = function () {
+        /* while compiling form , angular created this object*/
+        var data = $scope.loginInformation;
+        /* user data to post to the server*/
+       // console.log(data);
+
+       $http({
+            method: 'post',
+            url: 'http://192.81.223.10:8080/Oulu_Backend/webapi/users/login',
+            data: data,
+            config: 'Content-Type: application/json;'
+           }) .then(function(response) {
+             //  document.cookie = "token:" + response.data.token + " id:" + response.data.id;
+                document.cookie = JSON.stringify(response.data);
+                /* Example on how to use cookies below
+                console.log(document.cookie);
+
+                var y = JSON.parse(document.cookie);
+                console.log(y.token);
+                */
+                //console.log(response.data.token);
+                $location.path('/').replace();
+            }, function (response) {
+            // this function handles error
+            $scope.loginError = "Failed to login";
+
+        });
     };
 
     $scope.signUp = function () {
         $scope.notHidden = false;
         $location.path('/signup').replace();      
     };
+
 }]);
