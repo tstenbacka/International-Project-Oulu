@@ -1,53 +1,71 @@
-
 <div class="container">
-	<div class="card-expanded">
+  <div class="card-expanded">
 		<div class="card-expanded-block" ng-model="checkStart" ng-if="checkStart == true" ng-show="forwardStart">
             
         <!-- NAME, AGE, PASSWORD VIEW -->
 		<h1>Welcome :)</h1>
-        <br>
+       <br>
 		<p>We're pleased to see you here! Lets get started by filling the  basic information below.</p>
                 <!-- <h4>{{check1}}</h4> -->
-			<form action="" method="post">
+      <form action="" method="post">
 				<div class="center-block">
 				    <img class="user_picture" src="img/UserIcon @2x.png" alt=""/>
 				</div>
 				<br>
-                <h2-black>Name</h2-black>
-				<div class="inputs"><span class="add-on"><i></i></span>
-				    <input type="text" class="input-register" ng-model="name" id="Name" name="" placeholder= {{nameHolder}} >
+
+				<h2-black> Username </h2-black>
+        <div class="inputs"><span class="add-on"><i></i></span>
+				    <input type="text" class="input-register" ng-model="signInformation.username" id="username" name="" placeholder= {{SignUpHolders.usernameHolder}} required>
 				</div>
-                <h2-black>Age</h2-black>
-				<div class="inputs"><span class="add-on"><i></i></span>
-				    <input type="text" class="input-register" ng-model="age" id="Age" name="" placeholder= {{ageHolder}} > 
+      
+        <h2-black>First Name</h2-black>
+        <div class="inputs"><span class="add-on"><i></i></span>
+				    <input type="text" ng-model="signInformation.firstname" id="firstname" name="" placeholder= {{SignUpHolders.surnameHolder}} required> 
 				</div>
-                <h2-black>Password</h2-black>
+      
+        <h2-black>Last name</h2-black>
 				<div class="inputs"><span class="add-on"><i></i></span>
-				    <input type="text" class="input-register" ng-model="password" id="Password" name="" placeholder={{passwordHolder}}>
+				    <input type="text" ng-model="signInformation.lastname" id="Lastname" name="" placeholder={{SignUpHolders.lastnameHolder}} required>
 				</div>
-                <br>
-				    <input type="button" class="mainButton" value="Continue" class="mainButton" ng-click="forwardStart()"/>
-            </form>
-			</div> 
-        
-            <!-- POSTAL CODE VIEW -->
-            <div class="card-expanded-block" ng-model="checkPostal" ng-show="checkPostal">
-                <h1>Find Activities Nearby</h1> 
-                <br>
-                    <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location.</p>
-                    <form action="" method="post">
-                        <div class="center-block">
-	                       <!--Google Map Api code here-->
-                        </div>
-                    <br>
-                    <h2-black>Postal Code</h2-black>
-                    <div class="inputs"><span class="add-on"><i></i></span>       <input type="text" ng-model="postalCode" class="input-register" id="postalcode" name=""  placeholder={{postalCodeHolder}}>
-                    </div>
-                    <br>
-                    <input type="button" value="Previous" class="button-row-left" ng-click="backwardsPostal()"/>
-                    <input type="button" value="Next" class="button-row-right" ng-click="forwardPostal()" />
-                </form>		
-			</div>
+      
+        <h2-black>Date of birth</h2-black>
+            <div class="input-prepend"><span class="add-on"><i></i></span> 
+				    <input type="text" ng-model="signInformation.dayOfBirth" id="age" name="" placeholder={{SignUpHolders.ageHolder}} required>
+				</div>
+      
+        <h2-black>Password</h2-black>
+            <div class="inputs"><span class="add-on"><i></i></span>
+				    <input type="password" ng-model="signInformation.password" id="Password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+				</div>
+      
+        <h2-black>Retype password</h2-black>
+            <div class="inputs"><span class="add-on"><i></i></span>
+				    <input type="password" ng-model="pass2" id="Password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+				</div>
+      
+				<input type="button" class="mainButton" value="Continue" ng-click="forwardStart()"/>
+      </form>
+		</div>
+  
+    <!-- POSTAL CODE VIEW -->
+    <div class="card-expanded-block" ng-model="checkPostal" ng-show="checkPostal">
+        <h1>Find Activities Nearby</h1> 
+        <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location</p>
+        <br> 
+        <form action="" method="post">
+            <div class="center-block">
+    </div>
+        <br>
+        <h2-black>Postal Code and Country</h2-black>   
+        <div class="inputs"><span class="add-on"><i></i></span>            
+            <input type="text"  id="postcode" name=""  placeholder={{SignUpHolders.postalCodeHoler}} required>
+        </div>
+        <br>
+            <input type="button" value="Previous" class="button-row-left" ng-click="backwardsPostal()"/>
+            <input type="button" value="Next" class="button-row-right" ng-click="forwardPostal()"/>
+				    <br>
+        </form>		
+		</div>
         
             <!-- EMAIL CONFIRMATION VIEW -->
             <div class="card-expanded-block" ng-model="checkEmail" ng-show="checkEmail">
@@ -58,13 +76,13 @@
                     <br>
                     <h2-black>Email</h2-black>
                     <div class="input-prepend"><span class="add-on"><i></i></span>
-                        <input type="text" ng-model="email" id="email" name="" class="input-register"  placeholder={{emailHolder}}>
+                      <input type="email" ng-model="signInformation.email" id="email" name=""  placeholder={{SignUpHolders.emailHolder}} required>
+                      <input type="text" ng-model="email" id="email" name="" class="input-register"  placeholder={{emailHolder}}>
                     </div>
                     <br>
                     <input type="button" value="Previous" class="button-row-left" ng-click="backwardEmail()"/>
                     <input type="button" value="Next" class="button-row-right" ng-click="forwardEmail()" />
-				    <br>
-                    <br>
+				            <br>
                 </form>		
 			</div>
         
