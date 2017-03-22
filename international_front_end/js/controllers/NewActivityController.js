@@ -105,30 +105,20 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
     $scope.submitActivityForm = function () {
         /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
-        var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
+        
         console.log(data);
+        //console.log(JSON.stringify(data));
         
-        $http.defaults.headers.post = 'Bearer kaas';
-        
-        
+        $http.defaults.headers.post = 'kaas';
+    
         /* post to server*/
-        //$http.post(url, data);
-        
-        
-        $http.post(url, data)
-        .then(
-            function(response){
-                // success callback
-                console.log("SUCCESS");
-                console.log(response);
-                
-            },
-            function(response){
-                // failure callback
-                console.log("FAILURE");
-                console.log(response);
-            }
-        );
+        if (angular.isObject(data)) {
+            console.log("DATA IS AN OBJECT");
+            $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/activities", data);
+            
+        } else {
+            console.log("DATA IS NOT AN OBJECT");
+        }
         
         $location.path('/').replace();
     }

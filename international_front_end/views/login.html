@@ -1,17 +1,18 @@
+<!--
 <div class="container" ng-controller="LoginController">
     <div class="col-md-offset-5 col-md-3">
-    <h2>{{loginMsg}}</h2>
+    <h1>{{loginMsg}}</h1>
 <form ng-show="notHidden" name="form" ng-submit="login()" role="form">
     <div class="form-group">
-        <label for="username">Username</label>
+        <label for="username">Hello</label>
         <i class="fa fa-key"></i>
-        <input type="text" name="username" id="username" class="form-control" ng-model="userName" placeholder={{userNamePlaceholder}} required />
+        <input type="text" name="username" id="username" class="form-control" ng-model="loginInformation.username" placeholder={{userNamePlaceholder}} required />
         <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">{{userNameHelpText}}</span>
     </div>
     <div class="form-group">
         <label for="password">Password</label>
         <i class="fa fa-lock"></i>
-        <input type="password" name="password" id="password" class="form-control" ng-model="passWord" placeholder={{passWordPlaceholder}} required />
+        <input type="password" name="password" id="password" class="form-control" ng-model="loginInformation.password" placeholder={{passWordPlaceholder}} required />
         <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{passWordHelpText}}</span>
     </div>
     <div class="form-actions">
@@ -26,4 +27,42 @@
     <h2>{{newUserMsg}}</h2>
     <button ng-click="signUp()" class="btn btn-primary btn-md">{{newUserButtonMsg}}</button>
    </div>
+</div>
+-->
+
+<div class="login-main">
+    <div class="logInMainLabel">
+        <h1-color> {{ loginMsg }} </h1-color>
+    </div>
+    <div class="login-bar">
+        <div class="column-login">
+            <form ng-show="notHidden" name="newUser" id="logInNewUser" name="form" ng-submit="login()">
+                <div>
+                    <h2-black>Username</h2-black>
+                    <div class="form-username">
+                        <input type="text" name="username" id="username" class="input-logIn" ng-model="userName" placeholder={{userNamePlaceholder}} required />
+                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">{{userNameHelpText}}</span>
+                    </div>
+                    <h2-black>Password</h2-black>
+                    <div class="form-password">
+                        <i class="fa fa-lock"></i>
+                        <input type="password" name="password" id="password" class="input-logIn" ng-model="passWord" placeholder={{passWordPlaceholder}} required />
+                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{passWordHelpText}}</span>
+                    </div>
+                    <div class="form-actions">
+                        <h4>{{loginError}}</h4>
+                        <div class="spaceForgotPassword">
+                        <button type="submit" class="mainButton">{{loginMsg}}</button>
+                        <a class="forgotPassword"> <h2>{{forgotPassWordMsg}}</h2></a>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </form>
+                <div class="logInMainLabel">
+                    <h1-color>{{newUserMsg}}</h1-color>
+                </div>
+             <button ng-click="signUp()" class="mainButton">{{newUserButtonMsg}}</button>
+        </div>
+    </div>
 </div>
