@@ -32,7 +32,7 @@
             <div class="input-prepend"><span class="add-on"><i></i></span> 
 				    <input type="text" ng-model="signInformation.dayOfBirth" id="age" name="" placeholder={{SignUpHolders.ageHolder}} required>
 				</div>
-      
+        <h4>{{signupError}}</h4>
         <h2-black>Password</h2-black>
             <div class="inputs"><span class="add-on"><i></i></span>
 				    <input type="password" ng-model="signInformation.password" id="Password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
@@ -40,7 +40,7 @@
       
         <h2-black>Retype password</h2-black>
             <div class="inputs"><span class="add-on"><i></i></span>
-				    <input type="password" ng-model="pass2" id="Password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+				    <input type="password" ng-model="pass2" id="pass2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
 				</div>
       
 				<input type="button" class="mainButton" value="Continue" ng-click="forwardStart()"/>
@@ -48,7 +48,7 @@
 		</div>
   
     <!-- POSTAL CODE VIEW -->
-    <div class="card-expanded-block" ng-model="checkPostal" ng-show="checkPostal">
+    <div class="card-expanded-block" ng-model="checkPostal"  ng-if="checkPostal == true" ng-show="checkPostal">
         <h1>Find Activities Nearby</h1> 
         <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location</p>
         <br> 
@@ -93,7 +93,7 @@
                     <p> Great work there. Now you're ready to start exploring intresting new activities around the city and post your own for most epic dragon slaying time ever!</p>
                 <form action="" method="post"> 
                     <br>
-                    <input type="button" value="Let's Roll" class="mainButton" ng-click="letsRoll()"/>
+                    <input type="submit" value="Let's Roll" class="mainButton" ng-click="letsRoll()"/>
 				    <br>
                 </form>		
 			</div>
