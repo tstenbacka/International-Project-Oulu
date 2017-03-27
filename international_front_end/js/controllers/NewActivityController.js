@@ -24,20 +24,21 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
             activitySkillLevel: ''
         };
     */
-    
+        var userObject = JSON.parse(document.cookie);
+
     $scope.user = {
-        dayOfBirth: '1990-02-13T00:00:00Z',
+        dayOfBirth: userObject.dayOfBirth,
         description: 'oke',
-        email: 'pietje@bell.nl',
-        firstname: 'Pietje',
+        email: userObject.email,
+        firstname: userObject.firstname,
         friends: [],
-        homeLat: 432.0,
-        homeLong: 234.0,
-        id: 2,
-        lastname: 'Bell',
-        profilePicture: 'pietje.png',
-        searchDistance: 10,
-        username: 'pietjuh'
+        homeLat: userObject.homeLat,
+        homeLong: userObject.homeLong,
+        id: userObject.id,
+        lastname: userObject.lastname,
+        profilePicture: userObject.profilePicture,
+        searchDistance: userObject.searchDistance,
+        username: userObject.username
     };
     
     $scope.activityInformation = {
@@ -107,11 +108,10 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
         console.log(data);
         
-        $http.defaults.headers.post.Authorization = 'Bearer kaas';
-        
-        
-        /* post to server*/
-        //$http.post(url, data);
+        var userObject = JSON.parse(document.cookie);
+        var y = 'Bearer ' + userObject.token;
+        console.log(y);
+        $http.defaults.headers.post.Authorization = y;
         
         
         
