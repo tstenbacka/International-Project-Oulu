@@ -46,7 +46,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         description: '',
         duration: 0,
         frequency: '',
-        id: 0,
         name: '',
         participants:[],
         skilllevel: '',
@@ -71,32 +70,32 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
 
     $scope.categories = [
         {id: 1,
-         name : 'Running',
+         name : 'soccer',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 2,
-         name : 'Swimming',
+         name : 'cricket',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 3,
-         name : 'Tennis',
+         name : 'basketball',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 4,
-         name : 'Fencing',
+         name : 'Lan party',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 5,
-         name : 'Cycling',
+         name : 'Online gaming',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 6,
-         name : 'Soccer',
+         name : 'concert',
          ratings: [],
          type: "Models.Subcategory"
         }
@@ -108,11 +107,12 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
         console.log(data);
         
-        $http.defaults.headers.post = 'Bearer kaas';
+        $http.defaults.headers.post.Authorization = 'Bearer kaas';
         
         
         /* post to server*/
         //$http.post(url, data);
+        
         
         
         $http.post(url, data)
