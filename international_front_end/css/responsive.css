@@ -63,7 +63,7 @@
     }
 }
 
-@media screen and (max-height: 930px) {
+@media screen and (max-height: 1000px) {
     .new-activity {
         height: 100%;
     }
