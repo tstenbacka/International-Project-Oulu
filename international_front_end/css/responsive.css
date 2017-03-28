@@ -1,0 +1,73 @@
+@media screen and (max-width: 865px) {
+    
+    .IWantTo {
+        display: none;
+    }
+    .signIn {
+        display: none;
+    }
+    .form-control-input {
+        max-width: 50%;
+        text-align: center;
+    }
+    
+    .button-bottom-container {
+        width: 85%;
+    }
+    
+    .input-space {
+        margin-bottom: 70px;
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width: 470px) {
+    /* Make left and right drawers to full screen when mobile */
+    .login-main {
+        width: 100%;
+    }
+    .new-activity {
+        width: 100%;
+    }
+    
+    /* CREATE NEW USER */
+    .button-bottom-container {
+        width: 70%;
+    }
+    
+    .input-register-right {
+        text-align: center;
+        margin-right: 0;
+    }
+    
+    .input-register {
+        text-align: center;
+        margin-left: 0;
+    }  
+}
+
+@media screen and (max-width: 540px) {
+    .input-register-right {
+        text-align: center;
+        margin-right: 0;
+    }
+    
+    .input-register {
+        text-align: center;
+        margin-left: 0;
+    }
+    
+    .button-bottom-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-height: 930px) {
+    .new-activity {
+        height: 100%;
+    }
+    .login-main {
+        height: 100%;
+    }
+}

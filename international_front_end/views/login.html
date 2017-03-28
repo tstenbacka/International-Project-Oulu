@@ -51,18 +51,21 @@
                     </div>
                     <div class="form-actions">
                         <h4>{{loginError}}</h4>
-                        <div class="spaceForgotPassword">
+
                         <button type="submit" class="mainButton">{{loginMsg}}</button>
-                        <a class="forgotPassword"> <h2>{{forgotPassWordMsg}}</h2></a>
-                        </div>
+                        <a class="forgotPassword">
+                            <h2>{{forgotPassWordMsg}}</h2>
+                        </a>
                     </div>
                     <br>
                 </div>
             </form>
+            <div class="NewUser">
                 <div class="logInMainLabel">
                     <h1-color>{{newUserMsg}}</h1-color>
                 </div>
-             <button ng-click="signUp()" class="mainButton">{{newUserButtonMsg}}</button>
+                <button ng-click="signUp()" class="mainButton">{{newUserButtonMsg}}</button>
+            </div>
         </div>
     </div>
 </div>

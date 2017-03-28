@@ -1,16 +1,16 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', function ($scope, $location, $http) {
-    $scope.viewTitle = 'Create a new activity';
+    $scope.viewTitle = 'Create Activity';
 
     $scope.activityHints = {
-        hintCategory: 'Category:',
-        hintTitle: 'Title:',
-        hintDateTime: 'Date/Time:',
-        hintFrequency: 'Frequency:',
-        hintPostalCode: 'ZipCode:',
-        hintDescription: 'Description:',
-        hintDuration: 'Duration of activity:',
-        hintParticipantAmount: 'Participants:',
-        hintSkillLevel: 'Skill level:'
+        hintCategory: 'Category',
+        hintTitle: 'Name',
+        hintDateTime: 'Time',
+        hintFrequency: 'Frequency',
+        hintPostalCode: 'Location',
+        hintDescription: 'Description',
+        hintDuration: 'Duration of activity',
+        hintParticipantAmount: 'Participants',
+        hintSkillLevel: 'Skill level'
     };
     /*
         $scope.activityInformation = {

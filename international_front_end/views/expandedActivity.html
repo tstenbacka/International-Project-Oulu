@@ -1,25 +1,48 @@
 <div ng-controller="ExpandedActivityController">
     <div class="card-container">
-        <div class="card card-expanded">
+        <div class="card card-expanded" id="alignToLeft">
+            <div class="card-strip-expanded"></div>
             <div class="card-block">
-                <div class="card-strip"></div>
-                <p class="card-category-title">{{activity.subcategory.name}}</p> 
-                <h4 class="card-title"> {{activity.name}}</h4>                 
-                <p>{{activity.description}}</p>
-                <p class="card-title">Time and location</p> 
-                <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>
-                <p>Hupisaarten kesäteatteri</p>
-                <p class="card-title">Participants</p>
+
+                <!--<h2>{{activity.subcategory.name}}</h2> -->
+                <h2>Running</h2>
+                <!--<h2 class="card-title">{{activity.name}}</h2>-->
+
+                <h1>Morning Jogging</h1>
+                <!--<p>{{activity.description}}</p>-->
+                <p>Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)</p>
+
+                <div class="card-expanded-space"></div>
+                
+                <div class="card-wrapper">
+                    <h2-black>Time and location</h2-black>
+                    <!--<p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>-->
+                    <p>Hupisaarten kesäteatteri</p>
+                </div>
+                
+                <div class="card-wrapper">
+                <h2-black>Participants</h2-black>
                 <p>O O O O O O O O O O O O</p>
                 <p>Matti and 2 other friends are going</p>
-                <p class="card-title">Skill Level</p>
-                <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
-                <p class="card-title">About the Hoster</p> 
+                </div>
+                
+                <div class="card-wrapper">
+                <h2-black>Skill Level</h2-black>
+                <!--<p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p> -->
+                <p>Running: beginner</p> 
+                </div>
+                
+                <div class="card-wrapper">
+                <h2-black>About the Hoster</h2-black>
                 <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
-                <span>{{activity.creator.surname}} {{activity.creator.lastname}}</span>
-                <span>+ 3 running</span>
-                <input type="button" value="Let's Roll" class="cardbtn"/>
-           </div>
+                <p>{{activity.creator.surname}} {{activity.creator.lastname}}</p>
+                <p>+ 3 running</p>
+                </div>
+
+                <div class="button-bottom-container">
+                    <input type="button" value="Join Activity" class="mainButton" />
+                </div>
+            </div>
         </div>
     </div>
 </div>
