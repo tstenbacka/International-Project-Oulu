@@ -40,13 +40,13 @@
                 <div>
                     <h2-black>Username</h2-black>
                     <div class="form-username">
-                        <input type="text" name="username" id="username" class="input-logIn" ng-model="userName" placeholder={{userNamePlaceholder}} required />
+                        <input type="text" name="username" id="username" class="input-logIn" ng-model="loginInformation.username" placeholder={{userNamePlaceholder}} required />
                         <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">{{userNameHelpText}}</span>
                     </div>
                     <h2-black>Password</h2-black>
                     <div class="form-password">
                         <i class="fa fa-lock"></i>
-                        <input type="password" name="password" id="password" class="input-logIn" ng-model="passWord" placeholder={{passWordPlaceholder}} required />
+                        <input type="password" name="password" id="password" class="input-logIn" ng-model="loginInformation.password" placeholder={{passWordPlaceholder}} required />
                         <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{passWordHelpText}}</span>
                     </div>
                     <div class="form-actions">

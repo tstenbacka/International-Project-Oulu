@@ -4,7 +4,10 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         usernameHolder: 'Username',
 		surnameHolder: 'First name',
 		lastnameHolder: 'Last name',
-		ageHolder:"1.5.1996",
+
+
+		ageHolder:'date of birth',
+
 		passwordHolder:'Password',
 		postalCodeHoler:'Postal code',
 		emailHolder:'example@example.com'
@@ -12,10 +15,10 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 	$scope.signInformation = {
 		username:"",
 		password:"",
-		firsname:"",
+		firstname:"",
         lastname:"",
         email:"",
-		dayOfBirth: "",
+		dayOfBirth: "1997-07-02T00:00:00Z",
         profilePicture:"",
         homeLat: "",
         homeLong: "",
@@ -27,11 +30,25 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 	$scope.checkPostal = false;
     $scope.checkEmail = false;
     $scope.checkDone = false;
-    $scope.pass2;
+    $scope.pass2 = "";
+    $scope.signupError;
+    
 
 	$scope.forwardStart = function (){
-		$scope.checkStart = false;
+        
+        var password1 =  document.getElementById("Password").value;
+        var password2 =  document.getElementById("pass2").value;
+        
+        
+        if(password1 == password2){
+        $scope.checkStart = false;
         $scope.checkPostal = true;
+
+        }
+        else{
+            $scope.signupError = "Passwords does no match!"
+        }
+ 
 	};
 
 	$scope.forwardPostal = function (){	
@@ -68,6 +85,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
         $location.path('/').replace();
     };
+
         function GetLocation() {
             var geocoder = new google.maps.Geocoder();              
             var address =  document.getElementById("postcode").value;       
@@ -82,9 +100,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
                     alert("Request failed.");
                 }
             });
-        };
-    
-    
+        };    
 }]);
 
 

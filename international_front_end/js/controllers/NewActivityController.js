@@ -15,32 +15,22 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         hintTitlePlaceholder: 'Running in the 90s',
         hintDescriptionPlaceholder: 'Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)'
     };
-    /*
-        $scope.activityInformation = {
-            activityCategory: '',
-            activityTitle: '',
-            activityDateTime: new Date(Date),
-            activityLocation: '',
-            activityPostalCode: '',
-            activityDescription: '',
-            activityParticipantAmount: 0,
-            activitySkillLevel: ''
-        };
-    */
     
+        var userObject = JSON.parse(document.cookie);
+
     $scope.user = {
-        dayOfBirth: '1990-02-13T00:00:00Z',
+        dayOfBirth: userObject.dayOfBirth,
         description: 'oke',
-        email: 'pietje@bell.nl',
-        firstname: 'Pietje',
+        email: userObject.email,
+        firstname: userObject.firstname,
         friends: [],
-        homeLat: 432.0,
-        homeLong: 234.0,
-        id: 2,
-        lastname: 'Bell',
-        profilePicture: 'pietje.png',
-        searchDistance: 10,
-        username: 'pietjuh'
+        homeLat: userObject.homeLat,
+        homeLong: userObject.homeLong,
+        id: userObject.id,
+        lastname: userObject.lastname,
+        profilePicture: userObject.profilePicture,
+        searchDistance: userObject.searchDistance,
+        username: userObject.username
     };
     
     $scope.activityInformation = {
@@ -49,7 +39,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         description: '',
         duration: 0,
         frequency: '',
-        id: 0,
         name: '',
         participants:[],
         skilllevel: '',
@@ -74,32 +63,32 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
 
     $scope.categories = [
         {id: 1,
-         name : 'Running',
+         name : 'soccer',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 2,
-         name : 'Swimming',
+         name : 'cricket',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 3,
-         name : 'Tennis',
+         name : 'basketball',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 4,
-         name : 'Fencing',
+         name : 'Lan party',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 5,
-         name : 'Cycling',
+         name : 'Online gaming',
          ratings: [],
          type: "Models.Subcategory"
         },
         {id: 6,
-         name : 'Soccer',
+         name : 'concert',
          ratings: [],
          type: "Models.Subcategory"
         }
@@ -109,13 +98,13 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
         var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
-        console.log(data);
+        //console.log(data);
         
-        $http.defaults.headers.post = 'Bearer kaas';
+        var userObject = JSON.parse(document.cookie);
+       // var y = 'Bearer ' + userObject.token;
+        //console.log(y);
+        $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;
         
-        
-        /* post to server*/
-        //$http.post(url, data);
         
         
         $http.post(url, data)
@@ -123,13 +112,13 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
             function(response){
                 // success callback
                 console.log("SUCCESS");
-                console.log(response);
+                //console.log(response);
                 
             },
             function(response){
                 // failure callback
                 console.log("FAILURE");
-                console.log(response);
+                //console.log(response);
             }
         );
         
