@@ -4,14 +4,13 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         usernameHolder: 'Username',
 		surnameHolder: 'First name',
 		lastnameHolder: 'Last name',
-
-
 		ageHolder:'date of birth',
-
 		passwordHolder:'Password',
 		postalCodeHoler:'Postal code',
+        contryHolder:'country',
 		emailHolder:'example@example.com'
 	};
+    
 	$scope.signInformation = {
 		username:"",
 		password:"",
@@ -88,7 +87,10 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 
         function GetLocation() {
             var geocoder = new google.maps.Geocoder();              
-            var address =  document.getElementById("postcode").value;       
+            var postalcode =  document.getElementById("postcode").value;
+            var contry = document.getElementById("country").value;
+            var address = postalcode + " " + contry;
+            address.toString();  
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == google.maps.GeocoderStatus.OK) {
                     var lati = results[0].geometry.location.lat();

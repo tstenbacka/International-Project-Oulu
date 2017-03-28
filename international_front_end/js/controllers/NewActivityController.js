@@ -124,4 +124,23 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         
         $location.path('/').replace();
     }
+    
+    function GetLocation() {
+        var geocoder = new google.maps.Geocoder();              
+        var address =  document.getElementById("ActivityLocation").value;       
+        geocoder.geocode({ 'address': address }, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var lati = results[0].geometry.location.lat();
+                var longi = results[0].geometry.location.lng();
+                //alert("Latitude: " + lati + "\nLongitude: " + longi );
+                $scope.activityInformation.locationX   = lati;
+                 $scope.activityInformation.locationY = longi;
+                } 
+            else {
+                alert("Request failed.");
+                }
+            });
+        };    
+    
+    
 }]);
