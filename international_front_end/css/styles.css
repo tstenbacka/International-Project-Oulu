@@ -7,21 +7,34 @@ body {
     background-color: #aac8ed;
     padding-top: 0;
     margin-top: 20px;
+    min-height: 100%;
 }
 
 a {
     text-decoration: none;
+    background-color: transparent! important;
+}
+
+a:hover {
+    color: white;
+    background-color: transparent!important;
+}
+
+a:visited {
+    color: white;
 }
 
 img {
     max-width: 100%;
 }
 
-.container-fluid{
+.container-fluid {
     padding: 0;
     margin: 0;
     margin-top: 80px;
+    height: 100%;
 }
+
 
 /************************
 FONTS
@@ -30,40 +43,94 @@ FONTS
 p {
     font-size: 1.250em;
     color: #9B9B9B;
-    font-weight: normal;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
 }
 
 h1 {
     font-size: 2.25em;
     color: #4A4A4A;
     font-weight: bold;
+    letter-spacing: 0.5pt;
 }
 
 h1-color {
     font-size: 2.25em;
     color: #4990E2;
     font-weight: bold;
+    letter-spacing: 0.1pt;
 }
 
 h2 {
     font-size: 1.250em;
     color: #4990E2;
     font-weight: bold;
+    letter-spacing: 0.1pt;
 }
 
 h2-black {
     font-size: 1.250em;
     color: #4A4A4A;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 0.1pt;
+}
+
+#basicText {
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+}
+
+/* Inputs placeholder text color */
+*::-webkit-input-placeholder {
+    color: #E0E0E0;
+}
+*:-moz-placeholder {
+    color: #E0E0E0;
+}
+*::-moz-placeholder {
+    color: #E0E0E0;
+}
+*:-ms-input-placeholder {
+    color: #E0E0E0;
+}
+
+/************************
+STYLES
+************************/
+
+#borderless {
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+}
+
+#defaultText {
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+}
+
+#alignToLeft {
+    text-align: left;
 }
 
 /************************
 HEADER
 ************************/
 
-.navbar-fixed-top {
+.navbar {
+    overflow: hidden;
     background-color: #aac8ed;
-    padding: 5px 0 0px 0;
+    position: fixed;
+    top: 0px;
+    width: 100%;
 }
 
 .navbar-left {
@@ -72,19 +139,14 @@ HEADER
     padding: 0;
 }
 
-a:hover {
-    color: white;
-    background-color: transparent!important;
-}
-
 .profilePicture {
     width: 32px;
 }
 
 .navbar-form {
     margin: 0;
-    padding: 0;
-    height:75px;
+    padding: 6px 0 0 0;
+    height: 75px;
     text-align: center;
 }
 
@@ -99,14 +161,14 @@ a:hover {
 .form-control-input {
     background-color: #aac8ed;
     height: auto;
-    width: 300px !important;
-    margin: 0 0 20px -4px;
+    margin: auto;
     font-size: 3em;
     font-weight: lighter;
     color: white;
     border: none;
     box-shadow: none;
     outline: 0;
+    max-width: 25%;
 }
 
 .form-control:focus {
@@ -180,37 +242,37 @@ CARD  |  SMALL
 .card-strip {
     height: 3px;
     background-color: blue;
+    width: 100%;
 }
 
 .SingUpCard {
-    
-    width:380px;
+    width: 380px;
     height: 670px;
-    padding: 5%; 
+    padding: 5%;
     background-color: #fff;
     border-radius: 0px;
-    -webkit-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     font-weight: bold;
 }
 
-
-.cardbtn{
-	width: 350px;
-	padding: 5px;
+.cardbtn {
+    width: 350px;
+    padding: 5px;
     text-align: center;
-	background-color: blue;
-	color: white;
+    background-color: blue;
+    color: white;
 }
 
-.cardbtn-small{
+.cardbtn-small {
     width: 100px;
-	padding: 5px;
+    padding: 5px;
     text-align: center;
-	background-color: blue;
-	color: white;   
+    background-color: blue;
+    color: white;
 }
+
 
 /************************
 CARD  |  EXPANDED
@@ -222,55 +284,65 @@ CARD  |  EXPANDED
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
-    padding: 0;
-    margin: 45px 200px 45px 200px;
-    height: 728px;
+    padding: 30px 55px 30px 55px ;
+    max-width: 790px;
+    min-height: 820px;
+    margin: auto;
+    position: relative;
 }
 
-.card-expanded-block {
-    padding: 50px 40px 30px 40px;
+.card-strip-expanded {
+    position: absolute;
+    height: 5px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: #4990E2;
 }
+
+.card-expanded-space {
+    padding-bottom: 40px;
+}
+
+.card-wrapper {
+    margin-bottom: 20px;
+}
+
+.card-expanded-container {
+    margin-top: 58px;
+}
+
 
 /************************
 NEW ACTIVITY
 ************************/
 
 .new-activity {
+    position: relative;
+    margin: -80px 0 0 0;
     float: right;
-    margin: -60px 0 0 0;
     width: 470px;
     height: 100vh;
-    padding: 0 3% 0 3%;
+    padding: 47px 45px 20px 45px;
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
-    font-weight: bold;
     background-color: white;
+    
 }
 
 .createActivityLabel {
-    font-size: 2.25em;
-    color: #4990E2;
-    margin: 47px 0 10px 0;
-    font-weight: bold;
+    padding-bottom: 23px;
 }
 
-.column {
-    font-weight: bold;
-    font-size: 1.25em;
-}
 
 .activity-description {
     width: 100%;
+    resize: none;
 }
 
-#submitActivityForm {
-    background-color: #4990E2;
-    color: white;
+.timeInput {
     width: 100%;
-    height: 66px;
-    margin-bottom: 26px;
-    border: none;
 }
 
 /************************
@@ -278,11 +350,11 @@ LOG IN
 ************************/
 
 .login-main {
-    float: left;
-    margin: 0 0 0 0;
+    position: relative;
+    margin: -80px 0 0 0;
+    min-height: 100vh;
     width: 470px;
-    height: 100vh;
-    padding: 0 45px 0 45px;
+    padding: 47px 45px 20px 45px;
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -291,6 +363,10 @@ LOG IN
 
 .logInMainLabel {
     padding-bottom: 23px;
+}
+
+#label-text {
+    padding-bottom: 30px;
 }
 
 .input-logIn {
@@ -311,57 +387,102 @@ LOG IN
     width: 100%;
     height: 58px;
     border: none;
-
+    font-size: 1.25em;
+    font-weight: bold;
 }
 
-.spaceForgotPassword {
-    padding-bottom: 116px;
+.NewUser {
+    margin-top: 80px;
 }
+
 
 
 /************************
 CREATE NEW USER
 ************************/
 
+
 .user_picture {
-    width: 30%;
-    margin: 10px 10px 10px 10px;
+    width: 200px;
+}
+
+.profile-picture-container {
+    padding-bottom: 31px;
+}
+
+.input-space {
+    display: none;
 }
 
 .inputs {
     font-size: 1.250em;
     color: #9B9B9B;
     font-weight: normal;
+    border: none;
+    box-shadow: none;
+    outline: 0;
 }
 
 .input-register {
-    width: 50%;
+    text-align: left;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    margin-bottom: 17px;
+    margin-left: 5px;
+}
+
+.input-register-right {
+    text-align: right;
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    margin-bottom: 17px;
+    margin-right: 5px;
+}
+
+.input-register-middle {
     text-align: center;
     border: none;
     box-shadow: none;
     outline: 0;
-    margin-bottom: 10px
+    margin-bottom: 17px;
+}
+
+.input-register-age {
+    text-align: left;
+    border: none;
+    width: 100px;
+    box-shadow: none;
+    outline: 0;
+    margin-bottom: 17px
+}
+
+.button-bottom-container {
+    height: 58px;
+    position: absolute;
+    margin: auto;
+    padding: 0;
+    bottom: 30px;
+    width: 85%;
 }
 
 .button-row-left {
     background-color: #4990E2;
     color: white;
-    width: 100%;
     height: 58px;
     border: none;
     float: left;
     width: 40%;
-    margin-top: 342px;
+    font-size: 1.25em;
 }
 
 .button-row-right {
     background-color: #4990E2;
     color: white;
-    width: 100%;
     height: 58px;
     border: none;
     float: right;
     width: 40%;
-    margin-top: 342px;
+    font-size: 1.25em;
 }
-

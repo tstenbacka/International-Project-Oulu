@@ -4,7 +4,10 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         usernameHolder: 'Username',
 		surnameHolder: 'First name',
 		lastnameHolder: 'Last name',
+
+
 		ageHolder:'date of birth',
+
 		passwordHolder:'Password',
 		postalCodeHoler:'Postal code',
 		emailHolder:'example@example.com'
@@ -30,7 +33,6 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
     $scope.pass2 = "";
     $scope.signupError;
     
-  
 
 	$scope.forwardStart = function (){
         
@@ -83,7 +85,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         $http.post("http://192.81.223.10:8080/Oulu_Backend/webapi/users", data);
         $location.path('/').replace();
     };
-    
+
         function GetLocation() {
             var geocoder = new google.maps.Geocoder();              
             var address =  document.getElementById("postcode").value;       

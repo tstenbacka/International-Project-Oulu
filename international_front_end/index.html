@@ -9,18 +9,20 @@
     <title>Project Activity</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,600" rel="stylesheet">
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Page CSS -->
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
 
     <!-- import of AngularJS -->
     <script src="js/shared/angular.min.js"></script>
     <script src="js/shared/angular-route.js"></script>
     
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -28,11 +30,11 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
 </head>
 
 <body ng-app="activityApp">
-    <nav class="navbar-fixed-top">
+    <nav class="navbar">
         <div class="nav-list" ng-controller="MainController">
             <ul class="nav navbar-left">
                 <li>
@@ -50,20 +52,20 @@
                 </li>
             </ul>
             <form class="nav navbar-form" role="search">
-                        <span class="IWantTo">I want to</span>
-                        <input type="text" class="form-control-input" placeholder="" name="srch-term" id="srch-term">              
+                <span class="IWantTo">I want to</span>
+                <input type="text" class="form-control-input" placeholder="" name="srch-term" id="srch-term">
 
             </form>
-            </div>
+        </div>
     </nav>
-  
-     <!-- Routing places the appropriate page here -->
+
+    <!-- Routing places the appropriate page here -->
     <div class="container-fluid">
         <div ng-view></div>
     </div>
     <!-- Modules -->
     <script src="js/app.js"></script>
-                 
+
     <!-- Controllers -->
     <script src="js/controllers/MainController.js"></script>
     <script src="js/controllers/CardController.js"></script>
@@ -75,7 +77,21 @@
     <script src="js/controllers/ExpandedActivityController.js"></script>
 
     <!-- Scripts -->
+    
+    <!--
+    <script type="text/javascript">
+        function backgroundColor {
+            var color = '#'
+            var bgColors = ['A3C6F2', 'F2A4A3', 'C9F1A0'];
+
+            color += bgColors[Math.floor(Math.random * bgColors.length)];
+            document.body.style.background = color;
+        }
+    </script>
+    -->
+
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>  
+
 
     <!-- Directives -->
     <script src="js/directives/cardInfo.js"></script>
