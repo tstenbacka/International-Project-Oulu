@@ -27,9 +27,10 @@
                             <input type="text" class="input-register-middle" ng-model="signInformation.dayOfBirth" id="age" name="" placeholder={{SignUpHolders.ageHolder}} required>
                         </div>
                         <h2-black>Password</h2-black>
+                        <h4>{{signupError}}</h4>
                         <div class="inputs"><span class="add-on"><i></i></span>
                             <input type="password" class="input-register-right" ng-model="signInformation.password" id="Password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
-                            <input type="password" class="input-register" ng-model="pass2" id="Password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+                            <input type="password" class="input-register" ng-model="pass2" id="pass2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
                         </div>
                         <div class="input-space"></div>
                     </div>
