@@ -12,18 +12,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         hintParticipantAmount: 'Participants:',
         hintSkillLevel: 'Skill level:'
     };
-    /*
-        $scope.activityInformation = {
-            activityCategory: '',
-            activityTitle: '',
-            activityDateTime: new Date(Date),
-            activityLocation: '',
-            activityPostalCode: '',
-            activityDescription: '',
-            activityParticipantAmount: 0,
-            activitySkillLevel: ''
-        };
-    */
+    
         var userObject = JSON.parse(document.cookie);
 
     $scope.user = {
@@ -106,12 +95,12 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         /* while compiling form , angular creates this object*/
         var data = $scope.activityInformation;
         var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
-        console.log(data);
+        //console.log(data);
         
         var userObject = JSON.parse(document.cookie);
-        var y = 'Bearer ' + userObject.token;
-        console.log(y);
-        $http.defaults.headers.post.Authorization = y;
+       // var y = 'Bearer ' + userObject.token;
+        //console.log(y);
+        $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;
         
         
         
@@ -120,13 +109,13 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
             function(response){
                 // success callback
                 console.log("SUCCESS");
-                console.log(response);
+                //console.log(response);
                 
             },
             function(response){
                 // failure callback
                 console.log("FAILURE");
-                console.log(response);
+                //console.log(response);
             }
         );
         
