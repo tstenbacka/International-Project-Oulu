@@ -10,7 +10,10 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', functio
         hintDescription: 'Description',
         hintDuration: 'Duration of activity',
         hintParticipantAmount: 'Participants',
-        hintSkillLevel: 'Skill level'
+        hintSkillLevel: 'Skill level',
+        
+        hintTitlePlaceholder: 'Running in the 90s',
+        hintDescriptionPlaceholder: 'Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)'
     };
     /*
         $scope.activityInformation = {

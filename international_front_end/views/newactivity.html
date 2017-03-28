@@ -43,12 +43,12 @@
                     <div class="row-title" id="label-text">
                         <h2-black>{{ activityHints.hintTitle }}</h2-black>
                         <br>
-                        <input type="text" class="inputs" ng-model="activityInformation.name" required>
+                        <input type="text" class="inputs" ng-model="activityInformation.name" placeholder={{activityHints.hintTitlePlaceholder}} required>
                     </div>
                     <div class="row-desc" id="label-text">
                         <h2-black>{{ activityHints.hintDescription }}</h2-black>
                         <br>
-                        <textarea ng-model="activityInformation.description" class="activity-description" id="borderless" maxlength="140" rows="6" cols="40" required></textarea>
+                        <textarea ng-model="activityInformation.description" class="activity-description" id="borderless" maxlength="140" rows="6" cols="40" placeholder={{activityHints.hintDescriptionPlaceholder}} required></textarea>
                     </div>
                     <div class="row-category" id="label-text">
                         <h2-black>{{ activityHints.hintCategory }}</h2-black>
