@@ -2,7 +2,9 @@
     <div ng-repeat="acts in activities">
         <div ng-if="$index % 4 == 0" class="clearfix"></div>
         <div class="col-6 col-md-3">
-            <card-info info="acts"></card-info>
+            <a href="#/activity/">
+                <card-info info="acts"></card-info>
+            </a>
         </div>
     </div>
 </div>
