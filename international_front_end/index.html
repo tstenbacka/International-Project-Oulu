@@ -40,13 +40,13 @@
                 <li>
                     <a href='#/login' class="menuButton">
                         <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
-                        <span class="signIn">Sign In</span>
+                        <span class="signIn">{{ getDudesName() }}</span>
                     </a>
                 </li>
             </ul>
             <ul class="nav navbar-right">
                 <li class="new_act">
-                    <a href="#/newactivity" class="menuButton">
+                    <a ng-if="loggedIn()" href="#/newactivity" class="menuButton">
                         <img src="img/NewActivityButton.png" alt="" class="newActivity">
                     </a>
                 </li>
