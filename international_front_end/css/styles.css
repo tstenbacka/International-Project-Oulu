@@ -355,6 +355,11 @@ NEW ACTIVITY
 LOG IN
 ************************/
 
+.closeButton {
+    float: right;
+    height: 50%;
+}
+
 .login-main {
     position: relative;
     margin: -80px 0 0 0;
