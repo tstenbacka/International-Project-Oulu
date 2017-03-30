@@ -12,6 +12,8 @@ app.controller('MainController', ['$scope', function($scope) {
             return true;
         }
         else {
+            $scope.profile = false;
+            $scope.login = true;
             return false;
         }
     }
