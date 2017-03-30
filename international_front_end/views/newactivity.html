@@ -77,6 +77,14 @@
                         <br>
                         <input type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" id="borderless" required>
                     </div>
+                    <h2-black>{{activityHints.hintLocation}}</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
+                    </div>
+                    <h2-black>{{activityHints.hintCountry}}</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="actcountry" placeholder={{activityHints.hintContryPlaceholder}} required>
+                    </div>
                     <div class="row-skill" id="label-text">
                         <h2-black>{{ activityHints.hintSkillLevel }}</h2-black>
                         <br>
