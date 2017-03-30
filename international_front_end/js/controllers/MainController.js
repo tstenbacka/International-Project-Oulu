@@ -1,20 +1,24 @@
 app.controller('MainController', ['$scope', function($scope) {
-    $scope.signInTxt = 'Sign In';
+    //$scope.signInTxt = 'Sign In';
     $scope.newActivityTxt = 'New Activity';
     $scope.searchTxt = "I Want To ...";
-    $scope.loggedIn = document.cookie;
+    $scope.login = true;
+    $scope.profile = false;
 
     $scope.loggedIn = function () {
-        if(document.cookie.length > 0)
+        if(document.cookie.length > 0) {
+            $scope.profile = true;
+            $scope.login = false;
             return true;
-        else
+        }
+        else {
             return false;
+        }
     }
 
     $scope.getDudesName = function () {
         if(document.cookie.length > 0) {
             var userObject = JSON.parse(document.cookie);
-           // $scope.searchTxt = userObject.username;
             return userObject.username;
         }
 
