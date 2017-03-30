@@ -1,8 +1,11 @@
-app.controller('ProfileController', ['$scope', function($scope) {
+app.controller('ProfileController', ['$scope', '$location', function($scope, $location) {
     $scope.msg = 'Profile';
     
-    $scope.ProfileHolders = {
-        username: 'Onni Oululainen'
+    $scope.ProfileHolders = JSON.parse(document.cookie);
+
+    $scope.signOut = function() {
+        document.cookie = "";
+        $location.path('/').replace();
     }
     
 }]);
