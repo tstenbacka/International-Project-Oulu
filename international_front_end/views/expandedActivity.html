@@ -9,16 +9,22 @@
                 <p class="card-title">Time and location</p> 
                 <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>
                 <p>Hupisaarten kesäteatteri</p>
-                <p class="card-title">Participants</p>
+                
+                <!-- No information for this yet so lets not show it -->
+                <!--<p class="card-title">Participants</p>
                 <p>O O O O O O O O O O O O</p>
-                <p>Matti and 2 other friends are going</p>
+                <p>Matti and 2 other friends are going</p>-->
+                
                 <p class="card-title">Skill Level</p>
                 <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
                 <p class="card-title">About the Hoster</p> 
                 <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
-                <span>{{activity.creator.surname}} {{activity.creator.lastname}}</span>
-                <span>+ 3 running</span>
-                <input type="button" value="Let's Roll" class="cardbtn"/>
+                <span>{{activity.creator.firstname}} {{activity.creator.lastname}}</span>
+                
+                <!-- No information for this yet so lets not show it -->
+                <!--<span>+ 3 running</span> -->
+                
+                <input type="button" value="Join Activate" class="cardbtn"/>
            </div>
         </div>
     </div>

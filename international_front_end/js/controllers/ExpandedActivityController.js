@@ -6,7 +6,5 @@ app.controller('ExpandedActivityController', ['$scope','$http','$routeParams', f
     }, function(response){
         $scope.activities = "Something went wrong";
         console.log("WRONG");
-    });s
-                                              
-    //$routeParams.activityId = activity.id;
+    });
 }]);
