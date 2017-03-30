@@ -121,6 +121,10 @@ STYLES
     text-align: left;
 }
 
+#alignToCenter {
+    text-align: center;
+}
+
 /************************
 HEADER
 ************************/
@@ -488,4 +492,9 @@ CREATE NEW USER
     float: right;
     width: 40%;
     font-size: 1.25em;
+}
+
+.profile-picture-big {
+    width: 50%;
+    margin-left: 25%;
 }

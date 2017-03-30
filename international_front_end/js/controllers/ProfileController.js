@@ -1,3 +1,8 @@
 app.controller('ProfileController', ['$scope', function($scope) {
-    $scope.msg = 'profileeee';
+    $scope.msg = 'Profile';
+    
+    $scope.ProfileHolders = {
+        username: 'Onni Oululainen'
+    }
+    
 }]);
