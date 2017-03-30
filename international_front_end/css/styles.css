@@ -355,8 +355,14 @@ NEW ACTIVITY
 LOG IN
 ************************/
 
+.closeButton {
+    float: right;
+    opacity: 0.9;
+}
+
 .login-main {
     position: relative;
+    float: left;
     margin: -80px 0 0 0;
     min-height: 100vh;
     width: 470px;
@@ -402,6 +408,9 @@ LOG IN
     margin-top: 80px;
 }
 
+.login-back {
+    filter: blur(20px);
+}
 
 
 /************************
