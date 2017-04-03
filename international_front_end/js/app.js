@@ -1,5 +1,20 @@
 var app = angular.module("activityApp", ['ngRoute']);
 
+        app.service('sharedProperties', function () {
+            var searchKey = '';
+            
+            return {
+                getProperty: function () {
+                    return searchKey;
+                },
+                setProperty: function(value) {
+                    searchKey = value;
+                }            
+            };
+        });
+
+
+
 app.config(function ($routeProvider, $locationProvider) {
 $locationProvider.hashPrefix('');
   $routeProvider

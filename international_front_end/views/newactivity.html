@@ -33,60 +33,65 @@
 <div class="new-activity">
 
     <div class="createActivityLabel">
-        {{ viewTitle }}
+        <h1-color>{{ viewTitle }}</h1-color>
+        <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButton"></a>
     </div>
     <div class="new-activity-bar">
         <div class="column">
             <form name="createNewActivity" id="createActivity" ng-controller="NewActivityController" ng-submit="submitActivityForm()">
                 <div>
-                    <div class="row-category">
-                        <p1>{{ activityHints.hintCategory }}</p1>
+                    <br>
+                    <div class="row-title" id="label-text">
+                        <h2-black>{{ activityHints.hintTitle }}</h2-black>
+                        <br>
+                        <input type="text" class="inputs" ng-model="activityInformation.name" placeholder={{activityHints.hintTitlePlaceholder}} required>
+                    </div>
+                    <div class="row-desc" id="label-text">
+                        <h2-black>{{ activityHints.hintDescription }}</h2-black>
+                        <br>
+                        <textarea ng-model="activityInformation.description" class="activity-description" id="borderless" maxlength="140" rows="6" cols="40" placeholder={{activityHints.hintDescriptionPlaceholder}} required></textarea>
+                    </div>
+                    <div class="row-category" id="label-text">
+                        <h2-black>{{ activityHints.hintCategory }}</h2-black>
                         <br>
                         <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
                     </div>
-                    <br>
-                    <div class="row-title">
-                        <p1>{{ activityHints.hintTitle }}</p1>
+                    <div class="row-date" id="label-text">
+                        <h2-black>{{ activityHints.hintDateTime }}</h2-black>
                         <br>
-                        <input type="text" ng-model="activityInformation.name" required></input>
+                        <input class="timeInput" type="datetime" ng-model="activityInformation.dateTime" id="borderless"  required>
                     </div>
-                    <br>
-                    <div class="row-desc">
-                        <p1>{{ activityHints.hintDescription }}</p1>
+                    <div class="row-frequency" id="label-text">
+                        <h2-black>{{ activityHints.hintFrequency }}</h2-black>
                         <br>
-                        <textarea ng-model="activityInformation.description" class="activity-description" maxlength="140" rows="6" cols="40" required></textarea>
+                        <select ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies"> </select>
                     </div>
-                    <br>
-                    <div class="row-date">
-                        <p1>{{ activityHints.hintDateTime }}</p1>
+                    <div class="row-duration" id="label-text">
+                        <h2-black>{{ activityHints.hintDuration }}</h2-black>
                         <br>
-                        <input type="datetime" ng-model="activityInformation.dateTime" required></input>
+                        <input type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" id="borderless" required>
+                        <p>hours</p>
                     </div>
-                    <br>
-                    <div class="row-frequency">
-                        <p1>{{ activityHints.hintFrequency }}</p1>
+                    <div class="row-participants" id="label-text">
+                        <h2-black>{{ activityHints.hintParticipantAmount }}</h2-black>
                         <br>
-                        <select ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies" required> </select>
+                        <input type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" id="borderless" required>
                     </div>
-                    <br>
-                    <div class="row-duration">
-                        <p1>{{ activityHints.hintDuration }}</p1>
-                        <input type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" required>hours</input>
+                    <h2-black>{{activityHints.hintLocation}}</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
                     </div>
-                    <br>
-                    <div class="row-participants">
-                        <p1>{{ activityHints.hintParticipantAmount }}</p1>
-                        <input type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" required></input>
+                    <h2-black>{{activityHints.hintCountry}}</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="actcountry" placeholder={{activityHints.hintContryPlaceholder}} required>
                     </div>
-                    <br>
-                    <div class="row-skill">
-                        <p1>{{ activityHints.hintSkillLevel }}</p1>
+                    <div class="row-skill" id="label-text">
+                        <h2-black>{{ activityHints.hintSkillLevel }}</h2-black>
+                        <br>
                         <select ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required> </select>
                     </div>
-                    <br>
-                    <br>
                     <div>
-                        <input type="submit" id="submitActivityForm" value="Create"></input>
+                        <input class="mainButton" type="submit" value="Create">
                     </div>
                 </div>
             </form>
