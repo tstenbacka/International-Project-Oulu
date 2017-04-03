@@ -57,10 +57,16 @@
                         <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
                     </div>
                     <div class="row-date" id="label-text">
-                        <h2-black>{{ activityHints.hintDateTime }}</h2-black>
+                        <h2-black>Date</h2-black>
                         <br>
-                        <input class="timeInput" type="datetime" ng-model="activityInformation.dateTime" id="borderless"  required>
+                        <input class="dateInput" ng-model="activityInformation.date" type="text" id="datepicker"  required>  {{ loadDatePicker() }}
                     </div>
+                    <div class="row-time" id="label-text">
+                        <h2-black>Time</h2-black>
+                        <br>
+                        <input class="timeInput" type="text" id="timepicker"  required> {{ loadTimePicker() }}
+                    </div>
+                    
                     <div class="row-frequency" id="label-text">
                         <h2-black>{{ activityHints.hintFrequency }}</h2-black>
                         <br>
@@ -79,11 +85,11 @@
                     </div>
                     <h2-black>{{activityHints.hintLocation}}</h2-black>
                     <div class="inputs"><span class="add-on"><i></i></span>
-                        <input type="text" class="input-register-middle" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
+                        <input type="text" class="input-register-middle" id="alignToLeft" placeholder={{activityHints.hintLocationPlaceholder}} required>
                     </div>
                     <h2-black>{{activityHints.hintCountry}}</h2-black>
                     <div class="inputs"><span class="add-on"><i></i></span>
-                        <input type="text" class="input-register-middle" id="actcountry" placeholder={{activityHints.hintContryPlaceholder}} required>
+                        <input type="text" class="input-register-middle" id="alignToLeft" placeholder={{activityHints.hintContryPlaceholder}} required>
                     </div>
                     <div class="row-skill" id="label-text">
                         <h2-black>{{ activityHints.hintSkillLevel }}</h2-black>
