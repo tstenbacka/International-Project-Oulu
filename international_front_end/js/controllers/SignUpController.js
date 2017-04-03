@@ -1,4 +1,8 @@
 app.controller('SignUpController', ['$scope','$http','$location' ,'$window', function($scope,$http ,$location, $window) {
+    
+    $scope.loadDatePicker = function () {
+        $('#datepicker').datepicker();
+    }
                           
 	$scope.SignUpHolders = {
         usernameHolder: 'Username',

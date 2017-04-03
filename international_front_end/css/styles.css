@@ -125,6 +125,10 @@ STYLES
     text-align: center;
 }
 
+#alignToRight {
+    text-align: right;
+}
+
 /************************
 HEADER
 ************************/
@@ -333,8 +337,11 @@ NEW ACTIVITY
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     background-color: white;
-    z-index:1;
-    
+    z-index:1;  
+}
+
+#label-text {
+   padding-bottom: 30px; 
 }
 
 .createActivityLabel {
@@ -345,6 +352,10 @@ NEW ACTIVITY
 .activity-description {
     width: 100%;
     resize: none;
+}
+
+.row-skill {
+    padding-bottom: 50px;
 }
 
 /************************
@@ -374,10 +385,6 @@ LOG IN
     padding-bottom: 23px;
 }
 
-#label-text {
-    padding-bottom: 30px;
-}
-
 .input-logIn {
     font-size: 1.250em;
     color: #9B9B9B;
@@ -402,10 +409,6 @@ LOG IN
 
 .NewUser {
     margin-top: 80px;
-}
-
-.login-back {
-    filter: blur(20px);
 }
 
 
@@ -502,4 +505,10 @@ CREATE NEW USER
 .profile-picture-big {
     width: 50%;
     margin-left: 25%;
+}
+
+.button-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
 }

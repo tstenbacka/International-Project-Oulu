@@ -24,7 +24,7 @@
                         </div>
                         <h2-black>Date of Birth</h2-black>
                         <div class="inputs"><span class="add-on"><i></i></span>
-                            <input type="text" class="input-register-middle" ng-model="signInformation.dayOfBirth" id="age" name="" placeholder={{SignUpHolders.ageHolder}} required>
+                            <input class="dateInput" ng-model="activityInformation.date" type="text" id="datepicker"  required>  {{ loadDatePicker() }}
                         </div>
                         <h2-black>Password</h2-black>
                         <h4>{{signupError}}</h4>
@@ -78,6 +78,8 @@
                 <div class="inputs"><span class="add-on"><i></i></span>
                     <input type="email" ng-model="signInformation.email" class="input-register-middle" placeholder={{SignUpHolders.emailHolder}} required>
                 </div>
+                <h2>Username</h2>
+                <input type="username" ng-model="signInformation.username" class="input-register-middle" placeholder={{SignUpHolders.usernameHolder}} required>
                 <div class="button-bottom-container">
                     <input type="button" value="Previous" class="button-row-left" ng-click="backwardEmail()" />
                     <input type="button" value="Next" class="button-row-right" ng-click="forwardEmail()" />
