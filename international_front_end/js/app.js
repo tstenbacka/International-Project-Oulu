@@ -42,7 +42,7 @@ $locationProvider.hashPrefix('');
       controller: "RatingController",
       templateUrl: "views/rating.html"
     })
-    .when('/activity', {
+    .when('/activity/:id', {
       controller: "ExpandedActivityController",
       templateUrl: "views/expandedActivity.html"
     })

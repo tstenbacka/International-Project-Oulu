@@ -3,33 +3,31 @@
         <div class="card card-expanded" id="alignToLeft">
             <div class="card-strip-expanded"></div>
             <div class="card-block">
+                <div class="card-strip"></div>
+               
 
-                <!--<h2>{{activity.subcategory.name}}</h2> -->
-                <h2>Running</h2>
-                <!--<h2 class="card-title">{{activity.name}}</h2>-->
-
-                <h1>Morning Jogging</h1>
-                <!--<p>{{activity.description}}</p>-->
-                <p>Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)</p>
+                <h2>{{activity.subcategory.name}}</h2>
+                <h2 class="card-title">{{activity.name}}</h2>
+                <p>{{activity.description}}</p>  
 
                 <div class="card-expanded-space"></div>
                 
                 <div class="card-wrapper">
                     <h2-black>Time and location</h2-black>
-                    <!--<p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>-->
-                    <p>Hupisaarten kesäteatteri</p>
+                    <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>
                 </div>
                 
+      <!--
                 <div class="card-wrapper">
                 <h2-black>Participants</h2-black>
                 <p>O O O O O O O O O O O O</p>
                 <p>Matti and 2 other friends are going</p>
                 </div>
+      -->
                 
                 <div class="card-wrapper">
                 <h2-black>Skill Level</h2-black>
-                <!--<p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p> -->
-                <p>Running: beginner</p> 
+                <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
                 </div>
                 
                 <div class="card-wrapper">
