@@ -3,38 +3,39 @@
         <div class="card card-expanded" id="alignToLeft">
             <div class="card-strip-expanded"></div>
             <div class="card-block">
-                <div class="card-strip"></div>
-               
 
-                <h2>{{activity.subcategory.name}}</h2>
-                <h2 class="card-title">{{activity.name}}</h2>
-                <p>{{activity.description}}</p>  
+                <div class="card-wrapper">
+                    <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButton"></a>
+                    <h2>{{activity.subcategory.name}}</h2>
+                    <h1>{{activity.name}}</h1>
+                    <p>{{activity.description}}</p>
+                </div>
 
                 <div class="card-expanded-space"></div>
-                
+
                 <div class="card-wrapper">
                     <h2-black>Time and location</h2-black>
-                    <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE  'at' H a"}}</p>
+                    <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}}</p>
                 </div>
-                
-      <!--
+
+
                 <div class="card-wrapper">
-                <h2-black>Participants</h2-black>
-                <p>O O O O O O O O O O O O</p>
-                <p>Matti and 2 other friends are going</p>
+                    <h2-black>Participants</h2-black>
+                    <p>O O O O O O O O O O O O</p>
+                    <p>Matti and 2 other friends are going</p>
                 </div>
-      -->
-                
+
+
                 <div class="card-wrapper">
-                <h2-black>Skill Level</h2-black>
-                <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
+                    <h2-black>Skill Level</h2-black>
+                    <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
                 </div>
-                
+
                 <div class="card-wrapper">
-                <h2-black>About the Hoster</h2-black>
-                <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
-                <p>{{activity.creator.surname}} {{activity.creator.lastname}}</p>
-                <p>+ 3 running</p>
+                    <h2-black>About the Hoster</h2-black>
+                    <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
+                    <p>{{activity.creator.surname}} {{activity.creator.lastname}}</p>
+                    <p>+ 3 running</p>
                 </div>
 
                 <div class="button-bottom-container">
