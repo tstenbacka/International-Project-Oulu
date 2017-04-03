@@ -1,10 +1,15 @@
-app.controller('MainController', ['$scope', function($scope) {
+app.controller('MainController', ['$scope','sharedProperties','$route', function($scope, sharedProperties, $route ) {
     //$scope.signInTxt = 'Sign In';
     $scope.newActivityTxt = 'New Activity';
     $scope.searchTxt = "I Want To ...";
     $scope.login = true;
     $scope.profile = false;
-
+    
+    
+    $scope.objectValue = '';
+    sharedProperties.setProperty($scope.objectValue);
+    
+    
     $scope.loggedIn = function () {
         if(document.cookie.length > 0) {
             $scope.profile = true;
