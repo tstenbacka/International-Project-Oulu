@@ -4,7 +4,6 @@ app.controller('ExpandedActivityController', ['$scope','$http','$routeParams', f
         $scope.activity = response.data[$routeParams.id];
         console.log($routeParams.id);
     }, function(response){
-        $scope.activities = "Something went wrong";
-        console.log("WRONG");
+        console.log("Couldn't fetch data");
     });
 }]);
