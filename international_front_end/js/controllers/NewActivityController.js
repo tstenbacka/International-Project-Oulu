@@ -3,11 +3,18 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     
   
     $scope.loadDatePicker = function () {
-        $('#datepicker').datepicker();
+        $('#datepicker').datepicker({
+            dateFormat: "dd.mm.yy"
+        });
     }
     
     $scope.loadTimePicker = function () {
-        $('#timepicker').timepicker({ 'scrollDefault': 'now' });
+        $('#timepicker').timepicker({ 
+            scrollDefault: "now",
+            beforeShow: function(){
+            $(".ui-timepicker").css('font-size', '200px')
+        }
+        });
     }
         
 
@@ -71,6 +78,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     ];
 
     $scope.frequencies = [
+        'Only once',
         'Daily',
         'Weekly',
         'Monthly'

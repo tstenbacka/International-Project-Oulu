@@ -54,12 +54,14 @@
                     <div class="row-category" id="label-text">
                         <h2-black>{{ activityHints.hintCategory }}</h2-black>
                         <br>
-                        <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
+                        <select class="dropdownInput" ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> 
+                        <option value="" disabled selected>Chose category</option></select>
                     </div>
                     <div class="row-date" id="label-text">
                         <h2-black>Date</h2-black>
                         <br>
                         <input class="dateInput" ng-model="activityInformation.date" type="text" id="datepicker"  required>  {{ loadDatePicker() }}
+                        
                     </div>
                     <div class="row-time" id="label-text">
                         <h2-black>Time</h2-black>
@@ -70,18 +72,21 @@
                     <div class="row-frequency" id="label-text">
                         <h2-black>{{ activityHints.hintFrequency }}</h2-black>
                         <br>
-                        <select ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies"> </select>
+                        <select class="dropdownInput" ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies" required>
+                        <option value="" disabled selected>Chose frequency</option></select>
                     </div>
                     <div class="row-duration" id="label-text">
                         <h2-black>{{ activityHints.hintDuration }}</h2-black>
                         <br>
-                        <input type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" id="borderless" required>
+                        
+                        <input class="durationInput"  type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" id="borderless" required>
                         <p>hours</p>
+                                                
                     </div>
                     <div class="row-participants" id="label-text">
                         <h2-black>{{ activityHints.hintParticipantAmount }}</h2-black>
                         <br>
-                        <input type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" id="borderless" required>
+                        <input class="participantsInput" type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" id="borderless" required>
                     </div>
                     <h2-black>{{activityHints.hintLocation}}</h2-black>
                     <div class="inputs"><span class="add-on"><i></i></span>
@@ -94,7 +99,7 @@
                     <div class="row-skill" id="label-text">
                         <h2-black>{{ activityHints.hintSkillLevel }}</h2-black>
                         <br>
-                        <select ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required> </select>
+                        <select class="dropdownInput" ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required><option value="" disabled selected>Chose skill level</option> </select>
                     </div>
                     <div>
                         <input class="mainButton" type="submit" value="Create">
