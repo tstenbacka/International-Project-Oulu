@@ -2,6 +2,7 @@ app.controller('ExpandedActivityController', ['$scope','$http','$routeParams', f
     $scope.test = "Test";
     $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/').then(function(response) {
         $scope.activity = response.data[$routeParams.id];
+        $scope.currentId = $routeParams.id;
         console.log($routeParams.id);
     }, function(response){
         console.log("Couldn't fetch data");
