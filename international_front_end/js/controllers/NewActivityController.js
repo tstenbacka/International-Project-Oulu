@@ -1,5 +1,22 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
     $scope.viewTitle = 'Create Activity';
+    
+  
+    $scope.loadDatePicker = function () {
+        $('#datepicker').datepicker({
+            dateFormat: "dd.mm.yy"
+        });
+    }
+    
+    $scope.loadTimePicker = function () {
+        $('#timepicker').timepicker({ 
+            scrollDefault: "now",
+            beforeShow: function(){
+            $(".ui-timepicker").css('font-size', '200px')
+        }
+        });
+    }
+        
 
     $scope.activityHints = {
         hintCategory: 'Category',
@@ -53,26 +70,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         userAmount: 0,
 
     };
-    
-    function GetActivityLocation() {
-        var geocoder = new google.maps.Geocoder();              
-        var actLocation =  document.getElementById("ActivityLocation").value;
-        var contry = document.getElementById("actcountry").value;
-        var address = actLocation + " " + contry;
-        geocoder.geocode({ 'address': address }, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                var lati = results[0].geometry.location.lat();
-                var longi = results[0].geometry.location.lng();               
-                $scope.activityInformation.locationX = lati;
-                $scope.activityInformation.locationY = longi;
-                alert("Latitude: " + lati + "\nLongitude: " + longi );
-                }
-            else {
-                alert("Request failed.");
-                }
-            });
-    }; 
-    
 
     $scope.skillLevels = [
         'Beginner',
@@ -81,6 +78,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     ];
 
     $scope.frequencies = [
+        'Only once',
         'Daily',
         'Weekly',
         'Monthly'
@@ -168,8 +166,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
                 alert("Request failed.");
                 }
             });
-        
-        
            /* var data = $scope.activityInformation;    
             var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
             console.log(JSON.stringify(data));
