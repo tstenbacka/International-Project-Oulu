@@ -6,7 +6,8 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
         $(document).ready(function () {
             $('#ui-datepicker').datepicker({
-                dateFormat: "yy/mm/dd"
+                dateFormat: "yy/mm/dd",
+                altField: "#ui-datepicker"
             });
         });
     }
