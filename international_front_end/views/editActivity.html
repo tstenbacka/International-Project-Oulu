@@ -1,12 +1,14 @@
-<div ng-controller="ExpandedActivityController">
+<div ng-controller="NewActivityController">
     <div class="card-container">
         <div class="card card-expanded" id="alignToLeft">
             <div class="card-strip-expanded"></div>
             <div class="card-block">
                 <div class="card-wrapper">
                     <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButton"></a>
-                    <h2>{{activity.subcategory.name}}</h2>
-                    <h1>{{activity.name}}</h1>
+                    <!--<h2>{{activity.subcategory.name}}</h2>-->
+                    <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
+                    <!-- <h1>{{activity.name}}</h1>-->
+                   <input type="text" class="inputs" ng-model="activityInformation.name" placeholder={{activityHints.hintTitlePlaceholder}} required> 
                     <p>{{activity.description}}</p>
                 </div>
 
