@@ -3,13 +3,13 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     
   
     $scope.loadDatePicker = function () {
-        $('#datepicker').datepicker({
+        $('#ui-datepicker').datepicker({
             dateFormat: "dd.mm.yy"
         });
     }
     
     $scope.loadTimePicker = function () {
-        $('#timepicker').timepicker({ 
+        $('#ui-timepicker').timepicker({ 
             scrollDefault: "now",
             beforeShow: function(){
             $(".ui-timepicker").css('font-size', '200px')
