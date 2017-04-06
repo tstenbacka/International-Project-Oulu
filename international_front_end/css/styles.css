@@ -370,6 +370,7 @@ NEW ACTIVITY
     letter-spacing: 0.1pt;
     padding-bottom: 12px;
     font-size: 1.25em;
+    z-index: 2;
 }
 
 .timeInput {
@@ -380,6 +381,7 @@ NEW ACTIVITY
     font-weight: 400;
     letter-spacing: 0.1pt;
     font-size: 1.25em;
+    z-index: 2;
 }
 
 .dropdownInput {
