@@ -3,6 +3,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
 
     $scope.loadDatePicker = function () {
+
         $('#datepicker').datepicker({
             
             dateFormat: 'yy-mm-dd',
@@ -17,6 +18,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     }
 
     $scope.loadTimePicker = function () {
+
 
         $('#timepicker').timepicker({
             'scrollDefault': 'now',
@@ -34,8 +36,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         time: ''
     };
 
-
-
     $scope.activityHints = {
         hintCategory: 'Category',
         hintTitle: 'Name',
@@ -49,10 +49,12 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         hintLocation: 'Activity location',
         hintCountry: 'Country',
 
+
         hintTitlePlaceholder: 'Running in the 90s',
         hintDescriptionPlaceholder: 'Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)',
         hintLocationPlaceholder: 'Address or location',
         hintCountryPlaceholder: 'Country'
+
     };
 
     var userObject = JSON.parse(document.cookie);
@@ -71,8 +73,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         searchDistance: userObject.searchDistance,
         username: userObject.username
     };
-
-    //'2017-03-20T00:00:00Z'
 
     $scope.activityInformation = {
         creator: $scope.user,
