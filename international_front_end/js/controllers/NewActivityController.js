@@ -4,22 +4,37 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
     $scope.loadDatePicker = function () {
 
-        $(document).ready(function () {
-            $('#ui-datepicker').datepicker({
-                dateFormat: "yy/mm/dd",
-                altField: "#ui-datepicker"
-            });
+        $('#datepicker').datepicker({
+            
+            dateFormat: 'yy-mm-dd',
+            onSelect: function (dateText, inst) {
+                var dateAsString = dateText; //the first parameter of this function
+                var dateAsObject = $(this).datepicker('getDate'); //the getDate method
+
+                $scope.dateTimeHolder.date = '' + dateAsString;
+                console.log("" + $scope.dateTimeHolder.date)
+            }
         });
     }
 
     $scope.loadTimePicker = function () {
-        $(document).ready(function () {
-            $('#ui-timepicker').timepicker({
-                scrollDefault: "now",
-            });
+
+
+        $('#timepicker').timepicker({
+            'scrollDefault': 'now',
+            'timeFormat': 'H:i'
+        });
+
+        $('#timepicker').on('changeTime', function () {
+            $scope.dateTimeHolder.time = $(this).val();
+            console.log("" + $scope.dateTimeHolder.time);
         });
     }
 
+    $scope.dateTimeHolder = {
+        date: '',
+        time: ''
+    };
 
     $scope.activityHints = {
         hintCategory: 'Category',
@@ -32,12 +47,14 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         hintParticipantAmount: 'Participants',
         hintSkillLevel: 'Skill level',
         hintLocation: 'Activity location',
-        hintContry: 'Contry',
+        hintCountry: 'Country',
+
 
         hintTitlePlaceholder: 'Running in the 90s',
         hintDescriptionPlaceholder: 'Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)',
         hintLocationPlaceholder: 'Address or location',
-        hintContryPlaceholder: 'Contry'
+        hintCountryPlaceholder: 'Country'
+
     };
 
     var userObject = JSON.parse(document.cookie);
@@ -59,17 +76,18 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
     $scope.activityInformation = {
         creator: $scope.user,
-        dateTime: '2017-03-20T00:00:00Z',
+        dateTime: '',
         description: '',
+        distanceToPerson: 0,
         duration: 0,
         frequency: '',
+        locationX: '',
+        locationY: '',
         name: '',
         participants: [],
         skilllevel: '',
         subcategory: '',
         tags: [],
-        locationX: '',
-        locationY: '',
         userAmount: 0,
 
     };
@@ -137,6 +155,16 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         var actLocation = document.getElementById("ActivityLocation").value;
         var contry = document.getElementById("actcountry").value;
         var address = actLocation + " " + contry;
+
+
+        // DATETIME PARSING
+        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.dateTimeHolder.time + ':00Z';
+        DT = DT.replace(/\s+/g, '');
+
+        $scope.activityInformation.dateTime = DT;
+
+        console.log('' + $scope.activityInformation.dateTime);
+
         geocoder.geocode({
             'address': address
         }, function (results, status) {
