@@ -1,15 +1,40 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
     $scope.viewTitle = 'Create Activity';
-    
-  
+
+
     $scope.loadDatePicker = function () {
-        $('#datepicker').datepicker();
+        $('#datepicker').datepicker({
+
+            dateFormat: 'yy-mm-dd',
+            onSelect: function (dateText, inst) {
+                var dateAsString = dateText; //the first parameter of this function
+                var dateAsObject = $(this).datepicker('getDate'); //the getDate method
+
+                $scope.dateTimeHolder.date = '' + dateAsString;
+                console.log("" + $scope.dateTimeHolder.date)
+            }
+        });
     }
-    
+
     $scope.loadTimePicker = function () {
-        $('#timepicker').timepicker({ 'scrollDefault': 'now' });
+        $('#timepicker').timepicker({
+            'scrollDefault': 'now',
+            'timeFormat': 'H:i'
+
+        });
+
+        $('#timepicker').on('changeTime', function () {
+            $scope.dateTimeHolder.time = $(this).val();
+            console.log("" + $scope.dateTimeHolder.time);
+        });
     }
-        
+
+    $scope.dateTimeHolder = {
+        date: '',
+        time: ''
+    };
+
+
 
     $scope.activityHints = {
         hintCategory: 'Category',
@@ -21,16 +46,16 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         hintDuration: 'Duration of activity',
         hintParticipantAmount: 'Participants',
         hintSkillLevel: 'Skill level',
-        hintLocation:'Activity location',
-        hintContry:'Contry',
-        
+        hintLocation: 'Activity location',
+        hintCountry: 'Country',
+
         hintTitlePlaceholder: 'Running in the 90s',
         hintDescriptionPlaceholder: 'Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)',
         hintLocationPlaceholder: 'Address or location',
-        hintContryPlaceholder:'Contry'
+        hintCountryPlaceholder: 'Country'
     };
-    
-        var userObject = JSON.parse(document.cookie);
+
+    var userObject = JSON.parse(document.cookie);
 
     $scope.user = {
         dayOfBirth: userObject.dayOfBirth,
@@ -46,20 +71,23 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         searchDistance: userObject.searchDistance,
         username: userObject.username
     };
-    
+
+    //'2017-03-20T00:00:00Z'
+
     $scope.activityInformation = {
         creator: $scope.user,
-        dateTime: '2017-03-20T00:00:00Z',
+        dateTime: '',
         description: '',
+        distanceToPerson: 0,
         duration: 0,
         frequency: '',
+        locationX: '',
+        locationY: '',
         name: '',
-        participants:[],
+        participants: [],
         skilllevel: '',
         subcategory: '',
         tags: [],
-        locationX: '',
-        locationY: '',
         userAmount: 0,
 
     };
@@ -77,110 +105,127 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     ];
 
     $scope.categories = [
-        {id: 1,
-         name : 'soccer',
-         ratings: [],
-         type: "Models.Subcategory"
+        {
+            id: 1,
+            name: 'soccer',
+            ratings: [],
+            type: "Models.Subcategory"
         },
-        {id: 2,
-         name : 'cricket',
-         ratings: [],
-         type: "Models.Subcategory"
+        {
+            id: 2,
+            name: 'cricket',
+            ratings: [],
+            type: "Models.Subcategory"
         },
-        {id: 3,
-         name : 'basketball',
-         ratings: [],
-         type: "Models.Subcategory"
+        {
+            id: 3,
+            name: 'basketball',
+            ratings: [],
+            type: "Models.Subcategory"
         },
-        {id: 4,
-         name : 'Lan party',
-         ratings: [],
-         type: "Models.Subcategory"
+        {
+            id: 4,
+            name: 'Lan party',
+            ratings: [],
+            type: "Models.Subcategory"
         },
-        {id: 5,
-         name : 'Online gaming',
-         ratings: [],
-         type: "Models.Subcategory"
+        {
+            id: 5,
+            name: 'Online gaming',
+            ratings: [],
+            type: "Models.Subcategory"
         },
-        {id: 6,
-         name : 'concert',
-         ratings: [],
-         type: "Models.Subcategory"
+        {
+            id: 6,
+            name: 'concert',
+            ratings: [],
+            type: "Models.Subcategory"
         }
     ];
-    
 
-        
+
+
 
 
     $scope.submitActivityForm = function () {
         /* while compiling form , angular creates this object*/
-        
-        var geocoder = new google.maps.Geocoder();              
-        var actLocation =  document.getElementById("ActivityLocation").value;
+
+        var geocoder = new google.maps.Geocoder();
+        var actLocation = document.getElementById("ActivityLocation").value;
         var contry = document.getElementById("actcountry").value;
         var address = actLocation + " " + contry;
-        geocoder.geocode({ 'address': address }, function (results, status) {
+
+
+        // DATETIME PARSING
+        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.dateTimeHolder.time + ':00Z';
+        DT = DT.replace(/\s+/g, '');
+
+        $scope.activityInformation.dateTime = DT;
+
+        console.log('' + $scope.activityInformation.dateTime);
+
+        geocoder.geocode({
+            'address': address
+        }, function (results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 var lati = results[0].geometry.location.lat();
-                var longi = results[0].geometry.location.lng();               
+                var longi = results[0].geometry.location.lng();
                 $scope.activityInformation.locationX = lati;
                 $scope.activityInformation.locationY = longi;
                 //alert("Latitude: " + lati + "\nLongitude: " + longi );
-                
-                
-                var data = $scope.activityInformation;    
+
+
+                var data = $scope.activityInformation;
                 var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
                 console.log(JSON.stringify(data));
                 var userObject = JSON.parse(document.cookie);
                 // var y = 'Bearer ' + userObject.token;
                 //console.log(y);
-                $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;     
-                
-                $http.post(url, data)
-                .then(
-                    function(response){
-                        // success callback
-                        console.log("SUCCESS");
-                        //console.log(response);
+                $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;
 
-                    },
-                    function(response){
-                        // failure callback
-                        console.log("FAILURE");
-                        //console.log(response);
-                    }
-                );
+                $http.post(url, data)
+                    .then(
+                        function (response) {
+                            // success callback
+                            console.log("SUCCESS");
+                            //console.log(response);
+
+                        },
+                        function (response) {
+                            // failure callback
+                            console.log("FAILURE");
+                            //console.log(response);
+                        }
+                    );
 
                 $location.path('/').replace();
-                    }
-            else {
+            } else {
                 alert("Request failed.");
-                }
-            });
-           /* var data = $scope.activityInformation;    
-            var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
-            console.log(JSON.stringify(data));
-            var userObject = JSON.parse(document.cookie);
-            // var y = 'Bearer ' + userObject.token;
-            //console.log(y);
-            $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;     
+            }
+        });
+        /* var data = $scope.activityInformation;    
+         var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
+         console.log(JSON.stringify(data));
+         var userObject = JSON.parse(document.cookie);
+         // var y = 'Bearer ' + userObject.token;
+         //console.log(y);
+         $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;     
 
-            $http.post(url, data)
-            .then(
-                function(response){
-                    // success callback
-                    console.log("SUCCESS");
-                    //console.log(response);
+         $http.post(url, data)
+         .then(
+             function(response){
+                 // success callback
+                 console.log("SUCCESS");
+                 //console.log(response);
 
-                },
-                function(response){
-                    // failure callback
-                    console.log("FAILURE");
-                    //console.log(response);
-                }
-            );
+             },
+             function(response){
+                 // failure callback
+                 console.log("FAILURE");
+                 //console.log(response);
+             }
+         );
 
-            $location.path('/').replace();*/
-        }  
+         $location.path('/').replace();*/
+    }
 }]);
