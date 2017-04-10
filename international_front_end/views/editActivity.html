@@ -8,8 +8,9 @@
                     <!--<h2>{{activity.subcategory.name}}</h2>-->
                     <select ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> </select>
                     <!-- <h1>{{activity.name}}</h1>-->
-                   <input type="text" class="inputs" ng-model="activityInformation.name" placeholder={{activityHints.hintTitlePlaceholder}} required> 
-                    <p>{{activity.description}}</p>
+                   <input type="text" class="inputs" ng-model="activityInformation.name" placeholder={{activityHints.hintTitlePlaceholder}} required>
+                    <!--<p>{{activity.description}}</p>-->
+                    <textarea ng-model="activityInformation.description" class="activity-description" id="borderless" maxlength="140" rows="6" cols="40" placeholder={{activityHints.hintDescriptionPlaceholder}} required></textarea>
                 </div>
 
                 <div class="card-expanded-space"></div>
@@ -17,6 +18,17 @@
                 <div class="card-wrapper">
                     <h2-black>Time and location</h2-black>
                     <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}}</p>
+                    <input class="timeInput" type="datetime" ng-model="activityInformation.dateTime" id="borderless"  required>
+                    <select ng-model="activityInformation.frequency" ng-options="frequency for frequency in frequencies"> </select>
+                    
+                    <h2-black>{{activityHints.hintLocation}}</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
+                    </div>
+                    <h2-black>{{activityHints.hintCountry}}</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="actcountry" placeholder={{activityHints.hintContryPlaceholder}} required>
+                    </div>
                 </div>
 
 
@@ -30,6 +42,7 @@
                 <div class="card-wrapper">
                     <h2-black>Skill Level</h2-black>
                     <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
+                    <select ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required> </select>
                 </div>
 
                 <div class="card-wrapper">
