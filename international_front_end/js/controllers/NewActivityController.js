@@ -4,7 +4,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
     $scope.loadDatePicker = function () {
         $('#datepicker').datepicker({
-
+            
             dateFormat: 'yy-mm-dd',
             onSelect: function (dateText, inst) {
                 var dateAsString = dateText; //the first parameter of this function
@@ -17,10 +17,10 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     }
 
     $scope.loadTimePicker = function () {
+
         $('#timepicker').timepicker({
             'scrollDefault': 'now',
             'timeFormat': 'H:i'
-
         });
 
         $('#timepicker').on('changeTime', function () {
@@ -99,6 +99,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     ];
 
     $scope.frequencies = [
+        'Only once',
         'Daily',
         'Weekly',
         'Monthly'
