@@ -1,7 +1,11 @@
 app.controller('EditActivityController', ['$scope','$http','$routeParams', function($scope, $http, $routeParams) {
     $scope.test = "Test";
+    $scope.testTitle = "";
     $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/').then(function(response) {
         $scope.activity = response.data[$routeParams.id];
+        $scope.testTitle = response.data.name + "";
+        console.log("scope testTitle" + $scope.testTitle);
+        console.log("response.data.title" + response.data.name);
         console.log($routeParams.id);
     }, function(response){
         console.log("Couldn't fetch data");
@@ -20,7 +24,7 @@ app.controller('EditActivityController', ['$scope','$http','$routeParams', funct
         hintLocation:'Activity location',
         hintContry:'Contry',
         
-        hintTitlePlaceholder: 'Running in the 90s',
+        hintTitlePlaceholder: 'Title placeholder',
         hintDescriptionPlaceholder: 'Let’s get active this year! Join us every monday jogging throught Ainolan park to the end of Oulu river. Beginners welcome :)',
         hintLocationPlaceholder: 'Address or location',
         hintContryPlaceholder:'Contry'
