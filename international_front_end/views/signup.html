@@ -17,95 +17,97 @@
                     <div class="inputs-container">
                         <div class="inputs"><span class="add-on"><i></i></span>
 
-                            <input type="text" class="input-register-right" ng-model="signInformation.firstname" id="firstname" name="" placeholder={{SignUpHolders.surnameHolder}} required>
+                            <input type="text" class="input-register-right" ng-model="signInformation.firstname" id="firstName" name="" placeholder={{SignUpHolders.surnameHolder}} required>
 
 
-                            <input type="text" class="input-register" ng-model="signInformation.lastname" id="Lastname" name="" placeholder={{SignUpHolders.lastnameHolder}} required>
+                            <input type="text" class="input-register" ng-model="signInformation.lastname" id="lastName" name="" placeholder={{SignUpHolders.lastnameHolder}} required>
                         </div>
                         <h2-black>Date of Birth</h2-black>
                         <div class="inputs"><span class="add-on"><i></i></span>
-                            <input class="dateInput" ng-model="activityInformation.date" type="text" id="datepicker"  required>  {{ loadDatePicker() }}
+                            <input class="dateInput" ng-model="activityInformation.date" type="text" id="datepicker" required> {{ loadDatePicker() }}
                         </div>
                         <h2-black>Password</h2-black>
                         <h4>{{signupError}}</h4>
                         <div class="inputs"><span class="add-on"><i></i></span>
-                            <input type="password" class="input-register-right" ng-model="signInformation.password" id="Password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
-                            <input type="password" class="input-register" ng-model="pass2" id="pass2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+                            <input type="password" class="input-register-right" ng-model="signInformation.password" id="password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+                            <input type="password" class="input-register" ng-model="pass2" id="password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
                         </div>
                         <div class="input-space"></div>
                     </div>
                     <div class="button-bottom-container">
-                    <input type="button" class="mainButton" value="Continue" ng-click="forwardStart()" />
-                        </div>
+                        <input type="button" class="mainButton" value="Continue" ng-click=" forwardStart()" />
+                    </div>
                 </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
-    <!-- POSTAL CODE VIEW -->
-    <div class="card-expanded-block" ng-model="checkPostal" ng-show="checkPostal">
-        <h1>Find Activities Nearby</h1>
-        <br>
-        <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location</p>
-        <form action="" method="post">
-            <div class="card-expanded-container">
-                <h2-black>Postal Code</h2-black>
-                <div class="inputs"><span class="add-on"><i></i></span>
-                    <input type="text" class="input-register-middle" id="postcode" placeholder={{SignUpHolders.postalCodeHoler}} required>
-                </div>
-                <h2-black>Country</h2-black>
-                <div class="inputs"><span class="add-on"><i></i></span>
-                    <input type="text" class="input-register-middle" id="country" placeholder={{SignUpHolders.contryHolder}} required>
-                </div>
-                <div class="button-bottom-container">
-                    <input type="button" value="Previous" class="button-row-left" ng-click="backwardsPostal()" />
-
-                    <input type="button" value="Next" class="button-row-right" ng-click="forwardPostal()" />
-                </div>
-
-            </div>
-        </form>
-
-    </div>
-
-    <!-- EMAIL CONFIRMATION VIEW -->
-    <div class="card-expanded-block" ng-model="checkEmail" ng-show="checkEmail">
-        <h1>Almost There...</h1>
-        <br>
-        <p> You're almost done! We still need your email so we can verify your account. Dont't worry. We hate spam mail as much as you do. So we promise not to send you any.</p>
-        <form action="" method="post">
-            <div class="card-expanded-container">
-                <h2-black>Email</h2-black>
-                <div class="inputs"><span class="add-on"><i></i></span>
-                    <input type="email" ng-model="signInformation.email" class="input-register-middle" placeholder={{SignUpHolders.emailHolder}} required>
-                </div>
-                <h2>Username</h2>
-                <input type="username" ng-model="signInformation.username" class="input-register-middle" placeholder={{SignUpHolders.usernameHolder}} required>
-                <div class="button-bottom-container">
-                    <input type="button" value="Previous" class="button-row-left" ng-click="backwardEmail()" />
-                    <input type="button" value="Next" class="button-row-right" ng-click="forwardEmail()" />
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <!-- ALL DONE VIEW -->
-    <div class="card-expanded-block" ng-model="checkDone" ng-show="checkDone">
-        <h1>All Done.</h1>
-        <br>
-        <p> Great work there. Now you're ready to start exploring intresting new activities around the city and post your own for most epic dragon slaying time ever!</p>
-        <form action="" method="post">
+        <!-- POSTAL CODE VIEW -->
+        <div class="card-expanded-block" ng-model="checkPostal" ng-show="checkPostal">
+            <h1>Find Activities Nearby</h1>
             <br>
-            <div class="button-bottom-container">
-            <input type="button" value="Let's Roll" class="mainButton" ng-click="letsRoll()" />
-            </div>
+            <p> Please fill in your postal code below. By doing this you can see nearby activities effortlessly. Alternatively, you can drop pin to your location</p>
+            <form action="" method="post">
+                <div class="card-expanded-container">
+                    <h2-black>Postal Code</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="postcode" placeholder={{SignUpHolders.postalCodeHoler}} required>
+                    </div>
+                    <h2-black>Country</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="text" class="input-register-middle" id="country" placeholder={{SignUpHolders.contryHolder}} required>
+                    </div>
+                    <div class="button-bottom-container">
+                        <input type="button" value="Previous" class="button-row-left" ng-click="backwardsPostal()" />
+
+                        <input type="button" value="Next" class="button-row-right" ng-click="forwardPostal()" />
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+        <!-- EMAIL CONFIRMATION VIEW -->
+        <div class="card-expanded-block" ng-model="checkEmail" ng-show="checkEmail">
+            <h1>Almost There...</h1>
             <br>
-        </form>
+            <p> You're almost done! We still need your email so we can verify your account. Dont't worry. We hate spam mail as much as you do. So we promise not to send you any.</p>
+            <form action="" method="post">
+                <div class="card-expanded-container">
+                    <h2-black>Email</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="email" ng-model="signInformation.email" class="input-register-middle" id="email" placeholder={{SignUpHolders.emailHolder}} required>
+                    </div>
+                    <h2-black>Username</h2-black>
+                    <div class="inputs"><span class="add-on"><i></i></span>
+                        <input type="username" ng-model="signInformation.username" class="input-register-middle" id="username" placeholder={{SignUpHolders.usernameHolder}} required>
+                    </div>
+                    <div class="button-bottom-container">
+                        <input type="button" value="Previous" class="button-row-left" ng-click="backwardEmail()" />
+                        <input type="button" value="Next" class="button-row-right" ng-click="forwardEmail()" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- ALL DONE VIEW -->
+        <div class="card-expanded-block" ng-model="checkDone" ng-show="checkDone">
+            <h1>All Done.</h1>
+            <br>
+            <p> Great work there. Now you're ready to start exploring intresting new activities around the city and post your own for most epic dragon slaying time ever!</p>
+            <form action="" method="post">
+                <br>
+                <div class="button-bottom-container">
+                    <input type="button" value="Let's Roll" class="mainButton" ng-click="letsRoll()" />
+                </div>
+                <br>
+            </form>
+        </div>
     </div>
 </div>
-</div>
 
 
-  <!-- JEREN KOODI, ÄLÄ POISTA!
+<!-- JEREN KOODI, ÄLÄ POISTA!
   <div class="card-expanded">
 		<div class="card-expanded-block" ng-model="checkStart" ng-if="checkStart == true" ng-show="forwardStart">
             
@@ -208,4 +210,3 @@
 	</div>
 </div> 
 JEREN KOODI LOPPUU, ÄLÄ POISTA! -->
-

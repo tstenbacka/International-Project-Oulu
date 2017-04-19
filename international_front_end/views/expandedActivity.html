@@ -1,4 +1,4 @@
-<div ng-controller="ExpandedActivityController">
+<div ng-controller="ExpandedActivityController" ng-init="loadCardInfo()">
     <div class="card-container">
         <div class="card card-expanded" id="alignToLeft">
             <div class="card-strip-expanded"></div>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="button-bottom-container">
-                    <input type="button" value="Join Activity" class="mainButton" />
+                    <input type="button" value="Join Activity" class="mainButton" ng-click="joinActivityPressed()" />
                 </div>
             </div>
         </div>
