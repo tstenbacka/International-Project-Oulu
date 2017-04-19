@@ -325,6 +325,18 @@ CARD  |  EXPANDED
     margin-top: 58px;
 }
 
+/************************
+CARD  |  EXPANDED  |  EDIT
+************************/
+
+.title-edit {
+    font-size: 2.25em;
+    display: block;
+    color: #4A4A4A;
+    font-weight: bold;
+    letter-spacing: 0.5pt;
+}
+
 
 /************************
 NEW ACTIVITY
@@ -342,6 +354,13 @@ NEW ACTIVITY
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     background-color: white;
     z-index:1;  
+}
+
+.closeButtonNewActivity {
+    float: right;
+    width: 27px;
+    margin-top: -25px;
+    margin-right: -7px;
 }
 
 #label-text {
@@ -408,7 +427,15 @@ LOG IN
 
 .closeButton {
     float: right;
-    opacity: 0.9;
+    width: 32px;
+}
+
+.background-drawer {
+    margin-top: -80px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .login-main {
@@ -417,7 +444,7 @@ LOG IN
     margin: -80px 0 0 0;
     min-height: 100vh;
     width: 470px;
-    padding: 47px 45px 20px 45px;
+    padding: 38px 38px 38px 45px;
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
@@ -557,8 +584,10 @@ CREATE NEW USER
 }
 
 .profile-picture-big {
-    width: 50%;
-    margin-left: 25%;
+    width: 210px;
+    height: 210px;
+    margin-left: 18%;
+    margin-bottom: 25px;
 }
 
 .button-bottom {
@@ -571,4 +600,18 @@ CREATE NEW USER
     font-size: 1em;
     text-align: center;
     letter-spacing: 0.1pt;
+}
+
+.closeButtonProfile {
+    float: left;
+    width: 27px;
+    margin-top: -15px;
+    margin-left: -7px;
+}
+
+.joined-activities {
+    padding-top: 32px;
+}
+
+.hosted-activities {
 }

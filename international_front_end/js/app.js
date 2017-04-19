@@ -47,7 +47,7 @@ $locationProvider.hashPrefix('');
       templateUrl: "views/expandedActivity.html"
     })
     .when('/editactivity/:id', {
-      controller: "ExpandedActivityController",
+      controller: "EditActivityController",
       templateUrl: "views/editActivity.html"
     })
     .otherwise({

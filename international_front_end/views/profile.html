@@ -1,12 +1,25 @@
+<div class="background-drawer" onclick="location.href='index.html';"></div>
 <div class="login-main">
-    <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButton"></a>
+    <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButtonProfile"></a>
     <img src="img/UserIcon%20@2x.png" alt="" class="profile-picture-big">
-    <h1 id="alignToCenter">{{ProfileHolders.username}}</h1>
+    <h1 id="alignToCenter">{{ProfileHolders.firstname}} {{ProfileHolders.lastname}}</h1>
 
-    <p style="text-align: center">
-        {{ProfileHolders.firstname}} {{ProfileHolders.lastname}}</p>
+    <p style="text-align: center"> {{ProfileHolders.username}}</p>
  
-    <div class="button-bottom">
+    <div class="joined-activities"  id="label-text">
+        <a href="index.html">
+        <h2>Joined Activities</h2>
+        <p>You have joined 4 activities</p>
+        </a>
+    </div>
+    <div class="hosted-activities" id="label-text">
+        <a href="index.html">
+        <h2>Hosted Activities</h2>
+        <p>3 Activities coming next week</p>
+        </a>
+    </div>
+  
+    <div class="mainbutton">
         <input type="button" ng-click="signOut()" value="Sign Out" class="mainButton" />
         </div>
 </div>
