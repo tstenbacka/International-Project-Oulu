@@ -546,6 +546,16 @@ CREATE NEW USER
     font-size: 1.25em;
 }
 
+.button-row-right-grey {
+    background-color: gainsboro;
+    color: white;
+    height: 58px;
+    border: none;
+    float: right;
+    width: 40%;
+    font-size: 1.25em; 
+}
+
 .profile-picture-big {
     width: 50%;
     margin-left: 25%;
@@ -555,4 +565,10 @@ CREATE NEW USER
     position: absolute;
     bottom: 20px;
     width: 80%;
+}
+
+#datepicker {
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 0.1pt;
 }

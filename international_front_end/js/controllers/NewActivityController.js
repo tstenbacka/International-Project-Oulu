@@ -4,7 +4,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
     $scope.loadDatePicker = function () {
 
-        $('#datepicker').datepicker({
+        $('#datepicker1').datepicker({
             
             dateFormat: 'yy-mm-dd',
             onSelect: function (dateText, inst) {
@@ -18,15 +18,19 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     }
 
     $scope.loadTimePicker = function () {
+        
+        // Load user timezone offset
+        var offset = new Date().getTimezoneOffset();
+        console.log(offset);
 
 
         $('#timepicker').timepicker({
-            'scrollDefault': 'now',
-            'timeFormat': 'H:i'
+            scrollDefault: 'now',
+            timeFormat: 'H:i',            
         });
 
         $('#timepicker').on('changeTime', function () {
-            $scope.dateTimeHolder.time = $(this).val();
+            $scope.dateTimeHolder.time = "" + $(this).val();
             console.log("" + $scope.dateTimeHolder.time);
         });
     }
