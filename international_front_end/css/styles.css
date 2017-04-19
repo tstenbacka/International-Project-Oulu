@@ -82,6 +82,10 @@ h2-black {
     letter-spacing: 0.1pt;
 }
 
+select:invalid {
+    color: #E0E0E0;
+}
+
 /* Inputs placeholder text color */
 *::-webkit-input-placeholder {
     color: #E0E0E0;
@@ -123,6 +127,10 @@ STYLES
 
 #alignToCenter {
     text-align: center;
+}
+
+#alignToRight {
+    text-align: right;
 }
 
 /************************
@@ -327,14 +335,17 @@ NEW ACTIVITY
     margin: -80px 0 0 0;
     float: right;
     width: 470px;
-    height: 100vh;
+    min-height: 100vh;
     padding: 47px 45px 20px 45px;
     -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
     background-color: white;
-    z-index:1;
-    
+    z-index:1;  
+}
+
+#label-text {
+   padding-bottom: 30px; 
 }
 
 .createActivityLabel {
@@ -347,8 +358,48 @@ NEW ACTIVITY
     resize: none;
 }
 
-.timeInput {
+.row-skill {
+    margin-bottom: 50px;
+}
+
+.dateInput {
+    border: none;
     width: 100%;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+    padding-bottom: 12px;
+    font-size: 1.25em;
+    z-index: 2;
+}
+
+.timeInput {
+    border: none;
+    width: 100%;
+    padding-bottom: 12px;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+    font-size: 1.25em;
+    z-index: 2;
+}
+
+.dropdownInput {
+    text-indent: 1px;
+    text-overflow: '';
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    border: none;
+    background: transparent url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") no-repeat 360px;
+    font-size: 1.25em;
+    color: #9B9B9B;
+}
+
+.durationInput {
+    float: left;
+    width: 40px;
 }
 
 /************************
@@ -378,10 +429,6 @@ LOG IN
     padding-bottom: 23px;
 }
 
-#label-text {
-    padding-bottom: 30px;
-}
-
 .input-logIn {
     font-size: 1.250em;
     color: #9B9B9B;
@@ -406,10 +453,6 @@ LOG IN
 
 .NewUser {
     margin-top: 80px;
-}
-
-.login-back {
-    filter: blur(20px);
 }
 
 
@@ -503,7 +546,29 @@ CREATE NEW USER
     font-size: 1.25em;
 }
 
+.button-row-right-grey {
+    background-color: gainsboro;
+    color: white;
+    height: 58px;
+    border: none;
+    float: right;
+    width: 40%;
+    font-size: 1.25em; 
+}
+
 .profile-picture-big {
     width: 50%;
     margin-left: 25%;
+}
+
+.button-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+}
+
+#datepicker {
+    font-size: 1em;
+    text-align: center;
+    letter-spacing: 0.1pt;
 }

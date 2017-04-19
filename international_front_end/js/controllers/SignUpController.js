@@ -1,4 +1,12 @@
 app.controller('SignUpController', ['$scope','$http','$location' ,'$window', function($scope,$http ,$location, $window) {
+    
+    $scope.loadDatePicker = function () {
+        $('#datepicker').datepicker({
+            changeMonth: true,
+            yearRange: "-80:+0",
+            changeYear: true
+        });
+    }
                           
 	$scope.SignUpHolders = {
         usernameHolder: 'Username',
@@ -35,28 +43,40 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 
 	$scope.forwardStart = function (){
         
-        var password1 =  document.getElementById("Password").value;
-        var password2 =  document.getElementById("pass2").value;
+        // All inputs
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var datePicker = document.getElementById("datepicker").value;
         
         
-        if(password1 == password2){
+        var password1 =  document.getElementById("password").value;
+        var password2 =  document.getElementById("password2").value;        
+        
+        if(firstName != "" && lastName != "" && datePicker != "" && password1 == password2){
         $scope.checkStart = false;
         $scope.checkPostal = true;
 
         }
         else{
-            $scope.signupError = "Passwords does no match!"
+            window.alert("Please fill in all the boxes and check your password");
         }
  
 	};
 
-	$scope.forwardPostal = function (){	
-        $scope.checkPostal = false;
-        $scope.checkEmail = true;
-           /* window.navigator.geolocation.getCurrentPosition(function(pos){
-            console.log(pos);
-            });*/     
-        GetLocation();       
+	$scope.forwardPostal = function (){
+        
+        // All inputs
+        var postcode = document.getElementById("postcode").value;
+        var country = document.getElementById("country").value;
+        
+        if(postcode != "" && country != "") {
+            $scope.checkPostal = false;
+            $scope.checkEmail = true;
+            
+            GetLocation();   
+        } else {
+            window.alert("Please fill in all the boxes");
+        }
 	};
     
 	$scope.backwardsPostal = function (){
@@ -69,9 +89,20 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
         $scope.checkEmail = false;
 	};
     
-    $scope.forwardEmail = function (){	
-        $scope.checkDone = true;
-        $scope.checkEmail = false;
+    $scope.forwardEmail = function (){
+        
+        // All inputs
+        var email = document.getElementById("email").value;
+        var usename = document.getElementById("username").value;
+        
+        if(email != "" && usename != "") {
+            $scope.checkDone = true;
+            $scope.checkEmail = false;
+        } else {
+            window.alert("Please fill in all the boxes");
+        }
+        
+        
 
 	};
     $scope.letsRoll = function (){
