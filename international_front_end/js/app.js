@@ -46,6 +46,10 @@ $locationProvider.hashPrefix('');
       controller: "ExpandedActivityController",
       templateUrl: "views/expandedActivity.html"
     })
+    .when('/editactivity/:id', {
+      controller: "ExpandedActivityController",
+      templateUrl: "views/editActivity.html"
+    })
     .otherwise({
       redirectTo: '/'
     });
