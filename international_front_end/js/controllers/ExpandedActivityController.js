@@ -20,6 +20,8 @@ app.controller('ExpandedActivityController', ['$scope', '$http', '$routeParams',
             // Save activityID and userID for later use
             activityId = $scope.activityId;
             userId = $scope.user.id;
+            
+            console.log(userId);
 
         }, function (response) {
             console.log("Couldn't fetch data for expanded activity.");
