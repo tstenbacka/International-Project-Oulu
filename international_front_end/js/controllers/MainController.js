@@ -9,12 +9,6 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     sharedProperties.setProperty($scope.objectValue);
     
     
-    $scope.Searched = function (){
-
-    }
-
-    
-    
     $scope.loggedIn = function () {
         if(document.cookie.length > 0) {
             $scope.profile = true;
@@ -40,9 +34,22 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     }
 
     $scope.search = function () {
+
+        
+                
+        if ($scope.objectValue === ''){
+            $location.path('/').replace();
+            $route.reload();
+        }
+        else {
         var y = JSON.parse(document.cookie);
         y.search = $scope.objectValue;
         document.cookie = JSON.stringify(y);
         $location.path('/search').replace();
+        $route.reload();
+            
+            
+        }
     }
+    
 }]);

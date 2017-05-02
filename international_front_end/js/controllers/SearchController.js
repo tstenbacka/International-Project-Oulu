@@ -7,7 +7,8 @@ app.controller('SearchController', ['$scope','$http','sharedProperties','$timeou
  
   
     var search_url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities/byKey/" + $scope.searchword;
-
+    
+    
         
 
     $scope.pageInfo = 'Choose a card';  
