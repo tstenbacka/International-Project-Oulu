@@ -1,4 +1,4 @@
-app.controller('LoginController', ['$scope', '$location', '$http', function($scope, $location, $http) {
+app.controller('LoginController', ['$scope', '$location', '$http', '$cookies', function($scope, $location, $http, $cookies) {
     $scope.notHidden = true;
     $scope.loginMsg = 'Sign In';
     $scope.newUserMsg = 'New User';
@@ -32,7 +32,8 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
             config: 'Content-Type: application/json;'
            }) .then(function(response) {
              //  document.cookie = "token:" + response.data.token + " id:" + response.data.id;
-                document.cookie = JSON.stringify(response.data);
+                $cookies.put('user', JSON.stringify(response.data));
+              //  document.cookie = JSON.stringify(response.data);
                 /* Example on how to use cookies below
                 console.log(document.cookie);
 
@@ -40,6 +41,7 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
                 console.log(y.token);
                 */
                 //console.log(response.data.token);
+                console.log($cookies.get('user'));
                 $location.path('/').replace();
             }, function (response) {
             // this function handles error

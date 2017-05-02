@@ -7,10 +7,11 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     
     $scope.objectValue = '';
     sharedProperties.setProperty($scope.objectValue);
+    $scope.user = $cookies.get('user');
     
     
     $scope.loggedIn = function () {
-        if(document.cookie.length > 0) {
+        if($scope.user.length > 0) {
             $scope.profile = true;
             $scope.login = false;
             return true;
@@ -23,9 +24,8 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     }
 
     $scope.getDudesName = function () {
-        if(document.cookie.length > 0) {
-            return "asd";
-            var userObject = JSON.parse(document.cookie);
+        if($scope.user.length > 0) {
+            var userObject = JSON.parse(user);
             return userObject.username;
         }
 
@@ -34,10 +34,7 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
         }
     }
 
-    $scope.search = function () {
-
-        
-                
+    $scope.search = function () {                
         if ($scope.objectValue === ''){
             $location.path('/').replace();
             $route.reload();
