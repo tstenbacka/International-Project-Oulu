@@ -13,6 +13,18 @@ var app = angular.module("activityApp", ['ngRoute']);
             };
         });
 
+        app.service('activityIdService', function () {
+            var activityId = '';
+            
+            return {
+                getProperty: function () {
+                    return activityId;
+                },
+                setProperty: function(value) {
+                    activityId = value;
+                }            
+            };
+        });
 
 
 app.config(function ($routeProvider, $locationProvider) {
