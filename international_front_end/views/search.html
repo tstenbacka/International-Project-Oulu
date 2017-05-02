@@ -1,0 +1,11 @@
+
+<div ng-controller="SearchController">
+    <div ng-repeat="acts in activities">
+        <a href="#/activity/{{$index}}">
+            <div ng-if="$index % 4 == 0" class="clearfix"></div>
+            <div class="col-6 col-md-3">
+                <card-info info="acts"></card-info>
+            </div>
+        </a>
+    </div>
+</div>

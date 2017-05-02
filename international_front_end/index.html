@@ -69,7 +69,8 @@
             </ul>
             <form class="nav navbar-form" role="search">
                 <span class="IWantTo">I want to</span>
-                <input type="text" class="form-control-input" placeholder="" name="srch-term" id="srch-term" ng-model="objectValue"> {{objectValue}}
+                <input type="text" class="form-control-input" placeholder="" name="srch-term" id="srch-term" ng-model="objectValue">
+                <button ng-click="search()" id="search-button"></button>
             </form>
         </div>
     </nav>
@@ -88,9 +89,11 @@
     <script src="js/controllers/SignUpController.js"></script>
     <script src="js/controllers/ProfileController.js"></script>
     <script src="js/controllers/NewActivityController.js"></script>
-    <script src="js/controllers/RatingController.js"></script>
+    <script src="js/controllers/RatingController.js"></script>:
     <script src="js/controllers/ExpandedActivityController.js"></script>
-
+    <script src="js/controllers/EditActivityController.js"></script>
+    <script src="js/controllers/JoinedActivitiesController.js"></script>
+    <script src="js/controllers/SearchController.js"></script>
     <!-- Scripts -->
     
     <!--

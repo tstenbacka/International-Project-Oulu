@@ -1,8 +1,9 @@
 
+<div class="background-drawer" onclick="location.href='index.html';"></div>
 <div class="new-activity">
     <div class="createActivityLabel">
         <h1-color>{{ viewTitle }}</h1-color>
-        <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButton"></a>
+        <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButtonNewActivity"></a>
     </div>
     <div class="new-activity-bar">
         <div class="column">
@@ -29,7 +30,7 @@
                     <div class="row-date" id="label-text">
                         <h2-black>Date</h2-black>
                         <br>
-                        <input class="dateInput" ng-model="dateTimeHolder.date" type="text" id="datepicker" required> {{ loadDatePicker() }}
+                        <input class="dateInput" ng-model="dateTimeHolder.date" type="text" id="datepicker1" required> {{ loadDatePicker() }}
 
                     </div>
                     <div class="row-time" id="label-text">

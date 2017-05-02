@@ -1,6 +1,7 @@
 app.controller('CardController', ['$scope','$http','sharedProperties','$timeout','activityIdService',function($scope, $http, sharedProperties,$timeout,activityIdService) {
     
     $scope.searchword = sharedProperties.getProperty();
+
     var userObject = JSON.parse(document.cookie);
     $scope.distance = 10000;
     $scope.longitude = userObject.homeLong;
@@ -26,6 +27,7 @@ app.controller('CardController', ['$scope','$http','sharedProperties','$timeout'
     };
     
     $http.get(url_check()).then(function(response) {
+
         $scope.activities = response.data;
         console.log(response.data);
         console.log();
