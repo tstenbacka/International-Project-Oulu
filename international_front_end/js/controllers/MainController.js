@@ -1,11 +1,11 @@
-app.controller('MainController', ['$scope','sharedProperties','$route', function($scope, sharedProperties, $route ) {
+app.controller('MainController', ['$scope','sharedProperties','$route', '$location', function($scope, sharedProperties, $route, $location ) {
     //$scope.signInTxt = 'Sign In';
     $scope.newActivityTxt = 'New Activity';
     $scope.searchTxt = "I Want To ...";
     $scope.login = true;
     $scope.profile = false;
     
-    $scope.objectValue = 'jere';
+    $scope.objectValue = '';
     sharedProperties.setProperty($scope.objectValue);
     
     
@@ -37,5 +37,9 @@ app.controller('MainController', ['$scope','sharedProperties','$route', function
         else {
             return 'Sign In';
         }
+    }
+
+    $scope.search = function () {
+        $location.path('/search').replace();
     }
 }]);
