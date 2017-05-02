@@ -49,6 +49,13 @@ $locationProvider.hashPrefix('');
     .when('/search', {
         controller: "SearchController",
         templateUrl: "views/search.html"
+    .when('/editactivity/:id', {
+      controller: "EditActivityController",
+      templateUrl: "views/editActivity.html"
+    })
+    .when('/joinedActivities', {
+      controller: "JoinedActivitiesController",
+      templateUrl: "views/joinedActivities.html"
     })
     .otherwise({
       redirectTo: '/'

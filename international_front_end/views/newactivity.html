@@ -1,40 +1,9 @@
-<!--
-<div class="container" ng-controller="LoginController">
-    <div class="col-md-offset-5 col-md-3">
-    <h1>{{loginMsg}}</h1>
-<form ng-show="notHidden" name="form" ng-submit="login()" role="form">
-    <div class="form-group">
-        <label for="username">Hello</label>
-        <i class="fa fa-key"></i>
-        <input type="text" name="username" id="username" class="form-control" ng-model="userName" placeholder={{userNamePlaceholder}} required />
-        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">{{userNameHelpText}}</span>
-    </div>
-    <div class="form-group">
-        <label for="password">Password</label>
-        <i class="fa fa-lock"></i>
-        <input type="password" name="password" id="password" class="form-control" ng-model="passWord" placeholder={{passWordPlaceholder}} required />
-        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">{{passWordHelpText}}</span>
-    </div>
-    <div class="form-actions">
-        <h4>{{loginError}}</h4>
-        <button type="submit" class="btn btn-primary btn-md">{{loginMsg}}</button>
-       <br>
-      <a ng-href="#"> {{forgotPassWordMsg}}</a>
-        <br>
-        <br>
-    </div>
-</form>
-    <h2>{{newUserMsg}}</h2>
-    <button ng-click="signUp()" class="btn btn-primary btn-md">{{newUserButtonMsg}}</button>
-   </div>
-</div>
--->
 
+<div class="background-drawer" onclick="location.href='index.html';"></div>
 <div class="new-activity">
-
     <div class="createActivityLabel">
         <h1-color>{{ viewTitle }}</h1-color>
-        <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButton"></a>
+        <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButtonNewActivity"></a>
     </div>
     <div class="new-activity-bar">
         <div class="column">
@@ -55,20 +24,24 @@
                         <h2-black>{{ activityHints.hintCategory }}</h2-black>
                         <br>
                         <select class="dropdownInput" ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> 
-                        <option value="" disabled selected>Chose category</option></select>
+                        <option value="" disabled selected>Choose category</option>
+                        </select>
                     </div>
                     <div class="row-date" id="label-text">
                         <h2-black>Date</h2-black>
                         <br>
-                        <input class="dateInput" ng-model="activityInformation.date" type="text" id="ui-datepicker"  required>  {{ loadDatePicker() }}
-                        
+                        <input class="dateInput" ng-model="dateTimeHolder.date" type="text" id="datepicker1" required> {{ loadDatePicker() }}
+
                     </div>
                     <div class="row-time" id="label-text">
                         <h2-black>Time</h2-black>
                         <br>
-                        <input class="timeInput" type="text" id="ui-timepicker"  required> {{ loadTimePicker() }}
+
+                        <input class="timeInput" ng-model="dateTimeHolder.time" type="text" id="timepicker" required> {{ loadTimePicker() }}
+
+
                     </div>
-                    
+
                     <div class="row-frequency" id="label-text">
                         <h2-black>{{ activityHints.hintFrequency }}</h2-black>
                         <br>
@@ -78,10 +51,10 @@
                     <div class="row-duration" id="label-text">
                         <h2-black>{{ activityHints.hintDuration }}</h2-black>
                         <br>
-                        
-                        <input class="durationInput"  type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" id="borderless" required>
+
+                        <input class="durationInput" type="number" value="0" min="0" max="24" ng-model="activityInformation.duration" id="borderless" required>
                         <p>hours</p>
-                                                
+
                     </div>
                     <div class="row-participants" id="label-text">
                         <h2-black>{{ activityHints.hintParticipantAmount }}</h2-black>
@@ -90,16 +63,18 @@
                     </div>
                     <h2-black>{{activityHints.hintLocation}}</h2-black>
                     <div class="inputs"><span class="add-on"><i></i></span>
-                        <input type="text" class="input-register-middle" id="alignToLeft" placeholder={{activityHints.hintLocationPlaceholder}} required>
+                        <input type="text" class="input-register-middle" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
                     </div>
                     <h2-black>{{activityHints.hintCountry}}</h2-black>
                     <div class="inputs"><span class="add-on"><i></i></span>
-                        <input type="text" class="input-register-middle" id="alignToLeft" placeholder={{activityHints.hintContryPlaceholder}} required>
+                        <input type="text" class="input-register-middle" id="actcountry" placeholder={{activityHints.hintCountryPlaceholder}} required>
                     </div>
                     <div class="row-skill" id="label-text">
                         <h2-black>{{ activityHints.hintSkillLevel }}</h2-black>
                         <br>
-                        <select class="dropdownInput" ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required><option value="" disabled selected>Chose skill level</option> </select>
+                        <select class="dropdownInput" ng-model="activityInformation.skilllevel" ng-options="skillLevel for skillLevel in skillLevels" required>
+                        <option value="" disabled selected>Choose skill level</option>
+                        </select>
                     </div>
                     <div>
                         <input class="mainButton" type="submit" value="Create">

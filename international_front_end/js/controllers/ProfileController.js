@@ -8,4 +8,9 @@ app.controller('ProfileController', ['$scope', '$location', function($scope, $lo
         $location.path('/').replace();
     }
     
+    $scope.joinedActivitiesPressed = function () {
+        $scope.notHidden = false;
+        $location.path('/joinedActivities').replace();      
+    };
+    
 }]);

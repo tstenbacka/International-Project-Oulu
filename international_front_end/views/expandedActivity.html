@@ -1,4 +1,4 @@
-<div ng-controller="ExpandedActivityController">
+<div ng-controller="ExpandedActivityController" ng-init="loadCardInfo()">
     <div class="card-container">
         <div class="card card-expanded" id="alignToLeft">
             <div class="card-strip-expanded"></div>
@@ -16,7 +16,7 @@
                     <h2-black>Time and location</h2-black>
                     <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}}</p>
                 </div>
-
+                <a href="#/editactivity/{{ activityId }}">Edit</a>
 
                 <div class="card-wrapper">
                     <h2-black>Participants</h2-black>
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="button-bottom-container">
-                    <input type="button" value="Join Activity" class="mainButton" />
+                    <input type="button" value="Join Activity" class="mainButton" ng-click="joinActivityPressed()" />
                 </div>
             </div>
         </div>
