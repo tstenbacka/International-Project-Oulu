@@ -616,3 +616,7 @@ CREATE NEW USER
 .drawer-context {
     padding-top: 20px;
 }
+
+.joined-activities {
+   padding-top: 62px; 
+}
