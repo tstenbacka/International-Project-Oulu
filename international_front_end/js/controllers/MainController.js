@@ -1,4 +1,4 @@
-app.controller('MainController', ['$scope','sharedProperties','$route', '$location', function($scope, sharedProperties, $route, $location ) {
+app.controller('MainController', ['$scope','sharedProperties','$route', '$location', '$cookies', function($scope, sharedProperties, $route, $location, $cookies ) {
     //$scope.signInTxt = 'Sign In';
     $scope.newActivityTxt = 'New Activity';
     $scope.searchTxt = "I Want To ...";
@@ -24,6 +24,7 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
 
     $scope.getDudesName = function () {
         if(document.cookie.length > 0) {
+            return "asd";
             var userObject = JSON.parse(document.cookie);
             return userObject.username;
         }
@@ -42,9 +43,10 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
             $route.reload();
         }
         else {
-        var y = JSON.parse(document.cookie);
+            $cookies.put('search', $scope.objectValue);
+       /* var y = JSON.parse(document.cookie);
         y.search = $scope.objectValue;
-        document.cookie = JSON.stringify(y);
+        document.cookie = JSON.stringify(y);*/
         $location.path('/search').replace();
         $route.reload();
             

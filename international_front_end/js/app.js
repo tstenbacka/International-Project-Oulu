@@ -1,4 +1,4 @@
-var app = angular.module("activityApp", ['ngRoute']);
+var app = angular.module("activityApp", ['ngRoute', 'ngCookies']);
 
         app.service('sharedProperties', function () {
             var searchKey = '';
