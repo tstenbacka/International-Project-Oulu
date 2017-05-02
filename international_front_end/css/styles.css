@@ -210,6 +210,10 @@ HEADER
     padding-left: 8px;
 }
 
+#search-button {
+    visibility: hidden;
+}
+
 
 /************************
 CARD  |  SMALL
