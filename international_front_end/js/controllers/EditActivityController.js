@@ -1,6 +1,38 @@
-app.controller('EditActivityController', ['$scope','$http','$routeParams', function($scope, $http, $routeParams) {
-    $scope.test = "Test";
-    $scope.testTitle = "";
+app.controller('EditActivityController', ['$scope','$http','$routeParams', '$window', function($scope, $http, $routeParams, $window) {
+    
+    $scope.loadDatePicker = function () {
+
+        $('#datePic').datepicker({
+            
+            dateFormat: 'yy-mm-dd',
+            onSelect: function (dateText, inst) {
+                this.focus();
+                var dateAsString = dateText; //the first parameter of this function
+                var dateAsObject = $(this).datepicker('getDate'); //the getDate method
+
+                $scope.dateTimeHolder.date = '' + dateAsString;
+                console.log("" + $scope.dateTimeHolder.date)
+            }
+        });
+    }
+
+    $scope.loadTimePicker = function () {
+        
+        // Load user timezone offset
+        var offset = new Date().getTimezoneOffset();
+        console.log(offset);
+
+
+        $('#timePic').timepicker({
+            scrollDefault: 'now',
+            timeFormat: 'H:i',            
+        });
+
+        $('#timePic').on('changeTime', function () {
+            $scope.dateTimeHolder.time = "" + $(this).val();
+            console.log("" + $scope.dateTimeHolder.time);
+        });
+    }
     $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/').then(function(response) {
         $scope.activity = response.data[$routeParams.id];
         $scope.testTitle = response.data.name + "";
@@ -10,6 +42,7 @@ app.controller('EditActivityController', ['$scope','$http','$routeParams', funct
     }, function(response){
         console.log("Couldn't fetch data");
     });
+    
     
      $scope.activityHints = {
         hintCategory: 'Category',
@@ -178,32 +211,6 @@ app.controller('EditActivityController', ['$scope','$http','$routeParams', funct
                 alert("Request failed.");
                 }
             });
-        
-        
-           /* var data = $scope.activityInformation;    
-            var url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities"
-            console.log(JSON.stringify(data));
-            var userObject = JSON.parse(document.cookie);
-            // var y = 'Bearer ' + userObject.token;
-            //console.log(y);
-            $http.defaults.headers.post.Authorization = 'Bearer ' + userObject.token;     
-
-            $http.post(url, data)
-            .then(
-                function(response){
-                    // success callback
-                    console.log("SUCCESS");
-                    //console.log(response);
-
-                },
-                function(response){
-                    // failure callback
-                    console.log("FAILURE");
-                    //console.log(response);
-                }
-            );
-
-            $location.path('/').replace();*/
         }  
     
 }]);

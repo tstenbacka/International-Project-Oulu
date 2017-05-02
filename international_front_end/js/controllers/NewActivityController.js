@@ -1,7 +1,6 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
     $scope.viewTitle = 'Create Activity';
-
-
+    
     $scope.loadDatePicker = function () {
 
         $('#datepicker1').datepicker({
