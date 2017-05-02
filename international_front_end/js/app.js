@@ -46,6 +46,9 @@ $locationProvider.hashPrefix('');
       controller: "ExpandedActivityController",
       templateUrl: "views/expandedActivity.html"
     })
+    .when('/search', {
+        controller: "SearchController",
+        templateUrl: "views/search.html"
     .when('/editactivity/:id', {
       controller: "EditActivityController",
       templateUrl: "views/editActivity.html"
