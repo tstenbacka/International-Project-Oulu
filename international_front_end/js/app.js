@@ -50,6 +50,10 @@ $locationProvider.hashPrefix('');
       controller: "EditActivityController",
       templateUrl: "views/editActivity.html"
     })
+    .when('/joinedActivities', {
+      controller: "JoinedActivitiesController",
+      templateUrl: "views/joinedActivities.html"
+    })
     .otherwise({
       redirectTo: '/'
     });
