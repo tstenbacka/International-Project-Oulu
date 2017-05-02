@@ -210,6 +210,10 @@ HEADER
     padding-left: 8px;
 }
 
+#search-button {
+    visibility: hidden;
+}
+
 
 /************************
 CARD  |  SMALL
@@ -611,4 +615,8 @@ CREATE NEW USER
 
 .drawer-context {
     padding-top: 20px;
+}
+
+.joined-activities {
+   padding-top: 62px; 
 }

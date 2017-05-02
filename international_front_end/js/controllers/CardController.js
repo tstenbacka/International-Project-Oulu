@@ -4,8 +4,6 @@ app.controller('CardController', ['$scope','$http','sharedProperties','$timeout'
  
     $scope.searchword = sharedProperties.getProperty();
  
-
-   
     
     $scope.pageInfo = 'Choose a card';  
     $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities').then(function(response) {
