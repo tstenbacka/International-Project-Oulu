@@ -1,10 +1,13 @@
-app.controller('ExpandedActivityController', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
+
+app.controller('ExpandedActivityController', ['$scope','$http','$routeParams','activityIdService', function($scope, $http, $routeParams,activityIdService) {
+    
+    $scope.activityId = activityIdService.getProperty();
 
     var activityId;
     var userId;
 
     $scope.loadCardInfo = function () {
-        $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/').then(function (response) {
+        $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/' + $scope.activityId ).then(function(response) {
             $scope.activity = response.data[$routeParams.id];
             $scope.activityId = $routeParams.id;
 
