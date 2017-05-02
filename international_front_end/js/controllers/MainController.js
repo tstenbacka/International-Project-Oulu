@@ -40,6 +40,9 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     }
 
     $scope.search = function () {
+        var y = JSON.parse(document.cookie);
+        y.search = $scope.objectValue;
+        document.cookie = JSON.stringify(y);
         $location.path('/search').replace();
     }
 }]);
