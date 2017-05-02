@@ -1,8 +1,8 @@
 <div ng-controller="CardController">
     <div ng-repeat="acts in activities">
-        <div ng-click="openActivity(acts.id)">
-            <div ng-if="$index % 4 == 0" class="clearfix"></div>
-            <div class="col-6 col-md-3">
+        <div ng-if="$index % 4 == 0" class="clearfix"></div>
+        <div class="col-6 col-md-3">
+            <div ng-click="openActivity(acts.id)">
                 <card-info info="acts"></card-info>
             </div>
         </div>
