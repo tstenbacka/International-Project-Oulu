@@ -46,6 +46,10 @@ $locationProvider.hashPrefix('');
       controller: "ExpandedActivityController",
       templateUrl: "views/expandedActivity.html"
     })
+    .when('/search', {
+        controller: "SearchController",
+        templateUrl: "views/search.html"
+    })
     .otherwise({
       redirectTo: '/'
     });

@@ -5,9 +5,14 @@ app.controller('MainController', ['$scope','sharedProperties','$route', function
     $scope.login = true;
     $scope.profile = false;
     
-    
-    $scope.objectValue = '';
+    $scope.objectValue = 'jere';
     sharedProperties.setProperty($scope.objectValue);
+    
+    
+    $scope.Searched = function (){
+
+    }
+
     
     
     $scope.loggedIn = function () {
