@@ -16,28 +16,48 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         });
     }
 
-    $scope.loadTimePicker = function () {
-        
+    $scope.loadTimePicker = function () {   }
+    
+    $('#timepicker').timepicker({
+        scrollDefault: 'now',
+        timeFormat: 'H:i',            
+    });
+
+    $('#timepicker').on('changeTime', function () {
         // Load user timezone offset
-        var offset = new Date().getTimezoneOffset();
+        var offset = new Date().getTimezoneOffset()/60;
+        
         console.log(offset);
+        
+        // Get the picked datetime
+        var time = $(this).val();
+        var timesplit = time.split(":");
+        
+        // Parse hours into an int form and add/remove GMT offset        
+        var finalHour = parseInt(timesplit[0]) + offset;
+        
+        // Check that the datetime is not under or above 0 and 24
+        if (finalHour < 0){
+            
+            finalHour = 24 + finalHour;
+        } else if (finalHour > 24) {
+            
+            finalHour = finalHour - 24;
+        }
+        
+        $scope.timeHolder = "" + finalHour + ":" + timesplit[1];
+        $scope.dateTimeHolder.time = "" + time;
 
-
-        $('#timepicker').timepicker({
-            scrollDefault: 'now',
-            timeFormat: 'H:i',            
-        });
-
-        $('#timepicker').on('changeTime', function () {
-            $scope.dateTimeHolder.time = "" + $(this).val();
-            console.log("" + $scope.dateTimeHolder.time);
-        });
-    }
+        console.log("Time chosen: " + $scope.dateTimeHolder.time);
+        console.log("Time sent to back: " + $scope.timeHolder);
+    });
 
     $scope.dateTimeHolder = {
         date: '',
         time: ''
     };
+    
+    $scope.timeHolder = '';
 
     $scope.activityHints = {
         hintCategory: 'Category',
@@ -161,7 +181,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
 
         // DATETIME PARSING
-        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.dateTimeHolder.time + ':00Z';
+        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.timeHolder + ':00Z';
         DT = DT.replace(/\s+/g, '');
 
         $scope.activityInformation.dateTime = DT;
