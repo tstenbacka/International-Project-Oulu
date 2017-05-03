@@ -7,11 +7,16 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     
     $scope.objectValue = '';
     sharedProperties.setProperty($scope.objectValue);
-    $scope.user = $cookies.get('user');
     
     
     $scope.loggedIn = function () {
-        if($scope.user.length > 0) {
+            try {
+        $scope.user = $cookies.getObject('user');
+    }
+    catch(err) {
+        $scope.user.username = '';
+    }
+        if($scope.user.username.length > 0) {
             $scope.profile = true;
             $scope.login = false;
             return true;
@@ -24,8 +29,14 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     }
 
     $scope.getDudesName = function () {
-        if($scope.user.length > 0) {
-            var userObject = JSON.parse(user);
+            try {
+        $scope.user = $cookies.getObject('user');
+    }
+    catch(err) {
+        $scope.user.username = '';
+    }
+        if($scope.user.username.length > 0) {
+            var userObject = $scope.user;
             return userObject.username;
         }
 

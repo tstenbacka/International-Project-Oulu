@@ -32,7 +32,7 @@ app.controller('LoginController', ['$scope', '$location', '$http', '$cookies', f
             config: 'Content-Type: application/json;'
            }) .then(function(response) {
              //  document.cookie = "token:" + response.data.token + " id:" + response.data.id;
-                $cookies.put('user', JSON.stringify(response.data));
+                $cookies.putObject('user', response.data);
               //  document.cookie = JSON.stringify(response.data);
                 /* Example on how to use cookies below
                 console.log(document.cookie);
@@ -41,7 +41,7 @@ app.controller('LoginController', ['$scope', '$location', '$http', '$cookies', f
                 console.log(y.token);
                 */
                 //console.log(response.data.token);
-                console.log($cookies.get('user'));
+                console.log($cookies.getObject('user'));
                 $location.path('/').replace();
             }, function (response) {
             // this function handles error

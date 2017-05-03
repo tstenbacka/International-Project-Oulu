@@ -1,11 +1,18 @@
-app.controller('ProfileController', ['$scope', '$location', function($scope, $location) {
+app.controller('ProfileController', ['$scope', '$location', '$cookies', '$route', function($scope, $location, $cookies, $route) {
     $scope.msg = 'Profile';
     
-    $scope.ProfileHolders = JSON.parse($cookies.get('user'));
+    try {
+    $scope.ProfileHolders = $cookies.getObject('user');
+    }
+    catch(err) {
+       // $cookies.put('user', "");
+    }
 
     $scope.signOut = function() {
-        document.cookie = "";
+        $cookies.remove('user');
+        //document.cookie = "";
         $location.path('/').replace();
+        $route.reload();
     }
     
     $scope.joinedActivitiesPressed = function () {
