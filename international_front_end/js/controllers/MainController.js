@@ -24,7 +24,12 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
 
     $scope.getDudesName = function () {
         if(document.cookie.length > 0) {
+            try {
             var userObject = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                return 'Sign In';
+            }
             return userObject.username;
         }
 
@@ -34,19 +39,23 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     }
 
     $scope.search = function () {
-
-        
-                
         if ($scope.objectValue === ''){
             $location.path('/').replace();
             $route.reload();
         }
         else {
-        var y = JSON.parse(document.cookie);
-        y.search = $scope.objectValue;
-        document.cookie = JSON.stringify(y);
-        $location.path('/search').replace();
-        $route.reload();
+            try { 
+                var y = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                var y = {
+                    search : ''
+                };
+            }
+            y.search = $scope.objectValue;
+            document.cookie = JSON.stringify(y);
+            $location.path('/search').replace();
+            $route.reload();
             
             
         }
