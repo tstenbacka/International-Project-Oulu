@@ -6,20 +6,18 @@
 
     <p style="text-align: center"> {{ProfileHolders.username}}</p>
  
-    <div class="joined-activities"  id="label-text">
-        <a href="index.html">
+    <div class="joined-activities"  id="label-text"  ng-click="joinedActivitiesPressed()">
         <h2>Joined Activities</h2>
         <p>You have joined 4 activities</p>
-        </a>
     </div>
-    <div class="hosted-activities" id="label-text" >
-        <a href="#/hostedActivities">
+    <div class="hosted-activities" id="label-text">
+        <a href="newactivity.html">
         <h2>Hosted Activities</h2>
         <p>3 Activities coming next week</p>
-            </a>
+        </a>
     </div>
   
-    <div class="mainbutton">
+    <div class="button-bottom-container">
         <input type="button" ng-click="signOut()" value="Sign Out" class="mainButton" />
-        </div>
+    </div>
 </div>

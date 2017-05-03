@@ -1,10 +1,9 @@
-app.controller('MainController', ['$scope','sharedProperties','$route', function($scope, sharedProperties, $route ) {
+app.controller('MainController', ['$scope','sharedProperties','$route', '$location', function($scope, sharedProperties, $route, $location ) {
     //$scope.signInTxt = 'Sign In';
     $scope.newActivityTxt = 'New Activity';
     $scope.searchTxt = "I Want To ...";
     $scope.login = true;
     $scope.profile = false;
-    
     
     $scope.objectValue = '';
     sharedProperties.setProperty($scope.objectValue);
@@ -33,4 +32,24 @@ app.controller('MainController', ['$scope','sharedProperties','$route', function
             return 'Sign In';
         }
     }
+
+    $scope.search = function () {
+
+        
+                
+        if ($scope.objectValue === ''){
+            $location.path('/').replace();
+            $route.reload();
+        }
+        else {
+        var y = JSON.parse(document.cookie);
+        y.search = $scope.objectValue;
+        document.cookie = JSON.stringify(y);
+        $location.path('/search').replace();
+        $route.reload();
+            
+            
+        }
+    }
+    
 }]);
