@@ -8,7 +8,7 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     $scope.objectValue = '';
     sharedProperties.setProperty($scope.objectValue);
     
-    
+    // ridiculously dirty, but it works (kind of)
     $scope.loggedIn = function () {
         if(document.cookie.length > 0) {
             try {

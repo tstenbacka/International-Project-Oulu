@@ -47,13 +47,18 @@ This part checks if the user has logged in
         
         if(!logged)
             return basic_url;
+        else
+            return distance_url;
 
+// code below made pointless by resent changes
+/*
         if ($scope.searchword === ''){
             return distance_url;
         }
         else {
             return search_url;
         }
+*/
     };
     
     $http.get(url_check()).then(function(response) {
