@@ -11,9 +11,24 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     
     $scope.loggedIn = function () {
         if(document.cookie.length > 0) {
-            $scope.profile = true;
-            $scope.login = false;
-            return true;
+            try {
+                var userObject = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                $scope.profile = false;
+                $scope.login = true;
+                return false;                
+            }
+            if(userObject.username) {
+                $scope.profile = true;
+                $scope.login = false;
+                return true;
+            }
+            else {
+                $scope.profile = false;
+                $scope.login = true;
+                return false;               
+            }
         }
         else {
             $scope.profile = false;
@@ -30,7 +45,10 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
             catch (err) {
                 return 'Sign In';
             }
-            return userObject.username;
+            if(userObject.username)
+                return userObject.username;
+            else
+                return 'Sign In';
         }
 
         else {
