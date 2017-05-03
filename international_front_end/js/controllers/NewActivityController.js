@@ -127,7 +127,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         'Weekly',
         'Monthly'
     ];
-
+/*
     $scope.categories = [
         {
             id: 1,
@@ -166,7 +166,19 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
             type: "Models.Subcategory"
         }
     ];
-
+*/
+    
+ 
+	$scope.categories = [
+        {
+            name:'Sports',
+            items: [
+                {id: 1, name: 'soccer', ratings: [], type: "Models.Subcategory"},
+                {id: 2, name: 'cricket', ratings: [], type: "Models.Subcategory"},
+                {id: 3, name: 'basketball', ratings: [], type: "Models.Subcategory"}
+            ]
+        }
+	]
 
 
 
