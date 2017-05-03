@@ -425,6 +425,26 @@ NEW ACTIVITY
     width: 40px;
 }
 
+#ActivityLocation {
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+}
+
+#actcountry {
+    border: none;
+    box-shadow: none;
+    outline: 0;
+    font-size: 1.250em;
+    color: #9B9B9B;
+    font-weight: 400;
+    letter-spacing: 0.1pt;
+}
+
 /************************
 LOG IN
 ************************/
