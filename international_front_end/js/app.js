@@ -70,6 +70,10 @@ $locationProvider.hashPrefix('');
       controller: "JoinedActivitiesController",
       templateUrl: "views/joinedActivities.html"
     })
+    .when('/hostedActivities', {
+      controller: "HostedActivitiesController",
+      templateUrl: "views/hostedActivities.html"
+    })
     .otherwise({
       redirectTo: '/'
     });
