@@ -39,6 +39,7 @@ This part checks if the user has logged in
         activityIdService.setProperty(id)
         window.location="#/activity/"+id;
     }
+
     
     function url_check (){
         var search_url = "http://192.81.223.10:8080/Oulu_Backend/webapi/activities/byKey/" + $scope.searchword;
