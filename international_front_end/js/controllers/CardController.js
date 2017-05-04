@@ -28,6 +28,8 @@ This part checks if the user has logged in
     else {
         
     }
+    
+    
 /*
     var userObject = JSON.parse(document.cookie);
     $scope.distance = 10000;
@@ -71,4 +73,28 @@ This part checks if the user has logged in
         $scope.activities = "Something went wrong";
     });
     
+    $scope.loggedIn = function () {
+        if(document.cookie.length > 0) {
+            try {
+                var userObject = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                console.log("false err");
+                return false;                
+            }
+            if(userObject.username) {
+                console.log("true username");
+                return true;
+            }
+            else {
+                console.log("false username");
+                return false;               
+            }
+        }
+        else {
+             console.log("false");
+            return false;
+        }
+    }
+
 }]);

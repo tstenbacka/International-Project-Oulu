@@ -15,7 +15,7 @@
                 <div class="card-wrapper">
                     <h2-black>Time and location</h2-black>
                     <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}} </p>
-                    <p id="addressShow">{{addressScope}}</p>
+                    <p ng-if="loggedIn()" id="addressShow">{{addressScope}}</p>
                 </div>
                <!-- <a href="#/editactivity/{{ activityId }}">Edit</a>
                 -->
