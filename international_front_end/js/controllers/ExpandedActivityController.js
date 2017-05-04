@@ -2,7 +2,9 @@ app.controller('ExpandedActivityController', ['$scope', '$http', '$routeParams',
 
     var activityId;
     var userId;
-
+    var address = "";
+    var geocoder = new google.maps.Geocoder();
+    
     $scope.loadCardInfo = function () {
         $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/').then(function (response) {
             $scope.activity = response.data[$routeParams.id];
@@ -12,13 +14,12 @@ app.controller('ExpandedActivityController', ['$scope', '$http', '$routeParams',
             var jsonValue = JSON.parse(jsonString);  
             var X = jsonValue["locationX"];
             var Y = jsonValue["locationY"];
-            var address;
+            geocodeLatLng(geocoder,X, Y); 
+
+
             
             
-    
-            
-            
-            
+     
             
             
 
@@ -36,33 +37,9 @@ app.controller('ExpandedActivityController', ['$scope', '$http', '$routeParams',
             activityId = $scope.activityId;
             userId = $scope.user.id;
             
-                        
-            function geocodeLatLng(geocoder) {
-                var input = Y + ',' + X;
-                console.log(input);
-                var latlngStr = input.split(',', 2);
-                var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
-                var geocoder = new google.maps.Geocoder();
-                geocoder.geocode({ 'latLng': latlng }, function (results, status) {
-                    if (status !== google.maps.GeocoderStatus.OK) {
-                        alert("Activity location is not defined");
-                    }
-                    // This is checking to see if the Geoeode Status is OK before proceeding
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        console.log(results);
-                        address = (results[0].formatted_address);
-                        //console.log(address);
-                        
-                    }
-                });
-            }
+            console.log("Rivi 60 :D" + address);     
 
-                
-            geocodeLatLng();            
-            
-
-            
-            console.log(address);
+            console.log("Outside function address = " + $scope.addressScope);
             //console.log(Y);
 
         }, function (response) {
@@ -71,6 +48,28 @@ app.controller('ExpandedActivityController', ['$scope', '$http', '$routeParams',
 
     }
 
+    function geocodeLatLng(geocoder,X, Y) {
+                var input = Y + ',' + X;
+                console.log(input);
+                var latlngStr = input.split(',', 2);
+                var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+                geocoder.geocode({ 'latLng': latlng }, function (results, status) {
+                    if (status !== google.maps.GeocoderStatus.OK) {
+                        document.getElementById("addressShow").innerHTML = "Activity location is not defined";
+                    }
+                    // This is checking to see if the Geoeode Status is OK before proceeding
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        
+                        console.log(results);
+                        address = (results[0].formatted_address);
+                        console.log("geocodeLatLng address = " + address);
+                        document.getElementById("addressShow").innerHTML = address;
+
+                    }
+                });
+
+            }
+    
     $scope.joinActivityPressed = function () {
 
         console.log("You pressed the join activity button.")
