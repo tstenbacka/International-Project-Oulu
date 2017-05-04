@@ -1,11 +1,9 @@
-app.controller('JoinedActivitiesController', ['$scope', '$http', '$routeParams', '$location', function ($scope, $http, $routeParams, $location) {
+app.controller('HostedActivitiesController', ['$scope', '$http', '$routeParams', '$location', function ($scope, $http, $routeParams,  $location) {
     
-    $scope.test = 'Hello World';
-
     
-    $scope.loadJoinedActivities = function() {
+    $scope.loadHostedActivities = function() {
         
-        console.log("Loading joined activities");
+        console.log("Loading hosted activities");
         
         // Load user data from cookie
         var userObject = JSON.parse(document.cookie);
@@ -22,8 +20,8 @@ app.controller('JoinedActivitiesController', ['$scope', '$http', '$routeParams',
         console.log(userId);
         console.log(token);
         
-        // Create url that is sended to database
-        var urlBeg = "http://192.81.223.10:8080/Oulu_Backend/webapi/users/joinedactivities/";
+        
+        var urlBeg = "http://192.81.223.10:8080/Oulu_Backend/webapi/users/createdactivities/";
         var url = urlBeg.concat(userId);
         
         console.log(url);
@@ -71,7 +69,7 @@ app.controller('JoinedActivitiesController', ['$scope', '$http', '$routeParams',
         );
      
     }
-                                              
+    
     $scope.backButtonPressed = function () {
         $scope.notHidden = false;
         $location.path('/profile').replace();

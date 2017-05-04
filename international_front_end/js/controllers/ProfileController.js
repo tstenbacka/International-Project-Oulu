@@ -10,7 +10,12 @@ app.controller('ProfileController', ['$scope', '$location', function($scope, $lo
     
     $scope.joinedActivitiesPressed = function () {
         $scope.notHidden = false;
-        $location.path('/joinedActivities').replace();      
+        $location.path('/joinedActivities').replace();
+    };
+    
+    $scope.hostedActivitiesPressed = function () {
+        $scope.notHidden = false;
+        $location.path('/hostedActivities').replace();
     };
     
 }]);
