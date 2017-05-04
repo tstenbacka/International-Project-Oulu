@@ -1,5 +1,5 @@
-
-<div class="background-drawer" onclick="location.href='index.html';"></div>
+<div class="background-drawer" onclick="location.href='index.html';">
+</div>
 <div class="new-activity">
     <div class="createActivityLabel">
         <h1-color>{{ viewTitle }}</h1-color>
@@ -23,9 +23,17 @@
                     <div class="row-category" id="label-text">
                         <h2-black>{{ activityHints.hintCategory }}</h2-black>
                         <br>
-                        <select class="dropdownInput" ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> 
+                        
+<!--                    <select class="dropdownInput" ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> 
                         <option value="" disabled selected>Choose category</option>
                         </select>
+-->                     
+                        <select class="dropdownInput" ng-model="activityInformation.subcategory" required>
+                            <optgroup ng-repeat="header in categories" label="{{ header.name }}">
+                                <option ng-repeat="item in header.items" value="{{ item.name }}">{{ item.name }}</option>
+                            </optgroup>
+                        </select>
+                        
                     </div>
                     <div class="row-date" id="label-text">
                         <h2-black>Date</h2-black>
@@ -61,14 +69,19 @@
                         <br>
                         <input class="participantsInput" type="number" value="0" min="0" max="4" ng-model="activityInformation.userAmount" id="borderless" required>
                     </div>
-                    <h2-black>{{activityHints.hintLocation}}</h2-black>
-                    <div class="inputs"><span class="add-on"><i></i></span>
-                        <input type="text" class="input-register-middle" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
+
+                    <div class="row-location" id="label-text">
+                        <h2-black>{{activityHints.hintLocation}}</h2-black>
+                        <br>
+                        <input type="text" id="ActivityLocation" placeholder={{activityHints.hintLocationPlaceholder}} required>
                     </div>
-                    <h2-black>{{activityHints.hintCountry}}</h2-black>
-                    <div class="inputs"><span class="add-on"><i></i></span>
-                        <input type="text" class="input-register-middle" id="actcountry" placeholder={{activityHints.hintCountryPlaceholder}} required>
+                    <div class="row-country" id="label-text">
+                        <h2-black>{{activityHints.hintCountry}}</h2-black>
+                        <br>
+                        <input type="text" id="actcountry" placeholder={{activityHints.hintCountryPlaceholder}} required>
                     </div>
+
+
                     <div class="row-skill" id="label-text">
                         <h2-black>{{ activityHints.hintSkillLevel }}</h2-black>
                         <br>

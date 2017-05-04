@@ -17,14 +17,14 @@
                     <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}} </p>
                     <p id="addressShow">{{addressScope}}</p>
                 </div>
-                <a href="#/editactivity/{{ activityId }}">Edit</a>
-
-                <div class="card-wrapper">
+               <!-- <a href="#/editactivity/{{ activityId }}">Edit</a>
+                -->
+             <!--   <div class="card-wrapper">
                     <h2-black>Participants</h2-black>
                     
                     <p>Matti and 2 other friends are going</p>
                 </div>
-
+            -->
                 <div class="card-wrapper">
                     <h2-black>Skill Level</h2-black>
                     <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
@@ -37,7 +37,7 @@
                     <p>+ 3 running</p>
                 </div>
 
-                <div class="button-bottom-container">
+                <div ng-if="loggedIn()" class="button-bottom-container">
                     <input type="button" value="Join Activity" class="mainButton" ng-click="joinActivityPressed()" />
                 </div>
             </div>
