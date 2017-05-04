@@ -5,6 +5,25 @@ app.controller('ExpandedActivityController', ['$scope','$http','$routeParams','a
 
     var activityId;
     var userId;
+    $scope.loggedIn = function () {
+        if(document.cookie.length > 0) {
+            try {
+                var userObject = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                return false;                
+            }
+            if(userObject.username) {
+                return true;
+            }
+            else {
+                return false;               
+            }
+        }
+        else {
+            return false;
+        }
+    }
 
     $scope.loadCardInfo = function () {
         $http.get('http://192.81.223.10:8080/Oulu_Backend/webapi/activities/' + $scope.activityId ).then(function(response) {

@@ -16,8 +16,8 @@
                     <h2-black>Time and location</h2-black>
                     <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}}</p>
                 </div>
-                <a href="#/editactivity/{{ activityId }}">Edit</a>
-
+               <!-- <a href="#/editactivity/{{ activityId }}">Edit</a>
+                -->
                 <div class="card-wrapper">
                     <h2-black>Participants</h2-black>
                     <p>O O O O O O O O O O O O</p>
@@ -37,7 +37,7 @@
                     <p>+ 3 running</p>
                 </div>
 
-                <div class="button-bottom-container">
+                <div ng-if="loggedIn()" class="button-bottom-container">
                     <input type="button" value="Join Activity" class="mainButton" ng-click="joinActivityPressed()" />
                 </div>
             </div>
