@@ -508,7 +508,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
 
         // DATETIME PARSING
-        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.dateTimeHolder.time + ':00Z';
+        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.timeHolder + ':00Z';
         DT = DT.replace(/\s+/g, '');
 
         $scope.activityInformation.dateTime = DT;
