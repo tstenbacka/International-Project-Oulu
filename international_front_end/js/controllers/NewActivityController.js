@@ -1,6 +1,7 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
     $scope.viewTitle = 'Create Activity';
-    
+
+
     $scope.loadDatePicker = function () {
 
         $('#datepicker1').datepicker({
@@ -16,13 +17,14 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         });
     }
 
-    $scope.loadTimePicker = function () {   }
-    
-    $('#timepicker').timepicker({
-        scrollDefault: 'now',
-        timeFormat: 'H:i',            
-    });
+    $scope.loadTimePicker = function () {
 
+
+        $('#timepicker').timepicker({
+            'scrollDefault': 'now',
+            'timeFormat': 'H:i'
+        });
+    }
     $('#timepicker').on('changeTime', function () {
         // Load user timezone offset
         var offset = new Date().getTimezoneOffset()/60;
@@ -51,14 +53,15 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         console.log("Time chosen: " + $scope.dateTimeHolder.time);
         console.log("Time sent to back: " + $scope.timeHolder);
     });
+    
 
     $scope.dateTimeHolder = {
         date: '',
         time: ''
     };
-    
-    $scope.timeHolder = '';
 
+    $scope.timeHolder = '';
+    
     $scope.activityHints = {
         hintCategory: 'Category',
         hintTitle: 'Name',
@@ -127,7 +130,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         'Weekly',
         'Monthly'
     ];
-/*
+
     $scope.categories = [
         {
             id: 1,
@@ -166,371 +169,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
             type: "Models.Subcategory"
         }
     ];
-*/
-    
- 
-	$scope.categories = [
-        {
-            name: 'Sports',
-            items: [
-                {
-                    id: 1,
-                    name: 'Aerobics',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 2,
-                    name: 'American football',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 3,
-                    name: 'Badminton',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 4,
-                    name: 'Baseball',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 5,
-                    name: 'Basketball',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 6,
-                    name: 'Circuit training',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 7,
-                    name: 'Climbing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 8,
-                    name: 'Cricket',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 9,
-                    name: 'Cycling',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 10,
-                    name: 'Dancing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 11,
-                    name: 'Fencing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 12,
-                    name: 'Floorball',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 13,
-                    name: 'Golfing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 14,
-                    name: 'Handball',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 15,
-                    name: 'Hiking',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 16,
-                    name: 'Hockey',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 17,
-                    name: 'Ice Skating',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 18,
-                    name: 'Kayaking',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 19,
-                    name: 'Kite Surfing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 20,
-                    name: 'Martial Arts',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 21,
-                    name: 'Pilates',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 22,
-                    name: 'Polo',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 23,
-                    name: 'Riding',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 24,
-                    name: 'Roller skating',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 25,
-                    name: 'Running',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 26,
-                    name: 'Scuba diving',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 27,
-                    name: 'Skateboarding',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 28,
-                    name: 'Skiing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 29,
-                    name: 'Snowboarding',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 30,
-                    name: 'Squash',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 31,
-                    name: 'Surfing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 32,
-                    name: 'Swimming',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 33,
-                    name: 'Table tennis',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 34,
-                    name: 'Tennis',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 35,
-                    name: 'Volleyball',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 36,
-                    name: 'Windsurfing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
-            },
-        {
-            name: 'Health & Wellbeing',
-            items: [
-                {
-                    id: 1,
-                    name: 'Yoga',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 2,
-                    name: 'Massage',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
 
-            },
-        {
-            name: 'Entertainment',
-            items: [
-                {
-                    id: 1,
-                    name: 'Movie',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 2,
-                    name: 'Theater',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 3,
-                    name: 'Concert',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 4,
-                    name: 'E-sport',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
-
-            },
-        {
-            name: 'Gaming',
-            items: [
-                {
-                    id: 1,
-                    name: 'Board Games',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 2,
-                    name: 'Video Games',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 3,
-                    name: 'Card Games',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
-
-            },
-        {
-            name: 'Music',
-            items: [
-                {
-                    id: 1,
-                    name: 'Guitar',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 2,
-                    name: 'Piano',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    },
-                {
-                    id: 3,
-                    name: 'Violin',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                    ,
-                {
-                    id: 4,
-                    name: 'Singing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                    ,
-                {
-                    id: 5,
-                    name: 'Drums',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                    ,
-                {
-                    id: 6,
-                    name: 'Trumpet',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
-
-            },
-        {
-            name: 'Traveling',
-            items: [
-                {
-                    id: 1,
-                    name: 'Sightseeing',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
-            },
-        {
-            name: 'Other',
-            items: [
-                {
-                    id: 1,
-                    name: 'Other',
-                    ratings: [],
-                    type: "Models.Subcategory"
-                    }
-                ]
-            }
-        ];
 
 
 
