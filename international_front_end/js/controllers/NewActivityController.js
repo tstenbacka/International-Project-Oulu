@@ -4,7 +4,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
     $scope.loadDatePicker = function () {
 
-        $('#datepicker').datepicker({
+        $('#datepicker1').datepicker({
             
             dateFormat: 'yy-mm-dd',
             onSelect: function (dateText, inst) {
@@ -60,6 +60,8 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         time: ''
     };
 
+    $scope.timeHolder = '';
+    
     $scope.activityHints = {
         hintCategory: 'Category',
         hintTitle: 'Name',
