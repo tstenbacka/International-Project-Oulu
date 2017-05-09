@@ -18,7 +18,7 @@ app.controller('LoginController', ['$scope', '$location', '$http', function($sco
         username: '',
         password: ''
     };
-
+    
     $scope.login = function () {
         /* while compiling form , angular created this object*/
         var data = $scope.loginInformation;
