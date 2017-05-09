@@ -1,10 +1,10 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
     $scope.viewTitle = 'Create Activity';
-
+    
     $scope.loadDatePicker = function () {
 
         $('#datepicker1').datepicker({
-
+            
             dateFormat: 'yy-mm-dd',
             onSelect: function (dateText, inst) {
                 var dateAsString = dateText; //the first parameter of this function
@@ -16,28 +16,48 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         });
     }
 
-    $scope.loadTimePicker = function () {
+    $scope.loadTimePicker = function () {   }
+    
+    $('#timepicker').timepicker({
+        scrollDefault: 'now',
+        timeFormat: 'H:i',            
+    });
 
+    $('#timepicker').on('changeTime', function () {
         // Load user timezone offset
-        var offset = new Date().getTimezoneOffset();
+        var offset = new Date().getTimezoneOffset()/60;
+        
         console.log(offset);
+        
+        // Get the picked datetime
+        var time = $(this).val();
+        var timesplit = time.split(":");
+        
+        // Parse hours into an int form and add/remove GMT offset        
+        var finalHour = parseInt(timesplit[0]) + offset;
+        
+        // Check that the datetime is not under or above 0 and 24
+        if (finalHour < 0){
+            
+            finalHour = 24 + finalHour;
+        } else if (finalHour > 24) {
+            
+            finalHour = finalHour - 24;
+        }
+        
+        $scope.timeHolder = "" + finalHour + ":" + timesplit[1];
+        $scope.dateTimeHolder.time = "" + time;
 
-
-        $('#timepicker').timepicker({
-            scrollDefault: 'now',
-            timeFormat: 'H:i',
-        });
-
-        $('#timepicker').on('changeTime', function () {
-            $scope.dateTimeHolder.time = "" + $(this).val();
-            console.log("" + $scope.dateTimeHolder.time);
-        });
-    }
+        console.log("Time chosen: " + $scope.dateTimeHolder.time);
+        console.log("Time sent to back: " + $scope.timeHolder);
+    });
 
     $scope.dateTimeHolder = {
         date: '',
         time: ''
     };
+    
+    $scope.timeHolder = '';
 
     $scope.activityHints = {
         hintCategory: 'Category',
@@ -96,7 +116,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     };
 
     $scope.skillLevels = [
-        'None',
         'Beginner',
         'Intermediate',
         'Advanced'
@@ -108,8 +127,49 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         'Weekly',
         'Monthly'
     ];
-
+/*
     $scope.categories = [
+        {
+            id: 1,
+            name: 'soccer',
+            ratings: [],
+            type: "Models.Subcategory"
+        },
+        {
+            id: 2,
+            name: 'cricket',
+            ratings: [],
+            type: "Models.Subcategory"
+        },
+        {
+            id: 3,
+            name: 'basketball',
+            ratings: [],
+            type: "Models.Subcategory"
+        },
+        {
+            id: 4,
+            name: 'Lan party',
+            ratings: [],
+            type: "Models.Subcategory"
+        },
+        {
+            id: 5,
+            name: 'Online gaming',
+            ratings: [],
+            type: "Models.Subcategory"
+        },
+        {
+            id: 6,
+            name: 'concert',
+            ratings: [],
+            type: "Models.Subcategory"
+        }
+    ];
+*/
+    
+ 
+	$scope.categories = [
         {
             name: 'Sports',
             items: [
@@ -473,43 +533,6 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         ];
 
 
-    $scope.dropdown = [
-        {
-            name: 'Malaysia',
-            items: [
-                {
-                    name: 'sunway',
-                    value: 1
-                },
-                {
-                    name: 'subang',
-                    value: 2
-                },
-                {
-                    name: 'petaling jaya',
-                    value: 3
-                }
-        ]
-    },
-        {
-            name: 'Japan',
-            items: [
-                {
-                    name: 'tokyo',
-                    value: 4
-                },
-                {
-                    name: 'osaka',
-                    value: 5
-                },
-                {
-                    name: 'kyoto',
-                    value: 6
-                }
-        ]
-    }
-]
-
 
 
     $scope.submitActivityForm = function () {
@@ -522,7 +545,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
 
 
         // DATETIME PARSING
-        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.dateTimeHolder.time + ':00Z';
+        var DT = '' + $scope.dateTimeHolder.date + 'T' + $scope.timeHolder + ':00Z';
         DT = DT.replace(/\s+/g, '');
 
         $scope.activityInformation.dateTime = DT;

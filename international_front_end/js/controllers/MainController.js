@@ -8,12 +8,27 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     $scope.objectValue = '';
     sharedProperties.setProperty($scope.objectValue);
     
-    
+    // ridiculously dirty, but it works (kind of)
     $scope.loggedIn = function () {
         if(document.cookie.length > 0) {
-            $scope.profile = true;
-            $scope.login = false;
-            return true;
+            try {
+                var userObject = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                $scope.profile = false;
+                $scope.login = true;
+                return false;                
+            }
+            if(userObject.username) {
+                $scope.profile = true;
+                $scope.login = false;
+                return true;
+            }
+            else {
+                $scope.profile = false;
+                $scope.login = true;
+                return false;               
+            }
         }
         else {
             $scope.profile = false;
@@ -24,8 +39,16 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
 
     $scope.getDudesName = function () {
         if(document.cookie.length > 0) {
+            try {
             var userObject = JSON.parse(document.cookie);
-            return userObject.username;
+            }
+            catch (err) {
+                return 'Sign In';
+            }
+            if(userObject.username)
+                return userObject.username;
+            else
+                return 'Sign In';
         }
 
         else {
@@ -34,19 +57,23 @@ app.controller('MainController', ['$scope','sharedProperties','$route', '$locati
     }
 
     $scope.search = function () {
-
-        
-                
         if ($scope.objectValue === ''){
             $location.path('/').replace();
             $route.reload();
         }
         else {
-        var y = JSON.parse(document.cookie);
-        y.search = $scope.objectValue;
-        document.cookie = JSON.stringify(y);
-        $location.path('/search').replace();
-        $route.reload();
+            try { 
+                var y = JSON.parse(document.cookie);
+            }
+            catch (err) {
+                var y = {
+                    search : ''
+                };
+            }
+            y.search = $scope.objectValue;
+            document.cookie = JSON.stringify(y);
+            $location.path('/search').replace();
+            $route.reload();
             
             
         }

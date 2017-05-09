@@ -20,20 +20,21 @@
                         <br>
                         <textarea ng-model="activityInformation.description" class="activity-description" id="borderless" maxlength="140" rows="6" cols="40" placeholder={{activityHints.hintDescriptionPlaceholder}} required></textarea>
                     </div>
-
-
                     <div class="row-category" id="label-text">
                         <h2-black>{{ activityHints.hintCategory }}</h2-black>
                         <br>
-                        <select class="dropdownInput" required>
+                        
+<!--                    <select class="dropdownInput" ng-model="activityInformation.subcategory" ng-options="category as category.name for category in categories" required> 
+                        <option value="" disabled selected>Choose category</option>
+                        </select>
+-->                     
+                        <select class="dropdownInput" ng-model="activityInformation.subcategory" required>
                             <optgroup ng-repeat="header in categories" label="{{ header.name }}">
-                                <option ng-repeat="item in header.items" value="{{ item.value }}">{{ item.name }}</option>
+                                <option ng-repeat="item in header.items" value="{{ item.name }}">{{ item.name }}</option>
                             </optgroup>
                         </select>
-
+                        
                     </div>
-
-
                     <div class="row-date" id="label-text">
                         <h2-black>Date</h2-black>
                         <br>

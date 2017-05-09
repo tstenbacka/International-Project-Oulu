@@ -1,9 +1,9 @@
 <div class="background-drawer" onclick="location.href='index.html';"></div>
-<div class="login-main" ng-controller="JoinedActivitiesController" ng-init="loadJoinedActivities()">
+<div class="login-main" ng-controller="HostedActivitiesController" ng-init="loadHostedActivities()">
     <img src="img/CloseButton.png" alt="" class="closeButtonProfile" ng-click="backButtonPressed()">
     <div class="drawer-context">
-        <h2>Joined Activities</h2>
-        <p>You have joined {{ activities.length }} activities</p>
+        <h2>Hosted Activities</h2>
+        <p>You are hosting {{ activities.length }} activities</p>
         <br>
         <div ng-repeat="acts in activities">
             <div ng-if="$index % 4 == 0" class="clearfix"></div>

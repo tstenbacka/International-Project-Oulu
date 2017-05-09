@@ -14,32 +14,35 @@
 
                 <div class="card-wrapper">
                     <h2-black>Time and location</h2-black>
-                    <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}}</p>
+                    <p>{{activity.frequency}} {{activity.dateTime | date : "EEEE 'at' H a"}} </p>
+                    <p id="addressShow">{{addressScope}}</p>
                 </div>
-                <a href="#/editactivity/{{ activityId }}">Edit</a>
-
-                <div class="card-wrapper">
+                <!-- <a href="#/editactivity/{{ activityId }}">Edit</a>
+                -->
+                <!--   <div class="card-wrapper">
                     <h2-black>Participants</h2-black>
-                    <p>O O O O O O O O O O O O</p>
+                    
                     <p>Matti and 2 other friends are going</p>
                 </div>
-
-
+            -->
                 <div class="card-wrapper">
                     <h2-black>Skill Level</h2-black>
                     <p>{{activity.subcategory.name}}: {{activity.skilllevel}}</p>
                 </div>
 
                 <div class="card-wrapper">
+
                     <h2-black>About the Hoster</h2-black>
-                    <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
-                    <p>{{activity.creator.surname}} {{activity.creator.lastname}}</p>
-                    <p>+ 3 running</p>
+                    <br>
+                    <div class="about-the-hoster">
+                        <img src="img/UserIcon @2x.png" alt="" class="profile-picture-medium">
+                        <div class="name-and-karma">
+                            <p>{{activity.creator.firstname}} {{activity.creator.lastname}}</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="button-bottom-container">
                     <input type="button" value="Join Activity" class="mainButton" ng-click="joinActivityPressed()" />
-                </div>
             </div>
         </div>
     </div>

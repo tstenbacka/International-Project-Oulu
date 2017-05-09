@@ -14,6 +14,7 @@ app.controller('SignUpController', ['$scope','$http','$location' ,'$window', fun
 		lastnameHolder: 'Last name',
 		ageHolder:'date of birth',
 		passwordHolder:'Password',
+        password2Holder: 'Retype',
 		postalCodeHoler:'Postal code',
         contryHolder:'country',
 		emailHolder:'example@example.com'
