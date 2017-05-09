@@ -3,20 +3,20 @@
 @media screen and (max-width: 865px) {
     
     .IWantTo {
-        display: none !important;
+        display: none
     }
     .signIn {
-        display: none !important;
+        display: none
     }
     .form-control-input {
-        max-width: 50% !important;
-        text-align: center !important;
+        max-width: 50% 
+        text-align: center 
     }
     
     
     .input-space {
-        margin-bottom: 70px !important;
-        display: block !important;
+        margin-bottom: 70px 
+        display: block 
     }
     
 }
@@ -24,11 +24,15 @@
 @media screen and (max-width: 470px) {
     /* Make left and right drawers to full screen when mobile */
     .login-main {
-        width: 100% !important;
+        width: 100% 
+        height: 100vh;
+        max-height: 100%;
         margin-bottom: -20px;
     }
     .new-activity {
-        width: 100% !important;
+        width: 100% 
+        height: 100vh;
+        max-height: 100%;
         margin-bottom: -20px;
     }
     
@@ -36,35 +40,36 @@
   
     
     .input-register-right {
-        text-align: center !important;
-        margin-right: 0 !important;
+        text-align: center;
+        margin-right: 0;
     }
     
     .input-register {
-        text-align: center !important;
-        margin-left: 0 !important;
+        text-align: center;
+        margin-left: 0;
     }  
 }
 
 @media screen and (max-width: 540px) {
     .input-register-right {
-        text-align: center !important;
-        margin-right: 0 !important;
+        text-align: center;
+        margin-right: 0 
     }
     
     .input-register {
-        text-align: center !important;
-        margin-left: 0 !important;
+        text-align: center 
+        margin-left: 0 
     }
     
    
 }
 
 @media screen and (max-height: 1000px) {
-    .new-activity {
-        height: 100% !important;
-    }
+    /* Make left and right drawers to full screen when mobile */
     .login-main {
-        height: 100% !important;
+        height: 100% 
+    }
+    .new-activity {
+        height: 100% 
     }
 }
