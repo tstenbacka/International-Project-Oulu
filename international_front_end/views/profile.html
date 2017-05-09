@@ -1,21 +1,28 @@
 <div class="background-drawer" onclick="location.href='index.html';"></div>
-<div class="login-main">
-    <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButtonProfile"></a>
-    <img src="img/UserIcon%20@2x.png" alt="" class="profile-picture-big">
-    <h1 id="alignToCenter">{{ProfileHolders.firstname}} {{ProfileHolders.lastname}}</h1>
 
-    <p style="text-align: center"> {{ProfileHolders.username}}</p>
- 
-    <div class="joined-activities"  id="label-text"  ng-click="joinedActivitiesPressed()">
-        <h2>Joined Activities</h2>
-        <p>Activities you've joined into </p>
-    </div>
-    <div class="hosted-activities" id="label-text"  ng-click="hostedActivitiesPressed()">
-        <h2>Hosted Activities</h2>
-        <p>Activities you're gonna host</p>
-    </div>
-  
-    <div class="button-bottom-container">
-        <input type="button" ng-click="signOut()" value="Sign Out" class="mainButton" />
+
+
+<div class="login-main">
+    <div class="piirto">
+
+        <a href='index.html'><img src="img/CloseButton.png" alt="" class="closeButtonProfile"></a>
+        <img src="img/UserIcon%20@2x.png" alt="" class="profile-picture-big">
+        <h1 id="alignToCenter">{{ProfileHolders.firstname}} {{ProfileHolders.lastname}}</h1>
+        
+        
+
+        <p style="text-align: center"> {{ProfileHolders.username}}</p>
+
+        <div class="joined-activities" id="label-text" ng-click="joinedActivitiesPressed()">
+            <h2>Joined Activities</h2>
+            <p>Activities you've joined into </p>
+        </div>
+        <div class="hosted-activities" id="label-text" ng-click="hostedActivitiesPressed()">
+            <h2>Hosted Activities</h2>
+            <p>Activities you're gonna host</p>
+        </div>
+        
+        <input type="button" ng-click="signOut()" value="Sign Out" class="mainButton" id="button-bottom" />
+        
     </div>
 </div>

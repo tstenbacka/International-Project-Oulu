@@ -31,15 +31,20 @@
                 </div>
 
                 <div class="card-wrapper">
+
                     <h2-black>About the Hoster</h2-black>
-                    <img src="img/UserIcon%20@2x.png" alt="" class="profilePicture">
-                    <p>{{activity.creator.surname}} {{activity.creator.lastname}}</p>
-                    <p>+ 3 running</p>
+                    <br>
+                    <div class="about-the-hoster">
+                        <img src="img/UserIcon @2x.png" alt="" class="profile-picture-medium">
+                        <div class="name-and-karma">
+                            <p>{{activity.creator.firstname}} {{activity.creator.lastname}}</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div ng-if="loggedIn()" class="button-bottom-container">
+                          <!-- MIGHT need to be changed
+                <div ng-if="loggedIn()" class="button-bottom-container">  -->
                     <input type="button" value="Join Activity" class="mainButton" ng-click="joinActivityPressed()" />
-                </div>
             </div>
         </div>
     </div>

@@ -1,23 +1,22 @@
+
+
 @media screen and (max-width: 865px) {
     
     .IWantTo {
-        display: none;
+        display: none !important;
     }
     .signIn {
-        display: none;
+        display: none !important;
     }
     .form-control-input {
-        max-width: 50%;
-        text-align: center;
+        max-width: 50% !important;
+        text-align: center !important;
     }
     
-    .button-bottom-container {
-        width: 85%;
-    }
     
     .input-space {
-        margin-bottom: 70px;
-        display: block;
+        margin-bottom: 70px !important;
+        display: block !important;
     }
     
 }
@@ -25,49 +24,45 @@
 @media screen and (max-width: 470px) {
     /* Make left and right drawers to full screen when mobile */
     .login-main {
-        width: 100%;
+        width: 100% !important;
     }
     .new-activity {
-        width: 100%;
+        width: 100% !important;
     }
     
     /* CREATE NEW USER */
-    .button-bottom-container {
-        width: 70%;
-    }
+  
     
     .input-register-right {
-        text-align: center;
-        margin-right: 0;
+        text-align: center !important;
+        margin-right: 0 !important;
     }
     
     .input-register {
-        text-align: center;
-        margin-left: 0;
+        text-align: center !important;
+        margin-left: 0 !important;
     }  
 }
 
 @media screen and (max-width: 540px) {
     .input-register-right {
-        text-align: center;
-        margin-right: 0;
+        text-align: center !important;
+        margin-right: 0 !important;
     }
     
     .input-register {
-        text-align: center;
-        margin-left: 0;
+        text-align: center !important;
+        margin-left: 0 !important;
     }
     
-    .button-bottom-container {
-        max-width: 80%;
-    }
+   
 }
 
 @media screen and (max-height: 1000px) {
     .new-activity {
-        height: 100%;
+        height: 100% !important;
     }
     .login-main {
-        height: 100%;
+        height: 100% !important;
     }
 }

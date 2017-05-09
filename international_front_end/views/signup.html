@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="card-expanded">
+    <div class="card-signup">
         <div class="card-expanded-block" ng-model="checkStart" ng-if="checkStart == true" ng-show="forwardStart">
 
             <!-- NAME, AGE, PASSWORD VIEW -->
@@ -30,13 +30,11 @@
                         <h4>{{signupError}}</h4>
                         <div class="inputs"><span class="add-on"><i></i></span>
                             <input type="password" class="input-register-right" ng-model="signInformation.password" id="password" name="" placeholder={{SignUpHolders.passwordHolder}} required>
-                            <input type="password" class="input-register" ng-model="pass2" id="password2" name="" placeholder={{SignUpHolders.passwordHolder}} required>
+                            <input type="password" class="input-register" ng-model="pass2" id="password2" name="" placeholder={{SignUpHolders.password2Holder}} required>
                         </div>
                         <div class="input-space"></div>
                     </div>
-                    <div class="button-bottom-container">
-                        <input type="button" class="mainButton" value="Continue" ng-click=" forwardStart()" />
-                    </div>
+                        <input type="button" class="mainButton" value="Continue" ng-click=" forwardStart()" id="buttom-bottom-signup" />
                 </div>
             </form>
         </div>
@@ -56,12 +54,12 @@
                     <div class="inputs"><span class="add-on"><i></i></span>
                         <input type="text" class="input-register-middle" id="country" placeholder={{SignUpHolders.contryHolder}} required>
                     </div>
-                    <div class="button-bottom-container">
+                    <div class="input-space"></div>
+                    <div class="two-button-layout">
                         <input type="button" value="Previous" class="button-row-left" ng-click="backwardsPostal()" />
 
                         <input type="button" value="Next" class="button-row-right" ng-click="forwardPostal()" />
                     </div>
-
                 </div>
             </form>
 
@@ -82,7 +80,8 @@
                     <div class="inputs"><span class="add-on"><i></i></span>
                         <input type="username" ng-model="signInformation.username" class="input-register-middle" id="username" placeholder={{SignUpHolders.usernameHolder}} required>
                     </div>
-                    <div class="button-bottom-container">
+                    <div class="input-space"></div>
+                    <div class="two-button-layout">
                         <input type="button" value="Previous" class="button-row-left" ng-click="backwardEmail()" />
                         <input type="button" value="Next" class="button-row-right" ng-click="forwardEmail()" />
                     </div>
@@ -96,10 +95,8 @@
             <br>
             <p> Great work there. Now you're ready to start exploring intresting new activities around the city and post your own for most epic dragon slaying time ever!</p>
             <form action="" method="post">
-                <br>
-                <div class="button-bottom-container">
-                    <input type="button" value="Let's Roll" class="mainButton" ng-click="letsRoll()" />
-                </div>
+                 <div class="input-space-more"></div>
+                    <input type="button" value="Let's Roll" class="mainButton" ng-click="letsRoll()" id="buttom-bottom-signup" />
                 <br>
             </form>
         </div>
