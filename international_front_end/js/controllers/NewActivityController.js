@@ -113,7 +113,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         name: '',
         participants: [],
         skilllevel: '',
-        subcategory: '',
+        subcategoryString: '',
         tags: [],
         userAmount: 0,
 

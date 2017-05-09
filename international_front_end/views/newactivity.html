@@ -28,7 +28,7 @@
                         <option value="" disabled selected>Choose category</option>
                         </select>
 -->                     
-                        <select class="dropdownInput" ng-model="activityInformation.subcategory" required>
+                        <select class="dropdownInput" ng-model="activityInformation.subcategoryString" required>
                             <optgroup ng-repeat="header in categories" label="{{ header.name }}">
                                 <option ng-repeat="item in header.items" value="{{ item.name }}">{{ item.name }}</option>
                             </optgroup>
