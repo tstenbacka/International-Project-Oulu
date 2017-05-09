@@ -24,13 +24,13 @@
 @media screen and (max-width: 470px) {
     /* Make left and right drawers to full screen when mobile */
     .login-main {
-        width: 100% 
+        width: 100%;
         height: 100vh;
         max-height: 100%;
         margin-bottom: -20px;
     }
     .new-activity {
-        width: 100% 
+        width: 100%;
         height: 100vh;
         max-height: 100%;
         margin-bottom: -20px;
