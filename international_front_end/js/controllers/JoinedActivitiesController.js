@@ -24,7 +24,7 @@ app.controller('JoinedActivitiesController', ['$scope', '$http', '$routeParams',
         
         // Create url that is sended to database
         var urlBeg = "http://192.81.223.10:8080/Oulu_Backend/webapi/users/joinedactivities/";
-        var url = urlBeg.concat(userId);
+        var url = urlBeg.concat(userId  +"?lon=" + userObject.homeLong+ "&lat=" + userObject.homeLat );
         
         console.log(url);
         console.log(userObject);

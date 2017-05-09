@@ -22,7 +22,7 @@ app.controller('HostedActivitiesController', ['$scope', '$http', '$routeParams',
         
         
         var urlBeg = "http://192.81.223.10:8080/Oulu_Backend/webapi/users/createdactivities/";
-        var url = urlBeg.concat(userId);
+        var url = urlBeg.concat(userId +"?lon=" + userObject.homeLong+ "&lat=" + userObject.homeLat);
         
         console.log(url);
         console.log(userObject);
