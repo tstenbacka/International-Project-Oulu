@@ -1,7 +1,7 @@
 app.controller('SearchController', ['$scope','$http','sharedProperties','$timeout','activityIdService',function($scope, $http, sharedProperties,$timeout,activityIdService) {
     
 
-        if(document.cookie.length > 0) {
+    if(document.cookie.length > 0) {
         try {
         var userObject = JSON.parse(document.cookie);
         }
