@@ -1,6 +1,7 @@
 app.controller('NewActivityController', ['$scope', '$location', '$http', '$window', function ($scope, $location, $http, $window) {
     $scope.viewTitle = 'Create Activity';
-    
+
+
     $scope.loadDatePicker = function () {
 
         $('#datepicker1').datepicker({
@@ -16,13 +17,14 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         });
     }
 
-    $scope.loadTimePicker = function () {   }
-    
-    $('#timepicker').timepicker({
-        scrollDefault: 'now',
-        timeFormat: 'H:i',            
-    });
+    $scope.loadTimePicker = function () {
 
+
+        $('#timepicker').timepicker({
+            'scrollDefault': 'now',
+            'timeFormat': 'H:i'
+        });
+    }
     $('#timepicker').on('changeTime', function () {
         // Load user timezone offset
         var offset = new Date().getTimezoneOffset()/60;
@@ -51,7 +53,7 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
         console.log("Time chosen: " + $scope.dateTimeHolder.time);
         console.log("Time sent to back: " + $scope.timeHolder);
     });
-
+    
     $scope.dateTimeHolder = {
         date: '',
         time: ''
@@ -59,6 +61,8 @@ app.controller('NewActivityController', ['$scope', '$location', '$http', '$windo
     
     $scope.timeHolder = '';
 
+    $scope.timeHolder = '';
+    
     $scope.activityHints = {
         hintCategory: 'Category',
         hintTitle: 'Name',

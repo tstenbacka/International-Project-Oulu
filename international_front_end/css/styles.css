@@ -715,4 +715,13 @@ BUTTONS
 
 .piirto {
     height: 100%;
+
+  /* You might need to change these! */
+  
+.drawer-context {
+    padding-top: 20px;
+}
+
+.joined-activities {
+   padding-top: 62px; 
 }
