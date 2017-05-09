@@ -25,9 +25,11 @@
     /* Make left and right drawers to full screen when mobile */
     .login-main {
         width: 100% !important;
+        margin-bottom: -20px;
     }
     .new-activity {
         width: 100% !important;
+        margin-bottom: -20px;
     }
     
     /* CREATE NEW USER */
