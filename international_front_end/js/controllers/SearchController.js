@@ -37,7 +37,11 @@ app.controller('SearchController', ['$scope','$http','sharedProperties','$timeou
         else
             return search_url;
     }
-        
+    
+     $scope.openActivity =  function(id) {
+        activityIdService.setProperty(id)
+        window.location="#/activity/"+id;
+    }       
 
     $scope.pageInfo = 'Choose a card';  
        $http.get(url_check()).then(function(response) {
