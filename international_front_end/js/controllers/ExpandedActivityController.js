@@ -1,5 +1,5 @@
 
-app.controller('ExpandedActivityController', ['$scope','$http','$routeParams','activityIdService', function($scope, $http, $routeParams,activityIdService) {
+app.controller('ExpandedActivityController', ['$scope','$http','$routeParams','activityIdService', '$location', function($scope, $http, $routeParams,activityIdService, $location) {
     
     $scope.activityId = activityIdService.getProperty();
 
@@ -116,6 +116,7 @@ app.controller('ExpandedActivityController', ['$scope','$http','$routeParams','a
             function (response) {
                 // success callback
                 console.log("You just joined the activity, horray!");
+                $location.path('/').replace();
             },
             function (response) {
                 // failure callback

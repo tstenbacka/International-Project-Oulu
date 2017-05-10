@@ -3,36 +3,44 @@
 @media screen and (max-width: 865px) {
     
     .IWantTo {
-        display: none
+        display: none;
     }
     .signIn {
-        display: none
+        display: none;
     }
     .form-control-input {
-        max-width: 50% 
-        text-align: center 
+        max-width: 50%; 
+        text-align: center;
     }
-    
     
     .input-space {
-        margin-bottom: 70px 
-        display: block 
+        margin-bottom: 70px;
+        display: block;
     }
     
+}
+
+@media screen and (max-width: 300px) {
+    /* Hide distance bar when screen width is extremely small */
+    .card-distance {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 470px) {
     /* Make left and right drawers to full screen when mobile */
     .login-main {
         width: 100%;
-        height: 100vh;
-        max-height: 100%;
         margin-bottom: -20px;
     }
+    
+    .login-main-responsive {
+        width: 100%;
+        margin-bottom: -20px;
+    }
+    
     .new-activity {
         width: 100%;
-        height: 100vh;
-        max-height: 100%;
         margin-bottom: -20px;
     }
     
@@ -53,23 +61,20 @@
 @media screen and (max-width: 540px) {
     .input-register-right {
         text-align: center;
-        margin-right: 0 
+        margin-right: 0;
     }
     
     .input-register {
         text-align: center 
-        margin-left: 0 
+        margin-left: 0 ;
     }
     
    
 }
 
 @media screen and (max-height: 1000px) {
-    /* Make left and right drawers to full screen when mobile */
-    .login-main {
-        height: 100% 
-    }
+  
     .new-activity {
-        height: 100% 
+        height: 100% ;
     }
 }
